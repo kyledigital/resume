@@ -1,842 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kyle Hector — Digital Marketing Executive</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kyle Hector — Digital Marketing Executive</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    :root {
-      --bg:           #0f172a;
-      --bg2:          #1e293b;
-      --accent:       #38bdf8;
-      --accent2:      #06b6d4;
-      --accent-glow:  rgba(56, 189, 248, 0.18);
-      --text:         #f1f5f9;
-      --muted:        #94a3b8;
-      --border:       rgba(56, 189, 248, 0.15);
-      --radius:       14px;
-      --font:         'Segoe UI', system-ui, -apple-system, sans-serif;
-    }
+  :root {
+    --bg: #0f172a;
+    --bg2: #1e293b;
+    --accent: #38bdf8;
+    --accent2: #06b6d4;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --border: #334155;
+  }
 
-    html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+  }
 
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(15,23,42,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 1.5rem;
+    display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
+  }
+  nav a {
+    color: var(--muted); text-decoration: none; font-size: 0.85rem;
+    letter-spacing: 0.05em; text-transform: uppercase; font-weight: 500;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--accent); }
 
-    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+  /* SECTIONS */
+  section { padding: 5rem 1.5rem; max-width: 900px; margin: 0 auto; }
 
-    .section {
-      padding: 5rem 0;
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-    .section.visible { opacity: 1; transform: translateY(0); }
+  /* HERO */
+  #hero {
+    min-height: 100vh; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; text-align: center;
+    padding-top: 6rem;
+    animation: fadeIn 1s ease both;
+  }
 
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
+  .badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.3);
+    color: var(--accent); padding: 0.35rem 1rem; border-radius: 999px;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+  }
+  .badge::before {
+    content: ''; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+  }
 
-    .section-title {
-      font-size: clamp(1.6rem, 4vw, 2.2rem);
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 2.5rem;
-      line-height: 1.2;
-    }
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 800; line-height: 1.1;
+    background: linear-gradient(135deg, #fff 30%, var(--accent));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.75rem;
+  }
 
-    .divider { border: none; height: 1px; background: var(--border); margin: 0; }
+  .subtitle {
+    color: var(--muted); font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    margin-bottom: 0.5rem;
+  }
 
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(15, 23, 42, 0.88);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
+  .location {
+    color: var(--accent2); font-size: 0.9rem; margin-bottom: 2rem;
+  }
 
-    .nav-inner {
-      max-width: 900px; margin: 0 auto; padding: 0 1.5rem;
-      height: 58px; display: flex; align-items: center; justify-content: space-between;
-    }
+  .cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #0f172a; font-weight: 700; padding: 0.85rem 2rem;
+    border-radius: 999px; text-decoration: none; font-size: 0.95rem;
+    box-shadow: 0 0 30px rgba(56,189,248,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 45px rgba(56,189,248,0.5);
+  }
 
-    .nav-logo { font-size: 0.95rem; font-weight: 800; color: var(--accent); letter-spacing: 0.04em; text-decoration: none; }
+  /* SECTION HEADINGS */
+  .section-title {
+    font-size: 1.6rem; font-weight: 700; margin-bottom: 2rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-title::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+  .section-title span { color: var(--accent); }
 
-    .nav-links { display: flex; gap: 1.4rem; list-style: none; }
-    .nav-links a { font-size: 0.78rem; font-weight: 600; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--accent); }
+  /* STATS GRID */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+  .stat-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 1rem; padding: 1.5rem 1rem; text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s;
+  }
+  .stat-card.visible { opacity: 1; transform: translateY(0); }
+  .stat-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .stat-num {
+    font-size: 1.8rem; font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-label { color: var(--muted); font-size: 0.75rem; margin-top: 0.25rem; line-height: 1.3; }
 
-    @media (max-width: 580px) { .nav-links { display: none; } }
+  /* SUMMARY */
+  .summary-card {
+    background: var(--bg2); border-left: 3px solid var(--accent);
+    border-radius: 0 1rem 1rem 0; padding: 1.5rem;
+    color: var(--text); font-size: 1rem; line-height: 1.8;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .summary-card.visible { opacity: 1; transform: translateY(0); }
 
-    /* HERO */
-    #hero {
-      min-height: 100vh; display: flex; align-items: center;
-      padding-top: 58px; position: relative; overflow: hidden;
-    }
+  /* EXPERIENCE */
+  .exp-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 1rem; padding: 1.5rem; margin-bottom: 1rem;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s;
+  }
+  .exp-card.visible { opacity: 1; transform: translateY(0); }
+  .exp-card:hover { border-color: var(--accent); }
+  .exp-card.featured { border-color: rgba(56,189,248,0.3); }
+  .exp-header { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+  .exp-title { font-size: 1.1rem; font-weight: 700; color: #fff; }
+  .exp-company { color: var(--accent); font-size: 0.9rem; font-weight: 600; }
+  .exp-tag {
+    background: rgba(56,189,248,0.1); color: var(--accent);
+    padding: 0.2rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600;
+    align-self: flex-start;
+  }
+  .exp-card ul { list-style: none; padding: 0; }
+  .exp-card ul li {
+    padding: 0.35rem 0 0.35rem 1.25rem; color: var(--text);
+    font-size: 0.9rem; position: relative;
+  }
+  .exp-card ul li::before {
+    content: '▹'; position: absolute; left: 0; color: var(--accent);
+  }
+  .exp-card ul li strong { color: #fff; }
 
-    .hero-bg-grid {
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(56,189,248,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(56,189,248,0.04) 1px, transparent 1px);
-      background-size: 48px 48px; pointer-events: none;
-    }
+  .roles-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem; margin-top: 1rem;
+  }
+  .role-chip {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 0.75rem; padding: 0.75rem 1rem;
+    font-size: 0.85rem; color: var(--muted); text-align: center;
+    transition: border-color 0.2s, color 0.2s;
+    opacity: 0; transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.2s;
+  }
+  .role-chip.visible { opacity: 1; transform: translateY(0); }
+  .role-chip:hover { border-color: var(--accent); color: var(--text); }
 
-    .hero-glow {
-      position: absolute; width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(56,189,248,0.12) 0%, transparent 70%);
-      top: -100px; right: -150px; pointer-events: none;
-    }
+  /* SKILLS */
+  .skills-wrap { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .skill-pill {
+    background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.25);
+    color: var(--accent); padding: 0.4rem 1rem; border-radius: 999px;
+    font-size: 0.8rem; font-weight: 500; cursor: default;
+    transition: background 0.2s, transform 0.2s;
+    opacity: 0; transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s;
+  }
+  .skill-pill.visible { opacity: 1; transform: scale(1); }
+  .skill-pill:hover { background: rgba(56,189,248,0.2); transform: scale(1.05); }
 
-    .hero-content { position: relative; z-index: 1; }
+  /* CERTS */
+  .cert-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 1rem; padding: 1rem 1.25rem;
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 0.75rem;
+    opacity: 0; transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .cert-card.visible { opacity: 1; transform: translateY(0); }
+  .cert-name { font-size: 0.95rem; font-weight: 600; }
+  .cert-status {
+    font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+  }
+  .in-progress { background: rgba(251,146,60,0.15); color: #fb923c; border: 1px solid rgba(251,146,60,0.3); }
+  .completed { background: rgba(34,197,94,0.15); color: #22c55e; border: 1px solid rgba(34,197,94,0.3); }
 
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--accent); background: var(--accent-glow); border: 1px solid var(--border);
-      padding: 0.35rem 0.9rem; border-radius: 100px; margin-bottom: 1.5rem;
-      animation: fadeDown 0.7s ease both;
-    }
-    .hero-eyebrow::before {
-      content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%;
-      background: var(--accent); animation: pulse 2s infinite;
-    }
+  /* CONTACT */
+  #contact { text-align: center; }
+  .contact-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 1.5rem; padding: 3rem 2rem;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .contact-card.visible { opacity: 1; transform: translateY(0); }
+  .contact-card p { color: var(--muted); margin-bottom: 2rem; font-size: 1rem; }
+  .email-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #0f172a; font-weight: 700; padding: 0.85rem 2.5rem;
+    border-radius: 999px; text-decoration: none; font-size: 1rem;
+    box-shadow: 0 0 30px rgba(56,189,248,0.25);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .email-btn:hover { transform: translateY(-2px); box-shadow: 0 0 45px rgba(56,189,248,0.45); }
 
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.8);} }
+  footer {
+    text-align: center; padding: 2rem; color: var(--muted); font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+  }
 
-    .hero-name {
-      font-size: clamp(2.8rem, 9vw, 5.5rem); font-weight: 900;
-      line-height: 1.05; letter-spacing: -0.02em; color: var(--text);
-      animation: fadeUp 0.8s 0.1s ease both;
-    }
-    .hero-name .accent-word {
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-
-    .hero-title {
-      font-size: clamp(0.95rem, 2.5vw, 1.1rem); color: var(--muted); font-weight: 500;
-      margin-top: 1rem; max-width: 540px; animation: fadeUp 0.8s 0.25s ease both;
-    }
-
-    .hero-meta {
-      display: flex; flex-wrap: wrap; gap: 1.2rem;
-      margin-top: 1.8rem; animation: fadeUp 0.8s 0.35s ease both;
-    }
-    .hero-meta-item { display: flex; align-items: center; gap: 0.45rem; font-size: 0.85rem; color: var(--muted); }
-    .hero-meta-item a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .hero-meta-item a:hover { color: var(--accent); }
-
-    .hero-ctas {
-      display: flex; flex-wrap: wrap; gap: 0.9rem;
-      margin-top: 2.2rem; animation: fadeUp 0.8s 0.45s ease both;
-    }
-
-    .hero-cta {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.8rem 2rem; border-radius: 100px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #0f172a; font-weight: 800; font-size: 0.9rem; text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 0 24px rgba(56,189,248,0.3);
-    }
-    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(56,189,248,0.4); }
-
-    .hero-cta-ghost {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.8rem 1.8rem; border-radius: 100px;
-      background: transparent; border: 1px solid var(--border);
-      color: var(--muted); font-weight: 700; font-size: 0.9rem; text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .hero-cta-ghost:hover { border-color: var(--accent); color: var(--accent); }
-
-    @keyframes fadeDown { from{opacity:0;transform:translateY(-12px);}to{opacity:1;transform:translateY(0);} }
-    @keyframes fadeUp   { from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);} }
-
-    /* TOP KPI BANNER */
-    .top-kpi-bar {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .top-kpi-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      text-align: center;
-    }
-    .top-kpi-item {
-      padding: 2rem 1rem;
-      border-right: 1px solid var(--border);
-    }
-    .top-kpi-item:last-child { border-right: none; }
-    .top-kpi-number {
-      font-size: clamp(2rem, 5vw, 2.8rem);
-      font-weight: 900;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-      line-height: 1;
-    }
-    .top-kpi-label {
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--muted); margin-top: 0.4rem;
-    }
-
-    @media (max-width: 480px) {
-      .top-kpi-row { grid-template-columns: 1fr; }
-      .top-kpi-item { border-right: none; border-bottom: 1px solid var(--border); }
-      .top-kpi-item:last-child { border-bottom: none; }
-    }
-
-    /* SUMMARY */
-    .summary-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 2rem 2.2rem;
-      font-size: 1rem; color: #cbd5e1; line-height: 1.85; position: relative;
-    }
-    .summary-card::before {
-      content: '"'; position: absolute; top: -0.3rem; left: 1.2rem;
-      font-size: 4rem; color: var(--accent); font-family: Georgia, serif;
-      opacity: 0.25; line-height: 1;
-    }
-    .summary-card p + p { margin-top: 0.9rem; }
-
-    /* DETAIL KPI CARDS */
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
-      gap: 1.2rem;
-    }
-    .kpi-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.5rem 1.4rem;
-      position: relative; overflow: hidden;
-      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-    }
-    .kpi-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      border-radius: var(--radius) var(--radius) 0 0;
-    }
-    .kpi-card:hover { transform: translateY(-4px); border-color: rgba(56,189,248,0.4); box-shadow: 0 12px 32px rgba(56,189,248,0.12); }
-    .kpi-icon { font-size: 1.4rem; margin-bottom: 0.6rem; }
-    .kpi-number {
-      font-size: clamp(1.8rem, 4.5vw, 2.4rem); font-weight: 900;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-      line-height: 1;
-    }
-    .kpi-label { font-size: 0.78rem; color: var(--muted); margin-top: 0.35rem; font-weight: 500; line-height: 1.4; }
-
-    /* EXPERIENCE */
-    .experience-list { display: flex; flex-direction: column; gap: 1.6rem; }
-    .exp-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.8rem 2rem;
-      transition: border-color 0.25s, box-shadow 0.25s;
-    }
-    .exp-card:hover { border-color: rgba(56,189,248,0.35); box-shadow: 0 8px 28px rgba(56,189,248,0.08); }
-
-    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem; }
-    .exp-role { font-size: 1.05rem; font-weight: 800; color: var(--text); }
-
-    .exp-badge {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
-      color: var(--accent); background: var(--accent-glow); border: 1px solid var(--border);
-      padding: 0.2rem 0.7rem; border-radius: 100px; white-space: nowrap;
-    }
-    .exp-badge-orange {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
-      color: #fb923c; background: rgba(251,146,60,0.1); border: 1px solid rgba(251,146,60,0.2);
-      padding: 0.2rem 0.7rem; border-radius: 100px; white-space: nowrap;
-    }
-
-    .exp-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
-    .exp-company { font-size: 0.88rem; font-weight: 600; color: var(--accent2); }
-    .exp-dates { font-size: 0.78rem; color: var(--muted); }
-    .exp-focus { font-size: 0.78rem; color: var(--muted); font-style: italic; }
-    .exp-sep { color: var(--border); }
-
-    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
-    .exp-bullets li { font-size: 0.9rem; color: #94a3b8; padding-left: 1.2rem; position: relative; line-height: 1.6; }
-    .exp-bullets li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; top: 0.2em; }
-    .exp-bullets li strong { color: var(--text); font-weight: 700; }
-
-    /* SKILLS */
-    .skills-grid { display: flex; flex-wrap: wrap; gap: 0.65rem; }
-    .skill-pill {
-      font-size: 0.8rem; font-weight: 700; color: var(--accent);
-      background: var(--accent-glow); border: 1px solid rgba(56,189,248,0.25);
-      padding: 0.42rem 1rem; border-radius: 100px; letter-spacing: 0.02em;
-      transition: background 0.2s, border-color 0.2s, transform 0.2s; cursor: default;
-    }
-    .skill-pill:hover { background: rgba(56,189,248,0.25); border-color: var(--accent); transform: translateY(-2px); }
-
-    /* EDUCATION */
-    .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
-    .edu-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.4rem 1.5rem;
-      display: flex; gap: 1rem; align-items: flex-start;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .edu-card:hover { border-color: rgba(56,189,248,0.35); box-shadow: 0 4px 20px rgba(56,189,248,0.08); }
-    .edu-card.featured { border-color: rgba(56,189,248,0.3); background: rgba(56,189,248,0.04); }
-
-    .edu-icon-wrap {
-      width: 40px; height: 40px; border-radius: 10px;
-      background: var(--accent-glow); border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.15rem; flex-shrink: 0; margin-top: 0.1rem;
-    }
-    .edu-name { font-size: 0.9rem; font-weight: 700; color: var(--text); line-height: 1.35; }
-    .edu-issuer { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
-
-    .edu-status-badge {
-      display: inline-block; font-size: 0.68rem; font-weight: 700;
-      color: #fb923c; background: rgba(251,146,60,0.12);
-      border: 1px solid rgba(251,146,60,0.25);
-      padding: 0.12rem 0.55rem; border-radius: 100px; margin-top: 0.3rem;
-    }
-    .edu-status-done {
-      display: inline-block; font-size: 0.68rem; font-weight: 700;
-      color: #4ade80; background: rgba(74,222,128,0.1);
-      border: 1px solid rgba(74,222,128,0.2);
-      padding: 0.12rem 0.55rem; border-radius: 100px; margin-top: 0.3rem;
-    }
-
-    /* CONTACT */
-    #contact {
-      background: linear-gradient(135deg, #0d1f35 0%, #0f172a 100%);
-      border-top: 1px solid var(--border); padding: 5rem 0;
-    }
-    .contact-inner { text-align: center; max-width: 560px; margin: 0 auto; }
-    .contact-heading { font-size: clamp(2rem, 6vw, 3rem); font-weight: 900; color: var(--text); margin-bottom: 1rem; line-height: 1.15; }
-    .contact-heading span { background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .contact-sub { color: var(--muted); font-size: 1rem; margin-bottom: 2.2rem; }
-    .contact-email-btn {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      padding: 1rem 2.4rem; border-radius: 100px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #0f172a; font-weight: 800; font-size: 1rem; text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 0 32px rgba(56,189,248,0.25);
-    }
-    .contact-email-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(56,189,248,0.4); }
-    .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.6rem; }
-    .contact-link {
-      display: inline-flex; align-items: center; gap: 0.45rem;
-      font-size: 0.85rem; color: var(--muted); text-decoration: none;
-      border: 1px solid var(--border); padding: 0.45rem 1.1rem; border-radius: 100px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .contact-link:hover { color: var(--accent); border-color: rgba(56,189,248,0.4); }
-    .contact-location { margin-top: 1.8rem; font-size: 0.85rem; color: var(--muted); display: flex; align-items: center; justify-content: center; gap: 0.4rem; }
-
-    /* FOOTER */
-    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 1.4rem 1.5rem; text-align: center; font-size: 0.78rem; color: var(--muted); }
-    footer strong { color: var(--accent); }
-
-    /* MOBILE */
-    @media (max-width: 600px) {
-      .section { padding: 3.5rem 0; }
-      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
-      .exp-card { padding: 1.4rem 1.3rem; }
-      .summary-card { padding: 1.6rem 1.5rem; }
-    }
-  </style>
+  /* ANIMATIONS */
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+</style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">KH</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#metrics">Metrics</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+<nav>
+  <a href="#hero">Home</a>
+  <a href="#stats">Impact</a>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-bg-grid"></div>
-    <div class="hero-glow"></div>
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-eyebrow">Full-Stack Digital Marketer</div>
-        <h1 class="hero-name">Kyle<br><span class="accent-word">Hector</span></h1>
-        <p class="hero-title">Digital Marketing Executive &nbsp;&middot;&nbsp; Content Strategist &nbsp;&middot;&nbsp; Paid Media Specialist</p>
-        <div class="hero-meta">
-          <span class="hero-meta-item">&#128205; Jamaica, Caribbean</span>
-          <span class="hero-meta-item">&#9993;&#65039; <a href="mailto:kylehector12@gmail.com">kylehector12@gmail.com</a></span>
-          <span class="hero-meta-item">&#128197; 8+ Years Experience</span>
-          <span class="hero-meta-item">&#128101; <a href="https://www.linkedin.com/in/kylehector" target="_blank" rel="noopener">linkedin.com/in/kylehector</a></span>
-        </div>
-        <div class="hero-ctas">
-          <a href="#contact" class="hero-cta">Get in Touch &rarr;</a>
-          <a href="https://www.linkedin.com/in/kylehector" target="_blank" rel="noopener" class="hero-cta-ghost">View LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- HERO -->
+<section id="hero">
+  <div class="badge">Available for Opportunities</div>
+  <h1>Kyle Hector</h1>
+  <p class="subtitle">Digital Marketing Executive &nbsp;·&nbsp; Content Strategist &nbsp;·&nbsp; Paid Media Specialist</p>
+  <p class="location">📍 Jamaica, Caribbean</p>
+  <a href="#contact" class="cta-btn">Let's Work Together</a>
+</section>
 
-  <!-- TOP KPI BANNER -->
-  <div class="top-kpi-bar">
-    <div class="container">
-      <div class="top-kpi-row">
-        <div class="top-kpi-item">
-          <div class="top-kpi-number">25.5m+</div>
-          <div class="top-kpi-label">Customers Reached</div>
-        </div>
-        <div class="top-kpi-item">
-          <div class="top-kpi-number">32%</div>
-          <div class="top-kpi-label">Key Account Growth</div>
-        </div>
-        <div class="top-kpi-item">
-          <div class="top-kpi-number">$5m</div>
-          <div class="top-kpi-label">Revenue Generated</div>
-        </div>
-      </div>
+<!-- STATS -->
+<section id="stats">
+  <h2 class="section-title"><span>#</span> Impact by the Numbers</h2>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-num" data-target="54.6" data-suffix="K+">0</div>
+      <div class="stat-label">Facebook Followers Managed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" data-target="14.8" data-suffix="K+">0</div>
+      <div class="stat-label">Instagram Followers Managed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" data-target="231" data-suffix="K+">0</div>
+      <div class="stat-label">Views on Single Organic Post</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" data-target="541" data-suffix="K+">0</div>
+      <div class="stat-label">Campaign Impressions ($250 budget)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" data-target="36753" data-suffix="">0</div>
+      <div class="stat-label">Unique Campaign Viewers</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" data-prefix="$" data-target="0.46" data-suffix=" CPM">$0</div>
+      <div class="stat-label">Cost Per 1,000 Impressions</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" data-target="66.7" data-suffix="%">0</div>
+      <div class="stat-label">Instagram DM Response Rate</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" data-target="8" data-suffix="+ yrs">0</div>
+      <div class="stat-label">Years of Digital Marketing Experience</div>
     </div>
   </div>
+</section>
 
-  <hr class="divider">
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title"><span>#</span> Professional Summary</h2>
+  <div class="summary-card">
+    Results-driven digital marketing professional with 8+ years of experience in content strategy, social media management, paid media, and digital project management across Caribbean and international markets. Proven track record of managing large-scale social platforms, executing high-ROI paid campaigns, and producing multimedia content that drives engagement and brand growth — with a deep understanding of the Caribbean market and its diaspora audiences worldwide.
+  </div>
+</section>
 
-  <!-- ABOUT / SUMMARY -->
-  <section id="about" class="section">
-    <div class="container">
-      <p class="section-label">About</p>
-      <h2 class="section-title">Professional Summary</h2>
-      <div class="summary-card">
-        <p>Digital Marketer and Content Strategist with a strong focus on inbound marketing, storytelling, and campaign performance. Currently leading inbound initiatives at <strong style="color:var(--text)">Yello Media Group</strong> across the Caribbean, I specialise in content that connects, converts, and scales. I&rsquo;m passionate about blending creativity and data to drive results.</p>
-        <p>Digital marketing strategist &amp; multimedia content creator skilled in brand storytelling, content production, and campaign execution. Experienced in website management (WordPress, Wix), performance tracking, and high-impact digital campaigns across <strong style="color:var(--text)">corporate, real estate, lifestyle, and entertainment</strong> industries.</p>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2 class="section-title"><span>#</span> Work Experience</h2>
+
+  <div class="exp-card featured">
+    <div class="exp-header">
+      <div>
+        <div class="exp-title">Content &amp; Inbound Marketing Executive</div>
+        <div class="exp-company">Yello Media Group &nbsp;·&nbsp; Jamaica</div>
+      </div>
+      <span class="exp-tag">Featured Role</span>
+    </div>
+    <ul>
+      <li>Managed Facebook (<strong>54,600+ followers</strong>) and Instagram @findyellonow (<strong>14,800+ followers</strong>) for a pan-Caribbean audience across Jamaica, T&T, Barbados, Canada, US, and UK</li>
+      <li>Drove <strong>231,000+ views</strong> on a single organic product-launch post (2026 Yello Directory launch)</li>
+      <li>Produced Reels achieving up to <strong>1,303 organic reach</strong> and <strong>145 interactions</strong> per post</li>
+      <li>Executed paid ad campaign generating <strong>541,000+ impressions</strong> and <strong>36,753 unique viewers</strong> on a $250 budget — CPM of <strong>~$0.46</strong></li>
+      <li>Drove <strong>3,394 profile and page visits</strong> from a single boosted campaign</li>
+      <li>Audience: <strong>60.8% female</strong>, top country Jamaica (49.4%), with reach across US, UK, Canada, T&T, and Barbados</li>
+      <li>Maintained <strong>66.7% Instagram DM response rate</strong></li>
+    </ul>
+  </div>
+
+  <div class="exp-card">
+    <div class="exp-header">
+      <div>
+        <div class="exp-title">Digital Experience Lead</div>
+        <div class="exp-company">Marketing Exposure Digital Solutions Ltd</div>
       </div>
     </div>
-  </section>
+    <ul>
+      <li>Managed PPC campaigns, media buying, and digital content strategy for B2B and B2C clients</li>
+      <li>Developed cross-platform digital strategies driving measurable ROI for regional and international brands</li>
+    </ul>
+  </div>
 
-  <hr class="divider">
+  <h3 style="color:var(--muted); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; margin: 1.5rem 0 0.75rem;">Additional Roles</h3>
+  <div class="roles-grid">
+    <div class="role-chip">Digital Project Manager</div>
+    <div class="role-chip">Customer Success Specialist</div>
+    <div class="role-chip">Paid Media Specialist</div>
+    <div class="role-chip">Multimedia Producer</div>
+  </div>
+</section>
 
-  <!-- CAMPAIGN KPI METRICS -->
-  <section id="metrics" class="section">
-    <div class="container">
-      <p class="section-label">Impact</p>
-      <h2 class="section-title">Campaign Performance Numbers</h2>
-      <div class="kpi-grid">
+<!-- SKILLS -->
+<section id="skills">
+  <h2 class="section-title"><span>#</span> Skills</h2>
+  <div class="skills-wrap">
+    <span class="skill-pill">Content Strategy</span>
+    <span class="skill-pill">Social Media Management</span>
+    <span class="skill-pill">Meta Ads</span>
+    <span class="skill-pill">Paid Media / PPC</span>
+    <span class="skill-pill">HubSpot</span>
+    <span class="skill-pill">Adobe Premiere</span>
+    <span class="skill-pill">Canva</span>
+    <span class="skill-pill">Lightroom</span>
+    <span class="skill-pill">SEO</span>
+    <span class="skill-pill">Email Marketing</span>
+    <span class="skill-pill">Digital Project Management</span>
+    <span class="skill-pill">Video Production</span>
+    <span class="skill-pill">Reels &amp; Short-Form Video</span>
+    <span class="skill-pill">Inbound Marketing</span>
+    <span class="skill-pill">Media Buying</span>
+    <span class="skill-pill">Customer Success</span>
+    <span class="skill-pill">Caribbean Market Expertise</span>
+    <span class="skill-pill">Analytics &amp; Reporting</span>
+  </div>
+</section>
 
-        <div class="kpi-card">
-          <div class="kpi-icon">&#128216;</div>
-          <div class="kpi-number">54.6K</div>
-          <div class="kpi-label">Facebook Followers<br>Pan-Caribbean audience</div>
-        </div>
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <h2 class="section-title"><span>#</span> Certifications</h2>
+  <div class="cert-card">
+    <span class="cert-name">DMI Professional Diploma in Digital Marketing</span>
+    <span class="cert-status in-progress">In Progress</span>
+  </div>
+  <div class="cert-card">
+    <span class="cert-name">IBM Project Management Fundamentals</span>
+    <span class="cert-status in-progress">In Progress</span>
+  </div>
+</section>
 
-        <div class="kpi-card">
-          <div class="kpi-icon">&#128247;</div>
-          <div class="kpi-number">14.8K</div>
-          <div class="kpi-label">Instagram Followers<br>@findyellonow</div>
-        </div>
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title"><span>#</span> Get in Touch</h2>
+  <div class="contact-card">
+    <p>Open to remote opportunities in digital marketing, content strategy, and paid media. Based in Jamaica — available worldwide.</p>
+    <a href="mailto:kylehector12@gmail.com" class="email-btn">kylehector12@gmail.com</a>
+  </div>
+</section>
 
-        <div class="kpi-card">
-          <div class="kpi-icon">&#128064;</div>
-          <div class="kpi-number">541K</div>
-          <div class="kpi-label">Campaign Impressions<br>on a $250 ad budget</div>
-        </div>
+<footer>
+  <p>© 2026 Kyle Hector &nbsp;·&nbsp; Digital Marketing Executive &nbsp;·&nbsp; Jamaica, Caribbean</p>
+</footer>
 
-        <div class="kpi-card">
-          <div class="kpi-icon">&#128640;</div>
-          <div class="kpi-number">231K</div>
-          <div class="kpi-label">Views on a single<br>organic post</div>
-        </div>
+<script>
+  // Make all animated elements visible immediately if JS scroll observer fails
+  function revealAll() {
+    document.querySelectorAll('.stat-card, .summary-card, .exp-card, .role-chip, .skill-pill, .cert-card, .contact-card')
+      .forEach(el => el.classList.add('visible'));
+  }
 
-        <div class="kpi-card">
-          <div class="kpi-icon">&#128176;</div>
-          <div class="kpi-number">$0.46</div>
-          <div class="kpi-label">CPM achieved<br>36.7K unique viewers</div>
-        </div>
+  // Counter animation
+  function animateCounter(el) {
+    const target = parseFloat(el.dataset.target);
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const decimals = (el.dataset.target.includes('.')) ? el.dataset.target.split('.')[1].length : 0;
+    const duration = 1400;
+    const start = performance.now();
 
-        <div class="kpi-card">
-          <div class="kpi-icon">&#128279;</div>
-          <div class="kpi-number">3.4K</div>
-          <div class="kpi-label">Profile visits from<br>single boosted campaign</div>
-        </div>
-
-        <div class="kpi-card">
-          <div class="kpi-icon">&#128172;</div>
-          <div class="kpi-number">66.7%</div>
-          <div class="kpi-label">Instagram DM<br>response rate</div>
-        </div>
-
-        <div class="kpi-card">
-          <div class="kpi-icon">&#127919;</div>
-          <div class="kpi-number">185M</div>
-          <div class="kpi-label">Google Ads impressions<br>(Enersave, all time)</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section">
-    <div class="container">
-      <p class="section-label">Experience</p>
-      <h2 class="section-title">Work History</h2>
-
-      <div class="experience-list">
-
-        <!-- Yello — Content & Inbound -->
-        <div class="exp-card">
-          <div class="exp-header">
-            <div class="exp-role">Content &amp; Inbound Marketing Executive</div>
-            <span class="exp-badge">Current</span>
-          </div>
-          <div class="exp-meta">
-            <span class="exp-company">Yello Media Group</span>
-            <span class="exp-sep">&middot;</span>
-            <span class="exp-dates">April 2025 &mdash; Present</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>Planned and executed Yello&rsquo;s <strong>Brand Camp 2025</strong> content rollout across Facebook and Instagram, reaching over <strong>75K+ users</strong> with a mix of organic and boosted posts.</li>
-            <li>Developed and managed <strong>20+ creative assets</strong> including reels, carousels, and teaser videos to drive engagement and brand storytelling.</li>
-            <li>Managed Facebook (<strong>54,600+ followers</strong>) and Instagram @findyellonow (<strong>14,800+ followers</strong>) for a pan-Caribbean audience across Jamaica, T&amp;T, Barbados, Canada, the US, and the UK.</li>
-            <li>Drove <strong>231,000+ views</strong> on a single organic product-launch post for the 2026 Yello Directory launch.</li>
-            <li>Executed paid ad campaign: <strong>541,000+ impressions</strong>, <strong>36,753 unique viewers</strong> on a <strong>$250 budget</strong> &mdash; CPM ~$0.46.</li>
-            <li>Drove <strong>3,394 profile and page visits</strong> from a single boosted campaign; maintained a <strong>66.7% Instagram DM</strong> response rate.</li>
-            <li>Audience: <strong>60.8% female</strong>; top country Jamaica (49.4%), with reach across US, UK, Canada, T&amp;T &amp; Barbados.</li>
-            <li>Conceptualised and led the <strong>Jamaica Water Relief Initiative &ldquo;Refill Hope&rdquo;</strong> from vision to execution &mdash; a partnership with the <strong>National Water Commission of Jamaica</strong> to distribute <strong>3,500 buckets and 15,000 gallons</strong> of clean water to hurricane-affected families island-wide; the campaign generated <strong>195,000+ video views</strong>, reached <strong>69,000+ unique accounts</strong>, and drove <strong>3,600+ interactions</strong> including 203 shares across collaborative content featuring Jamaica&rsquo;s Prime Minister.</li>
-            <li>Produced a narrative-driven storytelling reel that achieved <strong>2,479 views</strong>, <strong>1,303 reach</strong>, and <strong>145 interactions</strong> &mdash; one of the highest organic engagement rates across the account&rsquo;s recent content history.</li>
-          </ul>
-        </div>
-
-        <!-- Yello — Customer Success -->
-        <div class="exp-card">
-          <div class="exp-header">
-            <div class="exp-role">Customer Success Specialist</div>
-            <span class="exp-badge-orange">Yello Media Group</span>
-          </div>
-          <div class="exp-meta">
-            <span class="exp-dates">2021 &mdash; 2025</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>Led digital strategy for high-value client accounts, including blue-chip clients like <strong>GKONE</strong>.</li>
-            <li>Oversaw the project management of a first-of-its-kind <strong>tracking solution</strong> that enabled accurate app installation and registration tracking.</li>
-            <li>Drove <strong>32% key account growth</strong> and contributed to <strong>$5m+ in revenue generated</strong> across managed accounts.</li>
-          </ul>
-        </div>
-
-        <!-- Digital Project Manager -->
-        <div class="exp-card">
-          <div class="exp-header">
-            <div class="exp-role">Digital Project Manager</div>
-          </div>
-          <div class="exp-meta">
-            <span class="exp-focus">Project Focus: Google, Social Media &amp; Website</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>Oversaw digital strategy for <strong>UWI Mona</strong>, identifying content optimization opportunities for social media and the website.</li>
-            <li>Led initiatives that improved promotional content, web performance, and user engagement, directly contributing to <strong>UWI Mona exceeding student registration targets</strong>.</li>
-          </ul>
-        </div>
-
-        <!-- Digital Experience Lead -->
-        <div class="exp-card">
-          <div class="exp-header">
-            <div class="exp-role">Digital Experience Lead</div>
-            <span class="exp-badge-orange">2021 &mdash; Present</span>
-          </div>
-          <div class="exp-meta">
-            <span class="exp-company">Marketing Exposure Digital Solutions Ltd</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>Lead the planning and execution of PPC campaigns, media buying, and digital content strategies for B2B and B2C clients.</li>
-            <li>Drive growth through <strong>Google Ads, Meta, and performance marketing</strong>, delivering measurable ROI for clients across multiple industries.</li>
-          </ul>
-        </div>
-
-        <!-- Paid Media Specialist -->
-        <div class="exp-card">
-          <div class="exp-header">
-            <div class="exp-role">Paid Media Specialist</div>
-            <span class="exp-badge-orange">2018 &mdash; 2021</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>Managed <strong>65+ digital campaigns</strong> for Yello Media and Imagine Digital, ensuring budget efficiency, timely execution, and measurable performance improvements.</li>
-            <li>Provided strategic oversight that led to <strong>surpassing campaign objectives</strong> and optimizing client ROI.</li>
-            <li>Optimized communication and reporting for Google Ads strategies, enhancing clarity and client engagement. Streamlined reporting templates, <strong>improving client understanding and campaign discussions by 35%</strong>.</li>
-          </ul>
-        </div>
-
-        <!-- Enersave Solutions — Freelance -->
-        <div class="exp-card">
-          <div class="exp-header">
-            <div class="exp-role">Freelance Google Ads Manager</div>
-            <span class="exp-badge">2019 &mdash; Present</span>
-          </div>
-          <div class="exp-meta">
-            <span class="exp-company">Enersave Solutions</span>
-            <span class="exp-sep">&middot;</span>
-            <span class="exp-dates">Recurring freelance engagements since 2019</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>Managed <strong>81 Google Ads campaigns</strong> across YouTube Video (TrueView/In-stream), Display, Search, Performance Max, and Smart campaign types for a Jamaican energy &amp; solar solutions company.</li>
-            <li>Drove <strong>456 purchases</strong> with a total attributed <strong>purchase value of $1.19M</strong> against $141K in lifetime ad spend &mdash; an estimated <strong>~8.4x ROAS</strong>.</li>
-            <li>Generated <strong>3,200 checkout initiations</strong> and <strong>113,600+ website page views</strong> from paid campaigns; total tracked conversions across all goal types exceeded <strong>127,000</strong> at <strong>$1.10 cost/conversion</strong>.</li>
-            <li>Delivered <strong>185M+ total impressions</strong> and <strong>3.37M+ clicks</strong> at an average <strong>CPC of $0.04</strong> and <strong>CPM of $0.76</strong> &mdash; consistently high reach at ultra-low cost.</li>
-            <li>Drove <strong>17.7M+ TrueView video views</strong> and <strong>32M+ total interactions</strong> with an overall interaction rate of <strong>17.34%</strong>.</li>
-            <li>Executed full-funnel campaign mix: awareness (Video/Display), consideration (Search/Performance Max), and conversion &mdash; covering product launches, Black Friday, Christmas, and Solar Sale promotions.</li>
-            <li>Active conversion goals tracked across all 58 enabled campaigns: <strong>Purchases, Add to Cart, Begin Checkout, Phone Call Leads, Request Quote, Downloads,</strong> and Page Views.</li>
-          </ul>
-        </div>
-
-        <!-- Multimedia Producer -->
-        <div class="exp-card">
-          <div class="exp-header">
-            <div class="exp-role">Multimedia Producer</div>
-          </div>
-          <ul class="exp-bullets">
-            <li>Produced video, photo, and digital content assets across corporate, real estate, lifestyle, and entertainment verticals.</li>
-            <li>Skilled in Adobe Premiere, Lightroom, and Canva for end-to-end content production and brand storytelling.</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <div class="container">
-      <p class="section-label">Skills</p>
-      <h2 class="section-title">Areas of Expertise</h2>
-      <div class="skills-grid">
-        <span class="skill-pill">Content Strategy</span>
-        <span class="skill-pill">Social Media Management</span>
-        <span class="skill-pill">Inbound Marketing</span>
-        <span class="skill-pill">Brand Storytelling</span>
-        <span class="skill-pill">Meta Ads (Facebook &amp; Instagram)</span>
-        <span class="skill-pill">Google Ads / PPC</span>
-        <span class="skill-pill">YouTube Advertising</span>
-        <span class="skill-pill">Performance Max Campaigns</span>
-        <span class="skill-pill">Paid Media &amp; Media Buying</span>
-        <span class="skill-pill">HubSpot</span>
-        <span class="skill-pill">Adobe Premiere</span>
-        <span class="skill-pill">Adobe Lightroom</span>
-        <span class="skill-pill">Canva</span>
-        <span class="skill-pill">WordPress</span>
-        <span class="skill-pill">Wix</span>
-        <span class="skill-pill">SEO</span>
-        <span class="skill-pill">Email Marketing</span>
-        <span class="skill-pill">Digital Project Management</span>
-        <span class="skill-pill">Video Production</span>
-        <span class="skill-pill">Short-Form Reels</span>
-        <span class="skill-pill">Performance Tracking</span>
-        <span class="skill-pill">Analytics &amp; Reporting</span>
-        <span class="skill-pill">Audience Growth</span>
-        <span class="skill-pill">Caribbean Market Expertise</span>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- EDUCATION & CERTIFICATIONS -->
-  <section id="education" class="section">
-    <div class="container">
-      <p class="section-label">Education &amp; Certifications</p>
-      <h2 class="section-title">Qualifications</h2>
-      <div class="edu-grid">
-
-        <!-- Degree -->
-        <div class="edu-card featured">
-          <div class="edu-icon-wrap">&#127891;</div>
-          <div>
-            <div class="edu-name">BA. Digital Media Production</div>
-            <div class="edu-issuer">University of the West Indies, Mona &mdash; Western Jamaica Campus, 2017</div>
-            <span class="edu-status-done">&#10003; Completed</span>
-          </div>
-        </div>
-
-        <!-- DMI -->
-        <div class="edu-card">
-          <div class="edu-icon-wrap">&#127891;</div>
-          <div>
-            <div class="edu-name">Professional Diploma in Digital Marketing</div>
-            <div class="edu-issuer">Digital Marketing Institute (DMI)</div>
-            <span class="edu-status-badge">In Progress</span>
-          </div>
-        </div>
-
-        <!-- DigitalMarketer -->
-        <div class="edu-card">
-          <div class="edu-icon-wrap">&#128203;</div>
-          <div>
-            <div class="edu-name">Certified Customer Acquisition Specialist</div>
-            <div class="edu-issuer">DigitalMarketer &mdash; 2023</div>
-            <span class="edu-status-done">&#10003; Certified</span>
-          </div>
-        </div>
-
-        <!-- Google -->
-        <div class="edu-card">
-          <div class="edu-icon-wrap">&#128269;</div>
-          <div>
-            <div class="edu-name">Fundamentals of Digital Marketing</div>
-            <div class="edu-issuer">Google Digital Garage &mdash; 2019</div>
-            <span class="edu-status-done">&#10003; Certified</span>
-          </div>
-        </div>
-
-        <!-- IBM -->
-        <div class="edu-card">
-          <div class="edu-icon-wrap">&#128296;</div>
-          <div>
-            <div class="edu-name">Project Management Fundamentals</div>
-            <div class="edu-issuer">IBM / Coursera</div>
-            <span class="edu-status-badge">In Progress</span>
-          </div>
-        </div>
-
-        <!-- NCB -->
-        <div class="edu-card">
-          <div class="edu-icon-wrap">&#128161;</div>
-          <div>
-            <div class="edu-name">Idea Generation &amp; Innovation</div>
-            <div class="edu-issuer">National Commercial Bank (NCB)</div>
-            <span class="edu-status-done">&#10003; Completed</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <div class="contact-inner section">
-        <h2 class="contact-heading">Let&rsquo;s <span>Work Together</span></h2>
-        <p class="contact-sub">Whether it&rsquo;s a campaign, a strategy, or a conversation &mdash; I&rsquo;m always open to connecting with the right people.</p>
-        <a href="mailto:kylehector12@gmail.com" class="contact-email-btn">
-          &#9993;&#65039;&nbsp; kylehector12@gmail.com
-        </a>
-        <div class="contact-links">
-          <a href="https://www.linkedin.com/in/kylehector" target="_blank" rel="noopener" class="contact-link">
-            &#128101; linkedin.com/in/kylehector
-          </a>
-        </div>
-        <p class="contact-location">&#128205; Based in Jamaica, Caribbean &nbsp;&middot;&nbsp; Available for remote &amp; regional work</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <strong>Kyle Hector</strong> &nbsp;&middot;&nbsp; Digital Marketing Executive &nbsp;&middot;&nbsp; Jamaica, Caribbean
-  </footer>
-
-  <script>
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.section').forEach(function(el) { observer.observe(el); });
-
-    function animateCounter(el, target, suffix, decimals) {
-      var duration = 1500;
-      var startTime = performance.now();
-      function step(now) {
-        var progress = Math.min((now - startTime) / duration, 1);
-        var eased = 1 - Math.pow(1 - progress, 3);
-        var value = eased * target;
-        el.textContent = (decimals ? value.toFixed(decimals) : Math.floor(value)) + suffix;
-        if (progress < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
+    function update(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const val = eased * target;
+      const display = decimals > 0 ? val.toFixed(decimals) : Math.floor(val).toLocaleString();
+      el.textContent = prefix + display + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = prefix + (decimals > 0 ? target.toFixed(decimals) : target.toLocaleString()) + suffix;
     }
+    requestAnimationFrame(update);
+  }
 
-    var kpiData = [
-      { number: 54.6, suffix: 'K', decimals: 1 },
-      { number: 14.8, suffix: 'K', decimals: 1 },
-      { number: 541,  suffix: 'K', decimals: 0 },
-      { number: 231,  suffix: 'K', decimals: 0 },
-      { number: 0.46, suffix: '',  decimals: 2 },
-      { number: 3.4,  suffix: 'K', decimals: 1 },
-      { number: 66.7, suffix: '%', decimals: 1 },
-      { number: 185,  suffix: 'M', decimals: 0 }
-    ];
+  // Intersection Observer for scroll animations
+  const animatedEls = document.querySelectorAll('.stat-card, .summary-card, .exp-card, .role-chip, .skill-pill, .cert-card, .contact-card');
 
-    var topKpiData = [
-      { number: 25.5, suffix: 'm+', decimals: 1 },
-      { number: 32,   suffix: '%',  decimals: 0 },
-      { number: 5,    suffix: 'm',  decimals: 0 }
-    ];
+  if ('IntersectionObserver' in window) {
+    let idx = 0;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          setTimeout(() => {
+            el.classList.add('visible');
+            const num = el.querySelector('.stat-num[data-target]');
+            if (num) animateCounter(num);
+          }, (idx++ % 8) * 80);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 
-    var countersTriggered = false;
-    var topTriggered = false;
+    animatedEls.forEach(el => observer.observe(el));
+  } else {
+    // Fallback: show everything immediately
+    revealAll();
+    document.querySelectorAll('.stat-num[data-target]').forEach(animateCounter);
+  }
 
-    var kpiObs = new IntersectionObserver(function(entries) {
-      if (entries[0].isIntersecting && !countersTriggered) {
-        countersTriggered = true;
-        document.querySelectorAll('.kpi-number').forEach(function(el, i) {
-          var d = kpiData[i]; if (!d) return;
-          setTimeout(function() { animateCounter(el, d.number, d.suffix, d.decimals); }, i * 80);
-        });
-      }
-    }, { threshold: 0.3 });
-    kpiObs.observe(document.getElementById('metrics'));
-
-    var topObs = new IntersectionObserver(function(entries) {
-      if (entries[0].isIntersecting && !topTriggered) {
-        topTriggered = true;
-        document.querySelectorAll('.top-kpi-number').forEach(function(el, i) {
-          var d = topKpiData[i]; if (!d) return;
-          var prefix = i === 2 ? '$' : '';
-          setTimeout(function() {
-            var duration = 1400, startTime = performance.now();
-            function step(now) {
-              var progress = Math.min((now - startTime) / duration, 1);
-              var eased = 1 - Math.pow(1 - progress, 3);
-              var value = eased * d.number;
-              el.textContent = prefix + (d.decimals ? value.toFixed(d.decimals) : Math.floor(value)) + d.suffix;
-              if (progress < 1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
-          }, i * 120);
-        });
-      }
-    }, { threshold: 0.5 });
-    topObs.observe(document.querySelector('.top-kpi-bar'));
-  </script>
-
+  // Safety fallback — if page loaded and stats section is in view, reveal after 500ms
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.querySelectorAll('.stat-card:not(.visible)').forEach(el => {
+        el.classList.add('visible');
+        const num = el.querySelector('.stat-num[data-target]');
+        if (num) animateCounter(num);
+      });
+    }, 500);
+  });
+</script>
 </body>
 </html>
