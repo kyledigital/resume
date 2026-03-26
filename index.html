@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kyle Hector · Digital Marketing Executive</title>
+<title>Kyle Hector · Digital Marketing Executive | Google Ads · Meta Ads · Content Strategy</title>
+<meta name="description" content="Kyle Hector — Digital Marketing Executive specialising in Google Ads, Meta Ads, paid media, content strategy, and social media management. 8+ years growing Caribbean brands. Open to remote opportunities.">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -74,11 +75,16 @@
   }
 
   .subtitle {
-    color: var(--muted); font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-    margin-bottom: 0.5rem;
+    color: var(--text); font-size: clamp(1rem, 2.8vw, 1.25rem);
+    margin-bottom: 0.5rem; font-weight: 500;
   }
 
-  .location { color: var(--accent2); font-size: 0.9rem; margin-bottom: 2rem; }
+  .hero-tagline {
+    color: var(--muted); font-size: clamp(0.85rem, 2vw, 1rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .location { color: var(--muted); font-size: 0.85rem; margin-bottom: 2rem; }
 
   .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
 
@@ -108,6 +114,12 @@
   }
   .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
   .section-title span { color: var(--accent); }
+
+  /* SECTION INTRO LINE */
+  .section-intro {
+    color: var(--muted); font-size: 0.95rem;
+    margin-top: -1.25rem; margin-bottom: 1.75rem;
+  }
 
   /* STATS GRID */
   .stats-grid {
@@ -348,6 +360,57 @@
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
     nav { gap: 0.75rem; padding: 0.5rem 1rem; font-size: 0.7rem; }
   }
+
+  /* WHAT I DO */
+  .what-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.25rem;
+  }
+  .what-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 1rem; padding: 1.5rem;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s;
+  }
+  .what-card.visible { opacity: 1; transform: translateY(0); }
+  .what-card:hover { border-color: var(--accent); }
+  .what-icon { font-size: 1.75rem; margin-bottom: 0.6rem; }
+  .what-title { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.4rem; }
+  .what-desc { color: var(--muted); font-size: 0.82rem; line-height: 1.55; }
+
+  /* SUMMARY BULLETS */
+  .summary-bullets { list-style: none; padding: 0; }
+  .summary-bullets li {
+    padding: 0.45rem 0 0.45rem 1.5rem; color: var(--text);
+    font-size: 0.95rem; position: relative; line-height: 1.65;
+    border-bottom: 1px solid rgba(51,65,85,0.5);
+  }
+  .summary-bullets li:last-child { border-bottom: none; }
+  .summary-bullets li::before { content: '▹'; position: absolute; left: 0; color: var(--accent); font-size: 0.85rem; top: 0.6rem; }
+  .summary-bullets li strong { color: #fff; }
+
+  /* EXP LINKS */
+  .exp-card a { color: var(--accent); text-decoration: none; }
+  .exp-card a:hover { text-decoration: underline; }
+
+  /* HOW I WORK */
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.25rem;
+  }
+  .how-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 1rem 1rem 0; padding: 1.4rem 1.5rem;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .how-card.visible { opacity: 1; transform: translateY(0); }
+  .how-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .how-title { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.35rem; }
+  .how-desc { color: var(--muted); font-size: 0.82rem; line-height: 1.55; }
 </style>
 </head>
 <body>
@@ -355,12 +418,10 @@
 <nav>
   <a href="#hero">Home</a>
   <a href="#stats">Impact</a>
-  <a href="#about">About</a>
+  <a href="#portfolio">Work</a>
   <a href="#experience">Experience</a>
   <a href="#skills">Skills</a>
-  <a href="#portfolio">Portfolio</a>
   <a href="#education">Education</a>
-  <a href="#certifications">Certifications</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -368,18 +429,47 @@
 <section id="hero">
   <div class="badge">Available for Opportunities</div>
   <h1>Kyle Hector</h1>
-  <p class="subtitle">Digital Marketing Executive &nbsp;·&nbsp; Content Strategist &nbsp;·&nbsp; Paid Media Specialist</p>
+  <p class="subtitle">Digital Marketing Executive · Google Ads · Meta Ads · Content Strategy</p>
+  <p class="hero-tagline">8 years of paid media, social growth, and campaign optimisation across Caribbean markets.</p>
   <p class="location">📍 Jamaica, Caribbean &nbsp;·&nbsp; 📞 <a href="tel:+18768547105" style="color:var(--accent2);text-decoration:none;">876-854-7105</a> &nbsp;·&nbsp; ✉️ <a href="mailto:kylehector12@gmail.com" style="color:var(--accent2);text-decoration:none;">kylehector12@gmail.com</a></p>
   <div class="hero-links">
-    <a href="#contact" class="cta-btn">Let's Work Together</a>
+    <a href="#contact" class="cta-btn">Work with me</a>
     <a href="https://www.linkedin.com/in/kyle-hector" target="_blank" class="outline-btn">LinkedIn ↗</a>
     <a href="assets/Kyle_Hector_Resume.pdf" download class="outline-btn" style="border-color:var(--accent2);color:var(--accent2);">⬇ Download CV</a>
+  </div>
+</section>
+
+<!-- WHAT I DO -->
+<section id="what-i-do">
+  <h2 class="section-title"><span>#</span> What I Do</h2>
+  <div class="what-grid">
+    <div class="what-card">
+      <div class="what-icon">🎯</div>
+      <div class="what-title">Google Ads &amp; Meta Ads</div>
+      <p class="what-desc">End-to-end PPC campaign management — audience targeting, creative testing, bid optimisation, and analytics &amp; reporting.</p>
+    </div>
+    <div class="what-card">
+      <div class="what-icon">📱</div>
+      <div class="what-title">Content Strategy &amp; Social Media</div>
+      <p class="what-desc">Growing brand audiences through platform-native content across Facebook, Instagram, and short-form video.</p>
+    </div>
+    <div class="what-card">
+      <div class="what-icon">📊</div>
+      <div class="what-title">Paid Media &amp; Campaign Optimisation</div>
+      <p class="what-desc">Maximising return at any budget level — precise targeting, smart bidding, and performance tracking that drives decisions.</p>
+    </div>
+    <div class="what-card">
+      <div class="what-icon">🎬</div>
+      <div class="what-title">Video &amp; Short-Form Content</div>
+      <p class="what-desc">Reels, launch videos, and branded content — produced and edited for engagement and organic reach.</p>
+    </div>
   </div>
 </section>
 
 <!-- STATS -->
 <section id="stats">
   <h2 class="section-title"><span>#</span> Impact by the Numbers</h2>
+  <p class="section-intro">Here's a snapshot of what I've delivered across campaigns and platforms.</p>
   <div class="stats-grid">
     <div class="stat-card">
       <div class="stat-num" data-target="54.6" data-suffix="K+">0</div>
@@ -391,7 +481,7 @@
     </div>
     <div class="stat-card">
       <div class="stat-num" data-target="185" data-suffix="M+">0</div>
-      <div class="stat-label">Google Ads Impressions Managed</div>
+      <div class="stat-label">Google Ads Impressions</div>
     </div>
     <div class="stat-card">
       <div class="stat-num" data-prefix="$" data-target="1.19" data-suffix="M">$0</div>
@@ -403,11 +493,11 @@
     </div>
     <div class="stat-card">
       <div class="stat-num" data-target="231" data-suffix="K+">0</div>
-      <div class="stat-label">Views on Single Organic Post</div>
+      <div class="stat-label">Views on a Single Organic Post</div>
     </div>
     <div class="stat-card">
       <div class="stat-num" data-target="541" data-suffix="K+">0</div>
-      <div class="stat-label">Campaign Impressions ($250 budget)</div>
+      <div class="stat-label">Impressions on a $250 Budget</div>
     </div>
     <div class="stat-card">
       <div class="stat-num" data-prefix="$" data-target="0.46" data-suffix=" CPM">$0</div>
@@ -419,16 +509,119 @@
     </div>
     <div class="stat-card">
       <div class="stat-num" data-target="8" data-suffix="+ yrs">0</div>
-      <div class="stat-label">Years of Digital Marketing Experience</div>
+      <div class="stat-label">Years in Digital Marketing</div>
     </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO / CASE STUDIES -->
+<section id="portfolio">
+  <h2 class="section-title"><span>#</span> Campaign Case Studies</h2>
+  <p class="section-intro">Real campaigns. Real budgets. Real results.</p>
+  <div class="portfolio-grid">
+
+    <div class="case-card">
+      <div class="case-banner google-ads">
+        <div class="case-banner-icon">📊</div>
+        <div class="case-banner-kpi">8.4x ROAS</div>
+        <div class="case-banner-sub">Google Ads · Enersave Solutions</div>
+      </div>
+      <div class="case-card-body">
+        <span class="case-tag google">Google Ads</span>
+        <div>
+          <div class="case-title">Enersave Solutions — Google Ads Performance</div>
+          <div class="case-client">Energy Solutions · Jamaica</div>
+        </div>
+        <p class="case-body">Built a full-funnel Google Ads strategy for Enersave — keyword targeting, campaign structure, and bid optimisation — delivering 185M+ impressions, 8.4x ROAS, and $1.19M in attributed revenue.</p>
+        <div class="case-results">
+          <div class="case-stat"><span class="case-stat-num">185M+</span><span class="case-stat-label">Impressions</span></div>
+          <div class="case-stat"><span class="case-stat-num">8.4x</span><span class="case-stat-label">ROAS</span></div>
+          <div class="case-stat"><span class="case-stat-num">$1.19M</span><span class="case-stat-label">Attributed Revenue</span></div>
+          <div class="case-stat"><span class="case-stat-num">3.38M</span><span class="case-stat-label">Clicks</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-banner meta-ads">
+        <div class="case-banner-icon">🎯</div>
+        <div class="case-banner-kpi">$0.46 CPM</div>
+        <div class="case-banner-sub">Meta Ads · $250 Budget</div>
+      </div>
+      <div class="case-card-body">
+        <span class="case-tag social">Paid Social</span>
+        <div>
+          <div class="case-title">FindYello — Maximum Reach on Minimum Budget</div>
+          <div class="case-client">Yello Media Group · Caribbean</div>
+        </div>
+        <p class="case-body">Generated 541K+ impressions and 3,394 profile visits from a $250 Meta Ads campaign — through precise audience segmentation and creative testing across Caribbean markets. CPM: $0.46.</p>
+        <div class="case-results">
+          <div class="case-stat"><span class="case-stat-num">541K+</span><span class="case-stat-label">Impressions</span></div>
+          <div class="case-stat"><span class="case-stat-num">36,753</span><span class="case-stat-label">Unique Viewers</span></div>
+          <div class="case-stat"><span class="case-stat-num">$0.46</span><span class="case-stat-label">CPM</span></div>
+          <div class="case-stat"><span class="case-stat-num">3,394</span><span class="case-stat-label">Profile Visits</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-banner organic-social">
+        <div class="case-banner-icon">🚀</div>
+        <div class="case-banner-kpi">231K+ Views</div>
+        <div class="case-banner-sub">Organic Post · Zero Ad Spend</div>
+      </div>
+      <div class="case-card-body">
+        <span class="case-tag social">Organic Social</span>
+        <div>
+          <div class="case-title">Yello 2026 Directory — Product Launch</div>
+          <div class="case-client">Yello Media Group · Caribbean</div>
+        </div>
+        <p class="case-body">Led content strategy for the 2026 Yello Directory launch. A single organic post reached 231K+ views — no paid spend. Right content, right audience, right timing.</p>
+        <div class="case-results">
+          <div class="case-stat"><span class="case-stat-num">231K+</span><span class="case-stat-label">Views (Single Post)</span></div>
+          <div class="case-stat"><span class="case-stat-num">54.6K</span><span class="case-stat-label">FB Followers</span></div>
+          <div class="case-stat"><span class="case-stat-num">1,303</span><span class="case-stat-label">Organic Reach / Reel</span></div>
+          <div class="case-stat"><span class="case-stat-num">66.7%</span><span class="case-stat-label">DM Response Rate</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-banner cause-mktg">
+        <div class="case-banner-icon">💧</div>
+        <div class="case-banner-kpi">Refill Hope</div>
+        <div class="case-banner-sub">Cause Marketing · Jamaica</div>
+      </div>
+      <div class="case-card-body">
+        <span class="case-tag cause">Cause Marketing</span>
+        <div>
+          <div class="case-title">Refill Hope — Campaign from Concept to Launch</div>
+          <div class="case-client">Jamaica Water Relief Initiative</div>
+        </div>
+        <p class="case-body">Took the Refill Hope initiative from concept to full launch — building the campaign narrative, visual identity, and content plan, then executing end-to-end across Facebook and Instagram.</p>
+        <div class="case-results">
+          <div class="case-stat"><span class="case-stat-num">Concept</span><span class="case-stat-label">to Full Launch</span></div>
+          <div class="case-stat"><span class="case-stat-num">FB + IG</span><span class="case-stat-label">Channel Strategy</span></div>
+          <div class="case-stat"><span class="case-stat-num">Multi</span><span class="case-stat-label">Platform Execution</span></div>
+          <div class="case-stat"><span class="case-stat-num">Jamaica</span><span class="case-stat-label">Social Impact</span></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-  <h2 class="section-title"><span>#</span> Professional Summary</h2>
+  <h2 class="section-title"><span>#</span> About</h2>
   <div class="summary-card">
-    Results-driven digital marketing professional with 8+ years of experience in content strategy, social media management, paid media, and digital project management across Caribbean and international markets. Proven track record managing large-scale social platforms, executing high-ROI paid campaigns on Google Ads and Meta, and producing multimedia content that drives engagement and brand growth. Managed over 185M Google Ads impressions, delivered 8.4x ROAS for Enersave Solutions generating $1.19M in attributed revenue, and driven 54.6K+ Facebook followers at Yello Media Group · with deep expertise in the Caribbean market and its diaspora audiences worldwide.
+    <ul class="summary-bullets">
+      <li>8+ years in digital marketing — <strong>paid media, content strategy, and social media management</strong> across Caribbean and international markets</li>
+      <li>Managed <strong>Google Ads</strong> campaigns generating <strong>185M+ impressions</strong> and <strong>$1.19M attributed revenue</strong> at 8.4x ROAS</li>
+      <li>Grew brand pages to <strong>54,600+ Facebook</strong> and <strong>14,800+ Instagram</strong> followers; 231K+ views on a single organic post</li>
+      <li>Delivered <strong>65+ paid campaigns</strong> across Google Ads and Meta Ads for regional and international clients</li>
+      <li>Deep expertise in <strong>Caribbean audience strategy</strong> — with diaspora reach across US, UK, Canada, T&amp;T, and Barbados</li>
+    </ul>
   </div>
 </section>
 
@@ -446,14 +639,12 @@
       <span class="exp-tag">Current Role</span>
     </div>
     <ul>
-      <li>Managed Facebook (<strong>54,600+ followers</strong>) and Instagram @findyellonow (<strong>14,800+ followers</strong>) for a pan-Caribbean audience across Jamaica, T&T, Barbados, Canada, US, and UK</li>
-      <li>Drove <strong>231,000+ views</strong> on a single organic product-launch post (2026 Yello Directory launch)</li>
-      <li>Produced Reels achieving up to <strong>1,303 organic reach</strong> and <strong>145 interactions</strong> per post</li>
-      <li>Executed paid ad campaign generating <strong>541,000+ impressions</strong> and <strong>36,753 unique viewers</strong> on a $250 budget · CPM of <strong>~$0.46</strong></li>
-      <li>Drove <strong>3,394 profile and page visits</strong> from a single boosted campaign</li>
-      <li>Led social media strategy for the Jamaica Water Relief Initiative <strong>"Refill Hope"</strong> campaign · took the vision from concept to execution across Facebook and Instagram</li>
-      <li>Audience: <strong>60.8% female</strong>, top country Jamaica (49.4%), with reach across US, UK, Canada, T&T, and Barbados</li>
-      <li>Maintained <strong>66.7% Instagram DM response rate</strong></li>
+      <li>Managed social media for <a href="https://www.facebook.com/findyellonow" target="_blank">@findyellonow</a> — <strong>54,600+ Facebook</strong> and <strong>14,800+ Instagram</strong> followers spanning Jamaica, T&amp;T, Barbados, US, UK, and Canada</li>
+      <li>Single organic product-launch post: <strong>231K+ views</strong>, zero paid spend — 2026 Yello Directory launch</li>
+      <li><strong>$250 Meta Ads campaign:</strong> 541K+ impressions · 36,753 unique viewers · <strong>$0.46 CPM</strong> · 3,394 profile visits</li>
+      <li>Produced Reels averaging <strong>1,303+ organic reach</strong> and <strong>145 interactions</strong> per post</li>
+      <li>Led social media management for <strong>"Refill Hope"</strong> water relief campaign — concept to full launch</li>
+      <li>Maintained <strong>66.7% Instagram DM response rate</strong>; audience 60.8% female, top country Jamaica (49.4%)</li>
     </ul>
   </div>
 
@@ -466,11 +657,10 @@
       </div>
     </div>
     <ul>
-      <li>Managed <strong>65+ digital campaigns</strong> for Yello Media and Imagine Digital, ensuring budget efficiency, timely execution, and measurable performance improvements</li>
-      <li>Oversaw Google Ads strategy for Enersave Solutions · generating <strong>185M+ impressions</strong>, <strong>8.4x ROAS</strong>, and <strong>$1.19M in attributed revenue</strong></li>
-      <li>Optimised communication and reporting for Google Ads strategies, improving client understanding and campaign discussions by <strong>35%</strong></li>
-      <li>Developed cross-platform digital strategies driving measurable ROI for regional and international brands</li>
-      <li>Streamlined reporting templates, improving client understanding and campaign discussions by 35%</li>
+      <li>Managed <strong>65+ Google Ads and Meta Ads campaigns</strong> for Yello Media and Imagine Digital</li>
+      <li>Built full-funnel Google Ads strategy for Enersave Solutions — <strong>185M+ impressions · 8.4x ROAS · $1.19M attributed revenue</strong></li>
+      <li>Improved client reporting and campaign communication by <strong>35%</strong> through cleaner dashboards and analytics frameworks</li>
+      <li>Delivered cross-platform PPC and digital marketing strategies for regional and international brands</li>
     </ul>
   </div>
 
@@ -482,9 +672,9 @@
       </div>
     </div>
     <ul>
-      <li>Oversaw digital strategy for UWI Mona, identifying content optimisation opportunities for social media and the website</li>
-      <li>Led initiatives that improved promotional content, web performance, and user engagement, directly contributing to UWI Mona exceeding student registration targets</li>
-      <li>Led digital strategy for high-value client accounts, including blue-chip clients like <strong>GKONE</strong> — overseeing the project management of a first-of-its-kind tracking solution that enabled accurate app installation and registration attribution</li>
+      <li>Identified content and UX gaps across UWI Mona's social channels and website</li>
+      <li>Led digital marketing campaigns contributing directly to UWI Mona exceeding student registration targets</li>
+      <li>Managed <strong>GKONE</strong> — delivered a first-of-its-kind app attribution solution for tracking installs and registration conversions</li>
     </ul>
   </div>
 
@@ -497,9 +687,8 @@
       </div>
     </div>
     <ul>
-      <li>Co-produced &amp; edited <em>Mello Min</em>, featuring Protoje, Queen Ifrica, and Bugle</li>
-      <li>Managed video editing, studio production, and live broadcasting for The Barry G Show</li>
-      <li>Operated as camera operator and production assistant, ensuring high-quality media output across TV and digital platforms</li>
+      <li>Co-produced and edited <em>Mello Min</em> — featuring Protoje, Queen Ifrica, and Bugle</li>
+      <li>Managed video editing, studio production, and live broadcast for The Barry G Show</li>
     </ul>
   </div>
 
@@ -514,6 +703,33 @@
   </div>
 </section>
 
+<!-- HOW I WORK -->
+<section id="how-i-work">
+  <h2 class="section-title"><span>#</span> How I Work</h2>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-icon">📈</div>
+      <div class="how-title">Results over vanity metrics</div>
+      <p class="how-desc">Leads, revenue, real growth — not just impressions. Every decision ties back to something that moves the business.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-icon">🧪</div>
+      <div class="how-title">Test fast, optimise early</div>
+      <p class="how-desc">I read data mid-campaign, not after. Test, adjust, and scale what works before the budget runs out.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-icon">🔗</div>
+      <div class="how-title">Paid and organic, together</div>
+      <p class="how-desc">Strong content lowers paid CPMs. Smart distribution extends organic reach. I build both with intention.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-icon">✂️</div>
+      <div class="how-title">Simple strategies, sharp execution</div>
+      <p class="how-desc">Complexity isn't a strategy. Focused plans, clean execution, and cutting what doesn't earn its place.</p>
+    </div>
+  </div>
+</section>
+
 <!-- SKILLS -->
 <section id="skills">
   <h2 class="section-title"><span>#</span> Skills</h2>
@@ -523,6 +739,7 @@
     <span class="skill-pill">Google Ads</span>
     <span class="skill-pill">Meta Ads</span>
     <span class="skill-pill">Paid Media / PPC</span>
+    <span class="skill-pill">Campaign Optimisation</span>
     <span class="skill-pill">SEO</span>
     <span class="skill-pill">HubSpot</span>
     <span class="skill-pill">Adobe Premiere Pro</span>
@@ -542,102 +759,6 @@
     <span class="skill-pill">Performance Tracking</span>
     <span class="skill-pill">Drone Operation</span>
     <span class="skill-pill">Photography</span>
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <h2 class="section-title"><span>#</span> Campaign Case Studies</h2>
-  <div class="portfolio-grid">
-
-    <div class="case-card">
-      <div class="case-banner google-ads">
-        <div class="case-banner-icon">📊</div>
-        <div class="case-banner-kpi">8.4x ROAS</div>
-        <div class="case-banner-sub">Google Ads · Enersave Solutions</div>
-      </div>
-      <div class="case-card-body">
-        <span class="case-tag google">Google Ads</span>
-        <div>
-          <div class="case-title">Enersave Solutions · Performance Max</div>
-          <div class="case-client">Energy Solutions · Jamaica</div>
-        </div>
-        <p class="case-body">Managed a full-funnel Google Ads strategy driving high-intent traffic and measurable conversions. Optimised campaign structure, keyword targeting, and bidding to achieve exceptional return on ad spend.</p>
-        <div class="case-results">
-          <div class="case-stat"><span class="case-stat-num">185M+</span><span class="case-stat-label">Impressions</span></div>
-          <div class="case-stat"><span class="case-stat-num">8.4x</span><span class="case-stat-label">ROAS</span></div>
-          <div class="case-stat"><span class="case-stat-num">$1.19M</span><span class="case-stat-label">Attributed Revenue</span></div>
-          <div class="case-stat"><span class="case-stat-num">3.38M</span><span class="case-stat-label">Clicks</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="case-card">
-      <div class="case-banner meta-ads">
-        <div class="case-banner-icon">🎯</div>
-        <div class="case-banner-kpi">$0.46 CPM</div>
-        <div class="case-banner-sub">Meta Ads · $250 Budget</div>
-      </div>
-      <div class="case-card-body">
-        <span class="case-tag social">Paid Social</span>
-        <div>
-          <div class="case-title">FindYello · $250 Budget Campaign</div>
-          <div class="case-client">Yello Media Group · Caribbean</div>
-        </div>
-        <p class="case-body">Executed a highly efficient paid social campaign on a lean $250 budget, targeting Caribbean audiences across Jamaica, T&T, and Barbados. Achieved industry-leading CPM through precise audience segmentation and creative testing.</p>
-        <div class="case-results">
-          <div class="case-stat"><span class="case-stat-num">541K+</span><span class="case-stat-label">Impressions</span></div>
-          <div class="case-stat"><span class="case-stat-num">36,753</span><span class="case-stat-label">Unique Viewers</span></div>
-          <div class="case-stat"><span class="case-stat-num">$0.46</span><span class="case-stat-label">CPM</span></div>
-          <div class="case-stat"><span class="case-stat-num">3,394</span><span class="case-stat-label">Profile Visits</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="case-card">
-      <div class="case-banner organic-social">
-        <div class="case-banner-icon">🚀</div>
-        <div class="case-banner-kpi">231K+ Views</div>
-        <div class="case-banner-sub">Organic Post · Single Reel</div>
-      </div>
-      <div class="case-card-body">
-        <span class="case-tag social">Organic Social</span>
-        <div>
-          <div class="case-title">Yello 2026 Directory · Product Launch</div>
-          <div class="case-client">Yello Media Group · Caribbean</div>
-        </div>
-        <p class="case-body">Led the organic content strategy for the 2026 Yello Directory launch across Facebook and Instagram. A single product-launch post achieved viral reach, demonstrating the power of well-timed, audience-first storytelling.</p>
-        <div class="case-results">
-          <div class="case-stat"><span class="case-stat-num">231K+</span><span class="case-stat-label">Views (Single Post)</span></div>
-          <div class="case-stat"><span class="case-stat-num">54.6K</span><span class="case-stat-label">FB Followers</span></div>
-          <div class="case-stat"><span class="case-stat-num">1,303</span><span class="case-stat-label">Organic Reach / Reel</span></div>
-          <div class="case-stat"><span class="case-stat-num">66.7%</span><span class="case-stat-label">DM Response Rate</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="case-card">
-      <div class="case-banner cause-mktg">
-        <div class="case-banner-icon">💧</div>
-        <div class="case-banner-kpi">Refill Hope</div>
-        <div class="case-banner-sub">Cause Marketing · Jamaica</div>
-      </div>
-      <div class="case-card-body">
-        <span class="case-tag cause">Cause Marketing</span>
-        <div>
-          <div class="case-title">Refill Hope · Water Relief Initiative</div>
-          <div class="case-client">Jamaica Water Relief Initiative</div>
-        </div>
-        <p class="case-body">Took the Jamaica Water Relief Initiative from concept to full social media execution. Built the campaign narrative, visual identity, and content plan — translating a social cause into a compelling digital campaign across Facebook and Instagram.</p>
-        <div class="case-results">
-          <div class="case-stat"><span class="case-stat-num">Concept</span><span class="case-stat-label">to Full Launch</span></div>
-          <div class="case-stat"><span class="case-stat-num">FB + IG</span><span class="case-stat-label">Channel Strategy</span></div>
-          <div class="case-stat"><span class="case-stat-num">Multi</span><span class="case-stat-label">Platform Execution</span></div>
-          <div class="case-stat"><span class="case-stat-num">Jamaica</span><span class="case-stat-label">Social Impact</span></div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -712,8 +833,13 @@
 <section id="contact">
   <h2 class="section-title"><span>#</span> Get in Touch</h2>
   <div class="contact-card">
-    <p>Open to remote opportunities in digital marketing, content strategy, Google Ads, and paid media. Based in Jamaica · available worldwide.</p>
+    <p>Open to remote roles in digital marketing, Google Ads, Meta Ads, and content strategy. Based in Jamaica — available worldwide. Let's connect.</p>
     <a href="mailto:kylehector12@gmail.com" class="email-btn">kylehector12@gmail.com</a>
+    <div style="margin-top:1.5rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="https://www.linkedin.com/in/kyle-hector" target="_blank" class="outline-btn" style="padding:0.55rem 1.5rem; font-size:0.85rem;">LinkedIn ↗</a>
+      <a href="https://www.facebook.com/findyellonow" target="_blank" class="outline-btn" style="padding:0.55rem 1.5rem; font-size:0.85rem;">Portfolio · FindYello FB ↗</a>
+      <a href="https://kyledigital.github.io/resume" target="_blank" class="outline-btn" style="padding:0.55rem 1.5rem; font-size:0.85rem;">This Site ↗</a>
+    </div>
   </div>
 </section>
 
@@ -723,7 +849,7 @@
 
 <script>
   function revealAll() {
-    document.querySelectorAll('.stat-card, .summary-card, .exp-card, .role-chip, .skill-pill, .cert-card, .contact-card, .edu-card')
+    document.querySelectorAll('.stat-card, .summary-card, .exp-card, .role-chip, .skill-pill, .cert-card, .contact-card, .edu-card, .what-card, .how-card')
       .forEach(el => el.classList.add('visible'));
   }
 
@@ -747,7 +873,7 @@
     requestAnimationFrame(update);
   }
 
-  const animatedEls = document.querySelectorAll('.stat-card, .summary-card, .exp-card, .role-chip, .skill-pill, .cert-card, .contact-card, .edu-card, .case-card');
+  const animatedEls = document.querySelectorAll('.stat-card, .summary-card, .exp-card, .role-chip, .skill-pill, .cert-card, .contact-card, .edu-card, .case-card, .what-card, .how-card');
 
   if ('IntersectionObserver' in window) {
     let idx = 0;
