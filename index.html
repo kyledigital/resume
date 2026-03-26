@@ -254,15 +254,54 @@
   /* PORTFOLIO */
   .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.25rem;
   }
   .case-card {
     background: var(--bg2); border: 1px solid var(--border);
-    border-radius: 1rem; padding: 1.5rem;
+    border-radius: 1rem; padding: 0;
     opacity: 0; transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s;
-    display: flex; flex-direction: column; gap: 1rem;
+    display: flex; flex-direction: column; gap: 0;
+    overflow: hidden;
+  }
+  .case-card-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+    display: flex; flex-direction: column; gap: 0.85rem;
+    flex: 1;
+  }
+  .case-banner {
+    height: 130px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.35rem;
+    position: relative; overflow: hidden;
+  }
+  .case-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(0,0,0,0.18);
+  }
+  .case-banner-icon { font-size: 2.2rem; position: relative; z-index: 1; line-height: 1; }
+  .case-banner-kpi {
+    font-size: 1.65rem; font-weight: 900; color: #fff;
+    text-shadow: 0 2px 14px rgba(0,0,0,0.35);
+    position: relative; z-index: 1; letter-spacing: -0.02em;
+  }
+  .case-banner-sub {
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: rgba(255,255,255,0.72);
+    position: relative; z-index: 1;
+  }
+  .case-banner.google-ads {
+    background: linear-gradient(135deg, #1a73e8 0%, #0f9d58 55%, #fbbc04 100%);
+  }
+  .case-banner.meta-ads {
+    background: linear-gradient(135deg, #1877f2 0%, #0064d1 45%, #6e40f5 100%);
+  }
+  .case-banner.organic-social {
+    background: linear-gradient(135deg, #111 0%, #1a1a1a 40%, #c47f00 100%);
+  }
+  .case-banner.cause-mktg {
+    background: linear-gradient(135deg, #0369a1 0%, #0891b2 50%, #22c55e 100%);
   }
   .case-card.visible { opacity: 1; transform: translateY(0); }
   .case-card:hover { border-color: var(--accent); }
@@ -508,62 +547,90 @@
   <div class="portfolio-grid">
 
     <div class="case-card">
-      <span class="case-tag google">Google Ads</span>
-      <div>
-        <div class="case-title">Enersave Solutions · Performance Max</div>
-        <div class="case-client">Energy Solutions · Jamaica</div>
+      <div class="case-banner google-ads">
+        <div class="case-banner-icon">📊</div>
+        <div class="case-banner-kpi">8.4x ROAS</div>
+        <div class="case-banner-sub">Google Ads · Enersave Solutions</div>
       </div>
-      <p class="case-body">Managed a full-funnel Google Ads strategy driving high-intent traffic and measurable conversions. Optimised campaign structure, keyword targeting, and bidding strategy to achieve exceptional return on ad spend.</p>
-      <div class="case-results">
-        <div class="case-stat"><span class="case-stat-num">185M+</span><span class="case-stat-label">Impressions</span></div>
-        <div class="case-stat"><span class="case-stat-num">8.4x</span><span class="case-stat-label">ROAS</span></div>
-        <div class="case-stat"><span class="case-stat-num">$1.19M</span><span class="case-stat-label">Attributed Revenue</span></div>
-        <div class="case-stat"><span class="case-stat-num">35%</span><span class="case-stat-label">Reporting Efficiency ↑</span></div>
-      </div>
-    </div>
-
-    <div class="case-card">
-      <span class="case-tag social">Paid Social</span>
-      <div>
-        <div class="case-title">FindYello · $250 Budget Campaign</div>
-        <div class="case-client">Yello Media Group · Caribbean</div>
-      </div>
-      <p class="case-body">Executed a highly efficient paid social campaign on a lean $250 budget, targeting Caribbean audiences across Jamaica, T&T, and Barbados. Achieved industry-leading CPM through precise audience segmentation and creative testing.</p>
-      <div class="case-results">
-        <div class="case-stat"><span class="case-stat-num">541K+</span><span class="case-stat-label">Impressions</span></div>
-        <div class="case-stat"><span class="case-stat-num">36,753</span><span class="case-stat-label">Unique Viewers</span></div>
-        <div class="case-stat"><span class="case-stat-num">$0.46</span><span class="case-stat-label">CPM</span></div>
-        <div class="case-stat"><span class="case-stat-num">3,394</span><span class="case-stat-label">Profile Visits</span></div>
+      <div class="case-card-body">
+        <span class="case-tag google">Google Ads</span>
+        <div>
+          <div class="case-title">Enersave Solutions · Performance Max</div>
+          <div class="case-client">Energy Solutions · Jamaica</div>
+        </div>
+        <p class="case-body">Managed a full-funnel Google Ads strategy driving high-intent traffic and measurable conversions. Optimised campaign structure, keyword targeting, and bidding to achieve exceptional return on ad spend.</p>
+        <div class="case-results">
+          <div class="case-stat"><span class="case-stat-num">185M+</span><span class="case-stat-label">Impressions</span></div>
+          <div class="case-stat"><span class="case-stat-num">8.4x</span><span class="case-stat-label">ROAS</span></div>
+          <div class="case-stat"><span class="case-stat-num">$1.19M</span><span class="case-stat-label">Attributed Revenue</span></div>
+          <div class="case-stat"><span class="case-stat-num">3.38M</span><span class="case-stat-label">Clicks</span></div>
+        </div>
       </div>
     </div>
 
     <div class="case-card">
-      <span class="case-tag social">Organic Social</span>
-      <div>
-        <div class="case-title">Yello 2026 Directory · Product Launch</div>
-        <div class="case-client">Yello Media Group · Caribbean</div>
+      <div class="case-banner meta-ads">
+        <div class="case-banner-icon">🎯</div>
+        <div class="case-banner-kpi">$0.46 CPM</div>
+        <div class="case-banner-sub">Meta Ads · $250 Budget</div>
       </div>
-      <p class="case-body">Led the organic content strategy for the 2026 Yello Directory launch across Facebook and Instagram. A single product-launch post achieved viral reach, demonstrating the power of well-timed, audience-first storytelling.</p>
-      <div class="case-results">
-        <div class="case-stat"><span class="case-stat-num">231K+</span><span class="case-stat-label">Views (Single Post)</span></div>
-        <div class="case-stat"><span class="case-stat-num">54.6K</span><span class="case-stat-label">FB Followers</span></div>
-        <div class="case-stat"><span class="case-stat-num">1,303</span><span class="case-stat-label">Organic Reach / Reel</span></div>
-        <div class="case-stat"><span class="case-stat-num">66.7%</span><span class="case-stat-label">DM Response Rate</span></div>
+      <div class="case-card-body">
+        <span class="case-tag social">Paid Social</span>
+        <div>
+          <div class="case-title">FindYello · $250 Budget Campaign</div>
+          <div class="case-client">Yello Media Group · Caribbean</div>
+        </div>
+        <p class="case-body">Executed a highly efficient paid social campaign on a lean $250 budget, targeting Caribbean audiences across Jamaica, T&T, and Barbados. Achieved industry-leading CPM through precise audience segmentation and creative testing.</p>
+        <div class="case-results">
+          <div class="case-stat"><span class="case-stat-num">541K+</span><span class="case-stat-label">Impressions</span></div>
+          <div class="case-stat"><span class="case-stat-num">36,753</span><span class="case-stat-label">Unique Viewers</span></div>
+          <div class="case-stat"><span class="case-stat-num">$0.46</span><span class="case-stat-label">CPM</span></div>
+          <div class="case-stat"><span class="case-stat-num">3,394</span><span class="case-stat-label">Profile Visits</span></div>
+        </div>
       </div>
     </div>
 
     <div class="case-card">
-      <span class="case-tag cause">Cause Marketing</span>
-      <div>
-        <div class="case-title">Refill Hope · Water Relief Initiative</div>
-        <div class="case-client">Jamaica Water Relief Initiative</div>
+      <div class="case-banner organic-social">
+        <div class="case-banner-icon">🚀</div>
+        <div class="case-banner-kpi">231K+ Views</div>
+        <div class="case-banner-sub">Organic Post · Single Reel</div>
       </div>
-      <p class="case-body">Took the Jamaica Water Relief Initiative from concept to full social media execution. Built the campaign narrative, visual identity, and content plan — translating a social cause into a compelling digital campaign across Facebook and Instagram.</p>
-      <div class="case-results">
-        <div class="case-stat"><span class="case-stat-num">Vision</span><span class="case-stat-label">Concept to Launch</span></div>
-        <div class="case-stat"><span class="case-stat-num">Multi</span><span class="case-stat-label">Platform Execution</span></div>
-        <div class="case-stat"><span class="case-stat-num">FB + IG</span><span class="case-stat-label">Channel Strategy</span></div>
-        <div class="case-stat"><span class="case-stat-num">Jamaica</span><span class="case-stat-label">Social Impact</span></div>
+      <div class="case-card-body">
+        <span class="case-tag social">Organic Social</span>
+        <div>
+          <div class="case-title">Yello 2026 Directory · Product Launch</div>
+          <div class="case-client">Yello Media Group · Caribbean</div>
+        </div>
+        <p class="case-body">Led the organic content strategy for the 2026 Yello Directory launch across Facebook and Instagram. A single product-launch post achieved viral reach, demonstrating the power of well-timed, audience-first storytelling.</p>
+        <div class="case-results">
+          <div class="case-stat"><span class="case-stat-num">231K+</span><span class="case-stat-label">Views (Single Post)</span></div>
+          <div class="case-stat"><span class="case-stat-num">54.6K</span><span class="case-stat-label">FB Followers</span></div>
+          <div class="case-stat"><span class="case-stat-num">1,303</span><span class="case-stat-label">Organic Reach / Reel</span></div>
+          <div class="case-stat"><span class="case-stat-num">66.7%</span><span class="case-stat-label">DM Response Rate</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-banner cause-mktg">
+        <div class="case-banner-icon">💧</div>
+        <div class="case-banner-kpi">Refill Hope</div>
+        <div class="case-banner-sub">Cause Marketing · Jamaica</div>
+      </div>
+      <div class="case-card-body">
+        <span class="case-tag cause">Cause Marketing</span>
+        <div>
+          <div class="case-title">Refill Hope · Water Relief Initiative</div>
+          <div class="case-client">Jamaica Water Relief Initiative</div>
+        </div>
+        <p class="case-body">Took the Jamaica Water Relief Initiative from concept to full social media execution. Built the campaign narrative, visual identity, and content plan — translating a social cause into a compelling digital campaign across Facebook and Instagram.</p>
+        <div class="case-results">
+          <div class="case-stat"><span class="case-stat-num">Concept</span><span class="case-stat-label">to Full Launch</span></div>
+          <div class="case-stat"><span class="case-stat-num">FB + IG</span><span class="case-stat-label">Channel Strategy</span></div>
+          <div class="case-stat"><span class="case-stat-num">Multi</span><span class="case-stat-label">Platform Execution</span></div>
+          <div class="case-stat"><span class="case-stat-num">Jamaica</span><span class="case-stat-label">Social Impact</span></div>
+        </div>
       </div>
     </div>
 
