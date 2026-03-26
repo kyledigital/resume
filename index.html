@@ -222,6 +222,8 @@
     transition: opacity 0.5s ease, transform 0.5s ease;
   }
   .cert-card.visible { opacity: 1; transform: translateY(0); }
+  .cert-card-left { display: flex; align-items: center; gap: 0.9rem; }
+  .cert-icon { font-size: 1.55rem; flex-shrink: 0; }
   .cert-name { font-size: 0.95rem; font-weight: 600; }
   .cert-issuer { color: var(--muted); font-size: 0.8rem; margin-top: 0.1rem; }
   .cert-status {
@@ -255,7 +257,7 @@
   .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.25rem;
+    gap: 1.75rem;
   }
   .case-card {
     background: var(--bg2); border: 1px solid var(--border);
@@ -266,8 +268,8 @@
     overflow: hidden;
   }
   .case-card-body {
-    padding: 1.25rem 1.5rem 1.5rem;
-    display: flex; flex-direction: column; gap: 0.85rem;
+    padding: 1.4rem 1.6rem 1.8rem;
+    display: flex; flex-direction: column; gap: 1rem;
     flex: 1;
   }
   .case-banner {
@@ -653,39 +655,54 @@
 <section id="certifications">
   <h2 class="section-title"><span>#</span> Certifications &amp; Training</h2>
   <div class="cert-card">
-    <div>
-      <div class="cert-name">Professional Diploma in Digital Marketing (CDMP)</div>
-      <div class="cert-issuer">Digital Marketing Institute</div>
+    <div class="cert-card-left">
+      <div class="cert-icon">📱</div>
+      <div>
+        <div class="cert-name">Professional Diploma in Digital Marketing (CDMP)</div>
+        <div class="cert-issuer">Digital Marketing Institute</div>
+      </div>
     </div>
-    <span class="cert-status in-progress">In Progress</span>
+    <span class="cert-status in-progress">⏳ In Progress</span>
   </div>
   <div class="cert-card">
-    <div>
-      <div class="cert-name">Project Management Fundamentals</div>
-      <div class="cert-issuer">IBM</div>
+    <div class="cert-card-left">
+      <div class="cert-icon">🏗️</div>
+      <div>
+        <div class="cert-name">Project Management Fundamentals</div>
+        <div class="cert-issuer">IBM</div>
+      </div>
     </div>
-    <span class="cert-status in-progress">In Progress</span>
+    <span class="cert-status in-progress">⏳ In Progress</span>
   </div>
   <div class="cert-card">
-    <div>
-      <div class="cert-name">Certified Customer Acquisition Specialist</div>
-      <div class="cert-issuer">Digital Marketer</div>
+    <div class="cert-card-left">
+      <div class="cert-icon">🎯</div>
+      <div>
+        <div class="cert-name">Certified Customer Acquisition Specialist</div>
+        <div class="cert-issuer">Digital Marketer</div>
+      </div>
     </div>
-    <span class="cert-status completed">2023</span>
+    <span class="cert-status completed">✅ 2023</span>
   </div>
   <div class="cert-card">
-    <div>
-      <div class="cert-name">Fundamentals of Digital Marketing</div>
-      <div class="cert-issuer">Google Digital Garage</div>
+    <div class="cert-card-left">
+      <div class="cert-icon">🔍</div>
+      <div>
+        <div class="cert-name">Fundamentals of Digital Marketing</div>
+        <div class="cert-issuer">Google Digital Garage</div>
+      </div>
     </div>
-    <span class="cert-status completed">2019</span>
+    <span class="cert-status completed">✅ 2019</span>
   </div>
   <div class="cert-card">
-    <div>
-      <div class="cert-name">Idea Generation &amp; Innovation</div>
-      <div class="cert-issuer">National Commercial Bank</div>
+    <div class="cert-card-left">
+      <div class="cert-icon">💡</div>
+      <div>
+        <div class="cert-name">Idea Generation &amp; Innovation</div>
+        <div class="cert-issuer">National Commercial Bank</div>
+      </div>
     </div>
-    <span class="cert-status completed">Completed</span>
+    <span class="cert-status completed">✅ Completed</span>
   </div>
 </section>
 
