@@ -114,3 +114,76 @@
   } else if (sections[0]) {
     setActiveNav(sections[0].id);
   }
+
+  const expCards = Array.from(document.querySelectorAll('[data-exp-card]'));
+
+  function setExpState(card, expand) {
+    const toggle = card.querySelector('.exp-toggle');
+    const header = card.querySelector('.exp-header');
+    const details = card.querySelector('.exp-details');
+    const label = card.querySelector('.exp-toggle-label');
+
+    if (!toggle || !details || !label) return;
+
+    card.classList.toggle('is-open', expand);
+    toggle.setAttribute('aria-expanded', expand ? 'true' : 'false');
+    label.textContent = expand ? 'Collapse details' : 'Expand details';
+    if (header) {
+      header.setAttribute('aria-expanded', expand ? 'true' : 'false');
+    }
+
+    if (expand) {
+      details.hidden = false;
+      details.style.maxHeight = `${details.scrollHeight}px`;
+    } else {
+      details.style.maxHeight = `${details.scrollHeight}px`;
+      requestAnimationFrame(() => {
+        details.style.maxHeight = '0px';
+      });
+      window.setTimeout(() => {
+        if (!card.classList.contains('is-open')) {
+          details.hidden = true;
+        }
+      }, prefersReducedMotion ? 0 : 280);
+    }
+  }
+
+  expCards.forEach((card) => {
+    const toggle = card.querySelector('.exp-toggle');
+    const header = card.querySelector('.exp-header');
+    const details = card.querySelector('.exp-details');
+
+    if (!toggle || !details) return;
+
+    if (card.classList.contains('is-open')) {
+      details.hidden = false;
+      details.style.maxHeight = 'none';
+      toggle.querySelector('.exp-toggle-label').textContent = 'Collapse details';
+    } else {
+      details.hidden = true;
+      details.style.maxHeight = '0px';
+      toggle.querySelector('.exp-toggle-label').textContent = 'Expand details';
+    }
+
+    toggle.addEventListener('click', () => {
+      const shouldExpand = toggle.getAttribute('aria-expanded') !== 'true';
+      setExpState(card, shouldExpand);
+    });
+
+    if (header) {
+      header.addEventListener('click', (event) => {
+        if (event.target.closest('.exp-toggle')) return;
+        const shouldExpand = toggle.getAttribute('aria-expanded') !== 'true';
+        setExpState(card, shouldExpand);
+      });
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    expCards.forEach((card) => {
+      if (!card.classList.contains('is-open')) return;
+      const details = card.querySelector('.exp-details');
+      if (!details) return;
+      details.style.maxHeight = `${details.scrollHeight}px`;
+    });
+  });

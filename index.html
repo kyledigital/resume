@@ -285,8 +285,9 @@
 <!-- EXPERIENCE -->
 <section id="experience">
   <h2 class="section-title"><span>#</span> Work Experience</h2>
+  <p class="section-intro">Tap a role to expand details.</p>
 
-  <div class="exp-card featured">
+  <div class="exp-card featured is-open" data-exp-card>
     <div class="exp-header">
       <div>
         <div class="exp-title">Content &amp; Inbound Marketing Executive</div>
@@ -296,8 +297,15 @@
         </ul>
         <div class="exp-date">2025 – Present</div>
       </div>
-      <span class="exp-tag">Current Role</span>
+      <div class="exp-actions">
+        <span class="exp-tag">Current Role</span>
+        <button class="exp-toggle" type="button" aria-expanded="true" aria-controls="exp-details-current">
+          <span class="exp-toggle-label">Collapse details</span>
+          <span class="exp-toggle-icon" aria-hidden="true">▾</span>
+        </button>
+      </div>
     </div>
+    <div class="exp-details" id="exp-details-current">
     <ul>
       <li>Managed social media for <a href="https://www.facebook.com/findyellonow" target="_blank">@findyellonow</a> — <strong>54,600+ Facebook</strong> and <strong>14,800+ Instagram</strong> followers across Jamaica, T&amp;T, Barbados, the US, the UK, and Canada</li>
       <li>Single organic product-launch post: <strong>231K+ views</strong>, zero paid spend — 2026 Yello Directory launch</li>
@@ -314,16 +322,22 @@
       <li>Led social media management for <strong>"Refill Hope"</strong> from concept to launch</li>
       <li>Maintained <strong>66.7% Instagram DM response rate</strong>; audience 60.8% female, top country Jamaica (49.4%)</li>
     </ul>
+    </div>
   </div>
 
-  <div class="exp-card">
+  <div class="exp-card" data-exp-card>
     <div class="exp-header">
       <div>
         <div class="exp-title">Customer Success Specialist</div>
         <div class="exp-company">Yello Media Group</div>
         <div class="exp-date">2021 – 2025</div>
       </div>
+      <button class="exp-toggle" type="button" aria-expanded="false" aria-controls="exp-details-customer-success">
+        <span class="exp-toggle-label">Expand details</span>
+        <span class="exp-toggle-icon" aria-hidden="true">▾</span>
+      </button>
     </div>
+    <div class="exp-details" id="exp-details-customer-success" hidden>
     <ul>
       <li>Managed high-value client accounts, including blue-chip brands such as <strong>GKONE</strong>, across websites, Google Ads, and social media</li>
       <li>Led onboarding, campaign setup, and ongoing optimisation across digital products, improving delivery clarity and account performance</li>
@@ -333,16 +347,22 @@
       <li>Supported internal sales teams with technical recommendations, campaign strategy input, and solution design for existing and prospective clients</li>
       <li>Contributed to internal process development, including helpdesk and ticketing workflows, training resources, and delivery support documentation</li>
     </ul>
+    </div>
   </div>
 
-  <div class="exp-card">
+  <div class="exp-card" data-exp-card>
     <div class="exp-header">
       <div>
         <div class="exp-title">Paid Media Specialist (Google Ads &amp; Meta Ads)</div>
         <div class="exp-company">Yello Media Group</div>
         <div class="exp-date">2018 – 2021</div>
       </div>
+      <button class="exp-toggle" type="button" aria-expanded="false" aria-controls="exp-details-paid-media">
+        <span class="exp-toggle-label">Expand details</span>
+        <span class="exp-toggle-icon" aria-hidden="true">▾</span>
+      </button>
     </div>
+    <div class="exp-details" id="exp-details-paid-media" hidden>
     <ul>
       <li>Managed <strong>65+ Google Ads and Meta Ads campaigns</strong> on behalf of Yello Media Group and related client accounts</li>
       <li class="list-group">
@@ -355,24 +375,31 @@
       <li>Improved client reporting and campaign communication by <strong>35%</strong> through cleaner dashboards and analytics frameworks</li>
       <li>Delivered cross-platform PPC and digital marketing strategies for regional and international brands</li>
     </ul>
+    </div>
   </div>
 
-  <div class="exp-card">
+  <div class="exp-card" data-exp-card>
     <div class="exp-header">
       <div>
         <div class="exp-title">Digital Project Manager</div>
         <div class="exp-company">University of the West Indies, Mona</div>
         <div class="exp-date">2017 – 2018</div>
       </div>
+      <button class="exp-toggle" type="button" aria-expanded="false" aria-controls="exp-details-project-manager">
+        <span class="exp-toggle-label">Expand details</span>
+        <span class="exp-toggle-icon" aria-hidden="true">▾</span>
+      </button>
     </div>
+    <div class="exp-details" id="exp-details-project-manager" hidden>
     <ul>
       <li>Identified content and UX gaps across UWI Mona's social channels and website</li>
       <li>Led digital marketing campaigns contributing directly to UWI Mona exceeding student registration targets</li>
       <li>Managed digital project delivery across web and campaign initiatives, aligning execution with institutional communication goals</li>
     </ul>
+    </div>
   </div>
 
-  <div class="exp-card">
+  <div class="exp-card" data-exp-card>
     <div class="exp-header">
       <div>
         <div class="exp-title">Multimedia Producer</div>
@@ -382,11 +409,17 @@
         </ul>
         <div class="exp-date">2017</div>
       </div>
+      <button class="exp-toggle" type="button" aria-expanded="false" aria-controls="exp-details-multimedia">
+        <span class="exp-toggle-label">Expand details</span>
+        <span class="exp-toggle-icon" aria-hidden="true">▾</span>
+      </button>
     </div>
+    <div class="exp-details" id="exp-details-multimedia" hidden>
     <ul>
       <li>Co-produced and edited <em>Mello Min</em> — featuring Protoje, Queen Ifrica, and Bugle</li>
       <li>Managed video editing, studio production, and live broadcast for The Barry G Show</li>
     </ul>
+    </div>
   </div>
 
   <h3 style="color:var(--muted); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; margin: 1.5rem 0 0.75rem;">Additional Roles</h3>

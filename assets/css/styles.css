@@ -250,6 +250,15 @@
   .exp-card:hover { border-color: var(--accent); }
   .exp-card.featured { border-color: rgba(56,189,248,0.3); }
   .exp-header { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+  .exp-card[data-exp-card] .exp-header {
+    cursor: pointer;
+  }
+  .exp-actions {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+  }
   .exp-title { font-size: 1.1rem; font-weight: 700; color: #fff; }
   .exp-company { color: var(--accent); font-size: 0.9rem; font-weight: 600; }
   .exp-date { color: var(--muted); font-size: 0.8rem; margin-top: 0.15rem; }
@@ -257,6 +266,46 @@
     background: rgba(56,189,248,0.1); color: var(--accent);
     padding: 0.2rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600;
     align-self: flex-start;
+  }
+  .exp-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(56,189,248,0.14);
+    color: var(--accent);
+    border: 1px solid rgba(56,189,248,0.35);
+    border-radius: 999px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    transition: border-color var(--interactive-duration) ease, color var(--interactive-duration) ease, background-color var(--interactive-duration) ease, transform var(--interactive-duration) ease;
+  }
+  .exp-toggle:hover {
+    border-color: rgba(56,189,248,0.55);
+    color: var(--text);
+    background: rgba(56,189,248,0.2);
+    transform: translateY(-1px);
+  }
+  .exp-card[data-exp-card]:hover .exp-toggle {
+    border-color: rgba(56,189,248,0.5);
+    background: rgba(56,189,248,0.18);
+  }
+  .exp-toggle-icon {
+    font-size: 0.85rem;
+    transition: transform var(--interactive-duration) ease;
+  }
+  .exp-card.is-open .exp-toggle-icon { transform: rotate(180deg); }
+  .exp-details {
+    overflow: hidden;
+    transition: max-height 280ms ease, opacity 220ms ease;
+    opacity: 1;
+  }
+  .exp-details[hidden] {
+    display: block;
+    max-height: 0 !important;
+    opacity: 0;
   }
   .exp-card ul:not(.inline-list) { list-style: none; padding: 0; }
   .exp-card ul:not(.inline-list) li {
@@ -538,6 +587,8 @@
       padding-bottom: 2rem;
     }
     #about { padding-top: 3rem; }
+    .exp-actions,
+    .exp-header { align-items: flex-start; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -563,5 +614,8 @@
     .how-card {
       opacity: 1;
       transform: none;
+    }
+    .exp-details {
+      transition: none;
     }
   }
