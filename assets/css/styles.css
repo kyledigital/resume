@@ -625,20 +625,32 @@
     background: linear-gradient(135deg, #0369a1 0%, #0891b2 50%, #22c55e 100%);
   }
   .case-card.visible { opacity: 1; transform: translateY(0); }
-  .case-card:hover {
-    border-color: rgba(56,189,248,0.5);
-    transform: perspective(800px) rotateY(2deg) translateY(-4px);
-    box-shadow: var(--surface-shadow);
+
+  @media (hover: hover) and (pointer: fine) {
+    .case-card:hover {
+      border-color: rgba(56,189,248,0.5);
+      transform: perspective(800px) rotateY(2deg) translateY(-4px);
+      box-shadow: var(--surface-shadow);
+    }
+    .case-card:hover .case-banner { transform: scale(1.01); }
+    .case-card:hover .case-title,
+    .case-card:hover .case-banner-kpi {
+      text-shadow: 0 4px 20px rgba(56,189,248,0.16);
+      transform: translateY(-1px);
+    }
+    .case-card:hover .case-stat {
+      border-color: rgba(56,189,248,0.28);
+      background: rgba(56,189,248,0.08);
+    }
   }
-  .case-card:hover .case-banner { transform: scale(1.01); }
-  .case-card:hover .case-title,
-  .case-card:hover .case-banner-kpi {
-    text-shadow: 0 4px 20px rgba(56,189,248,0.16);
-    transform: translateY(-1px);
-  }
-  .case-card:hover .case-stat {
-    border-color: rgba(56,189,248,0.28);
-    background: rgba(56,189,248,0.08);
+
+  @media (hover: none), (pointer: coarse) {
+    .case-studies-grid {
+      perspective: none;
+    }
+    .case-card {
+      transform-style: flat;
+    }
   }
   .case-tag {
     display: inline-block;
