@@ -187,3 +187,55 @@
       details.style.maxHeight = `${details.scrollHeight}px`;
     });
   });
+
+  // ─── SCROLL PROGRESS BAR ──────────────────────────────────────────────────
+  // Drives the scaleX transform on the fixed .scroll-progress bar at the top.
+  const scrollProgressBar = document.querySelector('.scroll-progress');
+  if (scrollProgressBar) {
+    function updateScrollProgress() {
+      const scrolled = window.scrollY;
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      scrollProgressBar.style.transform = `scaleX(${total > 0 ? scrolled / total : 0})`;
+    }
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    updateScrollProgress(); // set initial state
+  }
+
+  // ─── HERO METRIC COUNTERS ─────────────────────────────────────────────────
+  // Animates the 4 hero stats on load using the existing animateCounter().
+  // Handles $prefix, M/K+/x suffixes, and decimal values correctly.
+  document.querySelectorAll('.hero-metric-num[data-target]').forEach(animateCounter);
+
+  // ─── COPY EMAIL BUTTON ────────────────────────────────────────────────────
+  // Copies the email address to clipboard and briefly shows "Copied ✓".
+  document.querySelectorAll('[data-copy-email]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const email = btn.dataset.copyEmail;
+      const reset = () => {
+        window.setTimeout(() => {
+          btn.textContent = 'Copy';
+          btn.classList.remove('is-copied');
+        }, 2000);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(() => {
+          btn.textContent = 'Copied ✓';
+          btn.classList.add('is-copied');
+          reset();
+        }).catch(() => {});
+      } else {
+        // Fallback for browsers without clipboard API
+        const ta = document.createElement('textarea');
+        ta.value = email;
+        ta.style.cssText = 'position:absolute;left:-9999px;top:-9999px;';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        btn.textContent = 'Copied ✓';
+        btn.classList.add('is-copied');
+        reset();
+      }
+    });
+  });
