@@ -91,21 +91,29 @@
     gap: 0.65rem;
     padding-top: 7rem;
     padding-bottom: 2.5rem;
-    animation: fadeIn 1s ease both;
     position: relative;
-    overflow: hidden;
+    isolation: isolate;
+    animation: fadeIn 1s ease both;
   }
   #hero::before {
     content: '';
-    position: absolute; inset: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(96vw, 1200px);
+    height: min(84vh, 760px);
+    transform: translate(-50%, -50%);
     background:
-      radial-gradient(ellipse 35% 30% at 30% 40%, rgba(56,189,248,0.08) 0%, transparent 100%),
-      radial-gradient(ellipse 30% 35% at 70% 60%, rgba(6,182,212,0.06) 0%, transparent 100%),
-      radial-gradient(ellipse 25% 25% at 52% 25%, rgba(99,102,241,0.05) 0%, transparent 100%);
+      radial-gradient(circle at 50% 32%, rgba(56,189,248,0.12) 0%, rgba(56,189,248,0.06) 22%, transparent 54%),
+      radial-gradient(circle at 36% 52%, rgba(6,182,212,0.08) 0%, transparent 36%),
+      radial-gradient(circle at 66% 54%, rgba(99,102,241,0.06) 0%, transparent 34%);
+    border-radius: 50%;
+    filter: blur(56px);
+    opacity: 0.9;
     pointer-events: none;
-    z-index: 0;
+    z-index: -1;
   }
-  #hero > * { position: relative; z-index: 1; max-width: 44rem; }
+  #hero > * { max-width: 44rem; }
 
   .badge {
     display: inline-flex; align-items: center; gap: 0.5rem;
@@ -498,7 +506,7 @@
     transform-origin: left center;
   }
   .email-btn::after {
-    content: '✉';
+    content: '\2709';
     position: absolute;
     top: 50%;
     right: 1.05rem;
