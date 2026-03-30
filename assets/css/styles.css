@@ -388,7 +388,10 @@
   .role-chip:hover { border-color: var(--accent); color: var(--text); }
 
   /* SKILLS */
-  .skills-wrap { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .skills-wrap { display: flex; flex-direction: column; gap: 1.25rem; }
+  .skills-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .skills-group-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; }
+  .skills-group-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; }
   .skill-pill {
     background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.25);
     color: var(--accent); padding: 0.4rem 1rem; border-radius: 999px;
