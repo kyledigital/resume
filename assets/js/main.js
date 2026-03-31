@@ -54,6 +54,8 @@ function revealElement(el) {
   if (el.classList.contains('stat-card')) {
     animateCounter(el.querySelector('.stat-num[data-target]'));
   }
+
+  el.querySelectorAll('[data-target]').forEach(animateCounter);
 }
 
 if ('IntersectionObserver' in window && !prefersReducedMotion) {
@@ -74,7 +76,7 @@ if ('IntersectionObserver' in window && !prefersReducedMotion) {
   animatedEls.forEach((el) => revealObserver.observe(el));
 } else {
   revealAll();
-  document.querySelectorAll('.stat-num[data-target]').forEach(animateCounter);
+  document.querySelectorAll('[data-target]').forEach(animateCounter);
 }
 
 window.addEventListener('load', () => {
