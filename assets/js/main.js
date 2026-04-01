@@ -188,7 +188,7 @@ function closeOtherExpCards(activeCard) {
   });
 }
 
-function scrollExpCardIntoView(card) {
+function scrollExpCardIntoView(card, force = false) {
   if (!card) return;
 
   const header = card.querySelector('.exp-header') || card;
@@ -197,7 +197,7 @@ function scrollExpCardIntoView(card) {
   const minVisibleTop = navOffset + 12;
   const maxVisibleTop = window.innerHeight * 0.35;
 
-  if (top >= minVisibleTop && top <= maxVisibleTop) return;
+  if (!force && top >= minVisibleTop && top <= maxVisibleTop) return;
 
   const targetTop = window.scrollY + top - navOffset - 16;
   window.scrollTo({
@@ -207,15 +207,15 @@ function scrollExpCardIntoView(card) {
 }
 
 function settleExpCardPosition(card) {
-  scrollExpCardIntoView(card);
+  scrollExpCardIntoView(card, true);
 
   if (prefersReducedMotion) return;
 
   window.setTimeout(() => {
     if (card.classList.contains('is-open')) {
-      scrollExpCardIntoView(card);
+      scrollExpCardIntoView(card, true);
     }
-  }, 220);
+  }, 260);
 }
 
 expCards.forEach((card) => {
