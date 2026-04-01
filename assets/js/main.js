@@ -6,7 +6,7 @@ document.querySelectorAll('.section-title, .section-intro').forEach((el) => {
 });
 
 const animatedEls = document.querySelectorAll(
-  '.reveal-item, .stat-card, .summary-card, .exp-card, .role-chip, .skill-pill, .cert-card, .contact-card, .edu-card, .case-card, .what-card, .how-card'
+  '.reveal-item, .about-photo-card, .stat-card, .summary-card, .exp-card, .role-chip, .skill-pill, .cert-card, .contact-card, .edu-card, .case-card, .what-card, .how-card'
 );
 
 function revealAll() {
@@ -214,6 +214,45 @@ expCards.forEach((card) => {
   }
 });
 
+const aboutCard = document.querySelector('[data-about-card]');
+const aboutToggle = aboutCard?.querySelector('.about-toggle');
+const aboutDetails = aboutCard?.querySelector('.about-details');
+const aboutToggleLabel = aboutToggle?.querySelector('.exp-toggle-label');
+
+function setAboutState(expand) {
+  if (!aboutCard || !aboutToggle || !aboutDetails || !aboutToggleLabel) return;
+
+  aboutCard.classList.toggle('is-open', expand);
+  aboutToggle.setAttribute('aria-expanded', expand ? 'true' : 'false');
+  aboutToggle.setAttribute('aria-label', expand ? 'Hide more about Kyle Hector' : 'Read more about Kyle Hector');
+  aboutToggleLabel.textContent = expand ? 'Show less' : 'Read more';
+
+  if (expand) {
+    aboutDetails.hidden = false;
+    aboutDetails.style.maxHeight = `${aboutDetails.scrollHeight}px`;
+  } else {
+    aboutDetails.style.maxHeight = `${aboutDetails.scrollHeight}px`;
+    requestAnimationFrame(() => {
+      aboutDetails.style.maxHeight = '0px';
+    });
+    window.setTimeout(() => {
+      if (!aboutCard.classList.contains('is-open')) {
+        aboutDetails.hidden = true;
+      }
+    }, prefersReducedMotion ? 0 : 280);
+  }
+}
+
+if (aboutToggle && aboutDetails) {
+  aboutDetails.hidden = true;
+  aboutDetails.style.maxHeight = '0px';
+
+  aboutToggle.addEventListener('click', () => {
+    const shouldExpand = aboutToggle.getAttribute('aria-expanded') !== 'true';
+    setAboutState(shouldExpand);
+  });
+}
+
 window.addEventListener('resize', () => {
   if (window.innerWidth > 768) {
     setMobileNavState(false);
@@ -225,11 +264,16 @@ window.addEventListener('resize', () => {
     if (!details) return;
     details.style.maxHeight = `${details.scrollHeight}px`;
   });
+
+  if (aboutCard?.classList.contains('is-open') && aboutDetails) {
+    aboutDetails.style.maxHeight = `${aboutDetails.scrollHeight}px`;
+  }
 });
 
 // Drives the fixed top progress bar as the user scrolls.
 const scrollProgressBar = document.querySelector('.scroll-progress');
 const backToTopButton = document.querySelector('.back-to-top');
+
 if (scrollProgressBar) {
   function updateScrollProgress() {
     const scrolled = window.scrollY;
