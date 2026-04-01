@@ -38,6 +38,67 @@
     z-index: 160;
     box-shadow: 0 0 14px rgba(56,189,248,0.35);
   }
+  .back-to-top {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    width: 3rem;
+    height: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(56,189,248,0.22);
+    border-radius: 999px;
+    background: rgba(15,23,42,0.9);
+    color: var(--accent);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 14px 28px rgba(2, 8, 23, 0.2);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    pointer-events: none;
+    z-index: 145;
+    transition:
+      opacity 220ms ease,
+      transform 220ms ease,
+      visibility 0s linear 220ms,
+      border-color 220ms ease,
+      background-color 220ms ease,
+      box-shadow 220ms ease,
+      color 220ms ease;
+  }
+  .back-to-top span {
+    font-size: 1.15rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition:
+      opacity 220ms ease,
+      transform 220ms ease,
+      visibility 0s linear 0s,
+      border-color 220ms ease,
+      background-color 220ms ease,
+      box-shadow 220ms ease,
+      color 220ms ease;
+  }
+  .back-to-top:hover,
+  .back-to-top:focus-visible {
+    border-color: rgba(56,189,248,0.45);
+    background: rgba(30,41,59,0.96);
+    color: #d8f3ff;
+    box-shadow: 0 18px 34px rgba(2, 8, 23, 0.24);
+    transform: translateY(-2px);
+  }
+  .back-to-top:focus-visible {
+    outline: 2px solid rgba(56,189,248,0.6);
+    outline-offset: 3px;
+  }
 
   nav {
     position: sticky; top: 0; width: 100%; z-index: 140;
@@ -416,6 +477,13 @@
   }
   .summary-card.visible { opacity: 1; transform: translateY(0); }
   .summary-card p + p { margin-top: 0.9rem; }
+  .summary-card .summary-signoff {
+    margin-top: 1.2rem;
+    color: rgba(226, 232, 240, 0.9);
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 0.01em;
+  }
   #about .stats-grid { margin-top: 1.1rem; }
 
   /* EXPERIENCE */
@@ -702,6 +770,14 @@
     letter-spacing: 0.01em;
     margin: 0 auto 1.2rem;
   }
+  .contact-subnote {
+    max-width: 40rem;
+    margin: 0 auto 1rem;
+    color: rgba(201, 214, 232, 0.88) !important;
+    font-size: 0.92rem !important;
+    line-height: 1.65;
+    text-wrap: balance;
+  }
   .contact-meta {
     display: inline-flex;
     align-items: center;
@@ -721,10 +797,6 @@
     will-change: transform;
     transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
     animation: contact-bubble-float 6.8s ease-in-out infinite;
-  }
-  .contact-card .contact-meta:nth-of-type(3) {
-    animation-duration: 7.4s;
-    animation-delay: -1.1s;
   }
   .contact-card .contact-meta:nth-of-type(4) {
     animation-duration: 6.2s;
@@ -1011,8 +1083,8 @@
     font-size: 0.73rem;
     line-height: 1.5;
     color: rgba(148,163,184,0.82);
-    margin-top: -0.2rem;
-    margin-bottom: -0.1rem;
+    margin-top: -0.15rem;
+    margin-bottom: 0.05rem;
   }
   #portfolio .case-role {
     font-size: 0.75rem;
@@ -1432,6 +1504,13 @@
       max-width: 18rem;
       margin-bottom: 1rem;
     }
+    .contact-subnote {
+      width: min(100%, 18.5rem);
+      margin-bottom: 0.95rem;
+      font-size: 0.88rem !important;
+      line-height: 1.6;
+      color: rgba(201, 214, 232, 0.82) !important;
+    }
     .contact-meta {
       animation: none;
       transform: none;
@@ -1445,17 +1524,6 @@
       transform: none;
       box-shadow: none;
     }
-    .contact-card .contact-meta:first-of-type {
-      display: block;
-      width: min(100%, 18.5rem);
-      padding: 0.85rem 1rem;
-      border-radius: 1.4rem;
-      line-height: 1.65;
-      text-wrap: balance;
-      background: rgba(56,189,248,0.08);
-      border-color: rgba(56,189,248,0.16);
-      margin-bottom: 1rem;
-    }
     .contact-primary-actions {
       gap: 0.7rem;
       margin-top: 0.2rem;
@@ -1468,6 +1536,12 @@
     .copy-btn {
       min-width: 4.5rem;
       padding: 0.75rem 1.2rem;
+    }
+    .back-to-top {
+      right: 0.85rem;
+      bottom: 0.85rem;
+      width: 2.8rem;
+      height: 2.8rem;
     }
   }
 

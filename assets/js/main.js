@@ -229,6 +229,7 @@ window.addEventListener('resize', () => {
 
 // Drives the fixed top progress bar as the user scrolls.
 const scrollProgressBar = document.querySelector('.scroll-progress');
+const backToTopButton = document.querySelector('.back-to-top');
 if (scrollProgressBar) {
   function updateScrollProgress() {
     const scrolled = window.scrollY;
@@ -238,6 +239,22 @@ if (scrollProgressBar) {
 
   window.addEventListener('scroll', updateScrollProgress, { passive: true });
   updateScrollProgress();
+}
+
+if (backToTopButton) {
+  function toggleBackToTop() {
+    backToTopButton.classList.toggle('is-visible', window.scrollY > 520);
+  }
+
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? 'auto' : 'smooth'
+    });
+  });
+
+  window.addEventListener('scroll', toggleBackToTop, { passive: true });
+  toggleBackToTop();
 }
 
 // Animates the hero metrics on page load.
