@@ -377,6 +377,41 @@
   .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 0.85rem; }
 
   #about { padding-top: 3.5rem; }
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+  .about-photo-card {
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--reveal-duration) var(--reveal-ease), transform var(--reveal-duration) var(--reveal-ease);
+  }
+  .about-photo-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .about-photo-frame {
+    position: relative;
+    height: 100%;
+    min-height: 420px;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    border: 1px solid rgba(56,189,248,0.22);
+    background:
+      linear-gradient(180deg, rgba(15,23,42,0.05), rgba(15,23,42,0.45)),
+      linear-gradient(135deg, rgba(56,189,248,0.14), rgba(6,182,212,0.08));
+    box-shadow: 0 20px 42px rgba(2, 8, 23, 0.22);
+  }
+  .about-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 18%;
+  }
 
   .cta-btn {
     display: inline-block;
@@ -1441,6 +1476,12 @@
     #hero {
       padding-top: 3.75rem;
     }
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+    .about-photo-frame {
+      min-height: 420px;
+    }
   }
 
   @media (max-width: 600px) {
@@ -1484,6 +1525,12 @@
       text-align: center;
     }
     #about { padding-top: 3rem; }
+    .about-grid {
+      gap: 1.15rem;
+    }
+    .about-photo-frame {
+      min-height: 360px;
+    }
     .exp-actions,
     .exp-header { align-items: flex-start; }
     .contact-card {
