@@ -164,10 +164,7 @@ function setExpState(card, expand) {
 
   if (expand) {
     details.hidden = false;
-    details.style.maxHeight = '0px';
-    requestAnimationFrame(() => {
-      details.style.maxHeight = `${details.scrollHeight}px`;
-    });
+    details.style.maxHeight = `${details.scrollHeight}px`;
   } else {
     details.style.maxHeight = `${details.scrollHeight}px`;
     requestAnimationFrame(() => {
@@ -179,43 +176,6 @@ function setExpState(card, expand) {
       }
     }, prefersReducedMotion ? 0 : 280);
   }
-}
-
-function closeOtherExpCards(activeCard) {
-  expCards.forEach((card) => {
-    if (card === activeCard || !card.classList.contains('is-open')) return;
-    setExpState(card, false);
-  });
-}
-
-function scrollExpCardIntoView(card, force = false) {
-  if (!card) return;
-
-  const header = card.querySelector('.exp-header') || card;
-  const navOffset = siteNav ? siteNav.getBoundingClientRect().height : 0;
-  const top = header.getBoundingClientRect().top;
-  const minVisibleTop = navOffset + 12;
-  const maxVisibleTop = window.innerHeight * 0.35;
-
-  if (!force && top >= minVisibleTop && top <= maxVisibleTop) return;
-
-  const targetTop = window.scrollY + top - navOffset - 16;
-  window.scrollTo({
-    top: Math.max(targetTop, 0),
-    behavior: prefersReducedMotion ? 'auto' : 'smooth'
-  });
-}
-
-function settleExpCardPosition(card) {
-  scrollExpCardIntoView(card, true);
-
-  if (prefersReducedMotion) return;
-
-  window.setTimeout(() => {
-    if (card.classList.contains('is-open')) {
-      scrollExpCardIntoView(card, true);
-    }
-  }, 260);
 }
 
 expCards.forEach((card) => {
@@ -237,26 +197,14 @@ expCards.forEach((card) => {
 
   toggle.addEventListener('click', () => {
     const shouldExpand = toggle.getAttribute('aria-expanded') !== 'true';
-    if (shouldExpand) {
-      closeOtherExpCards(card);
-    }
     setExpState(card, shouldExpand);
-    if (shouldExpand) {
-      settleExpCardPosition(card);
-    }
   });
 
   if (header) {
     header.addEventListener('click', (event) => {
       if (event.target.closest('.exp-toggle')) return;
       const shouldExpand = toggle.getAttribute('aria-expanded') !== 'true';
-      if (shouldExpand) {
-        closeOtherExpCards(card);
-      }
       setExpState(card, shouldExpand);
-      if (shouldExpand) {
-        settleExpCardPosition(card);
-      }
     });
   }
 });
