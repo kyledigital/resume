@@ -957,6 +957,13 @@
     cursor: pointer;
     transition: border-color 220ms ease, color 220ms ease, background-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
   }
+  .exp-actions .exp-toggle {
+    gap: 0.32rem;
+    padding: 0.38rem 0.76rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    box-shadow: 0 8px 18px rgba(2, 8, 23, 0.08);
+  }
   .exp-toggle:hover {
     border-color: rgba(125,211,252,0.34);
     color: var(--text);
@@ -980,6 +987,9 @@
   .exp-toggle-icon {
     font-size: 0.85rem;
     transition: transform 240ms ease, opacity 220ms ease;
+  }
+  .exp-actions .exp-toggle-icon {
+    font-size: 0.78rem;
   }
   .exp-card.is-open .exp-toggle-icon { transform: rotate(180deg); }
   .exp-details {
@@ -1791,18 +1801,6 @@
     opacity: 0.9;
     pointer-events: none;
   }
-  .how-card::after {
-    content: '';
-    position: absolute;
-    top: 1.2rem;
-    left: 1.5rem;
-    width: 3rem;
-    height: 2px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--accent), rgba(56,189,248,0.14));
-    opacity: 0.92;
-    pointer-events: none;
-  }
   .how-card.visible { opacity: 1; transform: translateY(0); }
   .how-icon {
     position: relative;
@@ -2176,10 +2174,6 @@
       padding: 1.3rem 1.15rem 1.2rem;
       border-radius: 1.15rem;
     }
-    .how-card::after {
-      left: 1.15rem;
-      width: 2.4rem;
-    }
     .how-title,
     .how-desc {
       max-width: none;
@@ -2230,8 +2224,38 @@
     .about-photo-card::after {
       inset: -0.35rem;
     }
-    .exp-actions,
-    .exp-header { align-items: flex-start; }
+    .exp-header {
+      align-items: flex-start;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+    .exp-actions {
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      flex-wrap: nowrap;
+    }
+    .exp-tag,
+    .exp-card.featured .exp-tag,
+    .exp-tag-past {
+      padding: 0.26rem 0.64rem;
+      font-size: 0.68rem;
+      gap: 0.28rem;
+      box-shadow: 0 6px 14px rgba(2, 8, 23, 0.08);
+    }
+    .exp-actions .exp-toggle {
+      padding: 0.34rem 0.68rem;
+      gap: 0.28rem;
+      font-size: 0.66rem;
+      border-radius: 999px;
+      box-shadow: 0 6px 14px rgba(2, 8, 23, 0.06);
+      margin-left: auto;
+      flex: 0 0 auto;
+    }
+    .exp-actions .exp-toggle-icon {
+      font-size: 0.72rem;
+    }
     .contact-card {
       padding: 2.25rem 1.2rem 2rem;
     }
