@@ -152,12 +152,15 @@ function setExpState(card, expand) {
   const header = card.querySelector('.exp-header');
   const details = card.querySelector('.exp-details');
   const label = card.querySelector('.exp-toggle-label');
+  const title = card.querySelector('.exp-title');
+  const roleName = title ? title.textContent.trim() : 'this role';
 
   if (!toggle || !details || !label) return;
 
   card.classList.toggle('is-open', expand);
   toggle.setAttribute('aria-expanded', expand ? 'true' : 'false');
-  label.textContent = expand ? 'Collapse details' : 'Expand details';
+  toggle.setAttribute('aria-label', expand ? `Hide impact for ${roleName}` : `View impact for ${roleName}`);
+  label.textContent = expand ? 'Hide impact' : 'View impact';
   if (header) {
     header.setAttribute('aria-expanded', expand ? 'true' : 'false');
   }
@@ -188,11 +191,13 @@ expCards.forEach((card) => {
   if (card.classList.contains('is-open')) {
     details.hidden = false;
     details.style.maxHeight = 'none';
-    toggle.querySelector('.exp-toggle-label').textContent = 'Collapse details';
+    toggle.setAttribute('aria-label', `Hide impact for ${card.querySelector('.exp-title')?.textContent.trim() || 'this role'}`);
+    toggle.querySelector('.exp-toggle-label').textContent = 'Hide impact';
   } else {
     details.hidden = true;
     details.style.maxHeight = '0px';
-    toggle.querySelector('.exp-toggle-label').textContent = 'Expand details';
+    toggle.setAttribute('aria-label', `View impact for ${card.querySelector('.exp-title')?.textContent.trim() || 'this role'}`);
+    toggle.querySelector('.exp-toggle-label').textContent = 'View impact';
   }
 
   toggle.addEventListener('click', () => {

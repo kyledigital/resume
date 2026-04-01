@@ -423,13 +423,17 @@
     background: var(--bg2); border: 1px solid var(--border);
     border-radius: 1rem; padding: 1.75rem 1.75rem; margin-bottom: 1.25rem;
     opacity: 0; transform: translateY(20px);
-    transition: opacity var(--reveal-duration) var(--reveal-ease), transform var(--reveal-duration) var(--reveal-ease), border-color 220ms ease, background-color 220ms ease, box-shadow 260ms ease;
+    transition: opacity var(--reveal-duration) var(--reveal-ease), transform var(--reveal-duration) var(--reveal-ease), border-color 240ms ease, background-color 240ms ease, box-shadow 240ms ease;
   }
   .exp-card.visible { opacity: 1; transform: translateY(0); }
-  .exp-card:hover {
-    border-color: rgba(56,189,248,0.4);
-    transform: translateY(-4px);
-    box-shadow: 0 18px 38px rgba(2, 8, 23, 0.18);
+  .exp-card[data-exp-card] {
+    cursor: pointer;
+  }
+  .exp-card:hover,
+  .exp-card:focus-within {
+    border-color: rgba(56,189,248,0.42);
+    transform: translateY(-2px) scale(1.012);
+    box-shadow: 0 20px 42px rgba(2, 8, 23, 0.2), 0 0 0 1px rgba(56,189,248,0.08);
   }
   .exp-card.is-open {
     border-color: rgba(56,189,248,0.45);
@@ -439,7 +443,7 @@
   .exp-card.featured { border-color: rgba(56,189,248,0.3); }
   .exp-header { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
   .exp-card[data-exp-card] .exp-header {
-    cursor: pointer;
+    cursor: inherit;
     transition: color 220ms ease;
   }
   .exp-card[data-exp-card] .exp-header:hover,
@@ -533,13 +537,14 @@
     font-weight: 700;
     letter-spacing: 0.03em;
     cursor: pointer;
-    transition: border-color 220ms ease, color 220ms ease, background-color 220ms ease, transform 220ms ease;
+    transition: border-color 220ms ease, color 220ms ease, background-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
   }
   .exp-toggle:hover {
     border-color: rgba(56,189,248,0.55);
     color: var(--text);
     background: rgba(56,189,248,0.18);
     transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(2, 8, 23, 0.16);
   }
   .exp-toggle:focus-visible {
     outline: 2px solid rgba(56,189,248,0.6);
@@ -606,10 +611,31 @@
     color: var(--accent); padding: 0.4rem 1rem; border-radius: 999px;
     font-size: 0.8rem; font-weight: 500;
     opacity: 0; transform: scale(0.9);
-    transition: opacity 0.3s var(--reveal-ease), transform 0.3s var(--reveal-ease), background var(--interactive-duration) ease, box-shadow var(--interactive-duration) ease;
+    transition: opacity 0.3s var(--reveal-ease), transform 0.3s var(--reveal-ease), background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease, color 220ms ease;
   }
   .skill-pill.visible { opacity: 1; transform: scale(1); box-shadow: 0 0 0 1px rgba(56,189,248,0.18); }
-  .skill-pill:hover { background: rgba(56,189,248,0.2); transform: scale(1.05); box-shadow: 0 0 12px rgba(56,189,248,0.35); }
+  .skill-pill:hover,
+  .skill-pill:focus-visible {
+    background: rgba(56,189,248,0.14);
+    border-color: rgba(56,189,248,0.38);
+    color: #d8f3ff;
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 10px 18px rgba(2, 8, 23, 0.14), 0 0 0 1px rgba(56,189,248,0.14);
+  }
+  .skill-pill-core {
+    background: rgba(56,189,248,0.12);
+    border-color: rgba(56,189,248,0.34);
+    color: #bfeaff;
+  }
+  .skill-pill-core.visible {
+    box-shadow: 0 0 0 1px rgba(56,189,248,0.22), 0 10px 20px rgba(2, 8, 23, 0.08);
+  }
+  .skill-pill-core:hover,
+  .skill-pill-core:focus-visible {
+    background: rgba(56,189,248,0.18);
+    border-color: rgba(56,189,248,0.46);
+    box-shadow: 0 12px 24px rgba(2, 8, 23, 0.16), 0 0 0 1px rgba(56,189,248,0.18);
+  }
 
   /* EDUCATION */
   .edu-card {
@@ -680,6 +706,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     width: fit-content;
     max-width: 100%;
     padding: 0.35rem 0.85rem;
@@ -689,6 +716,30 @@
     font-size: 0.9rem !important;
     color: #b7c6db !important;
     margin: 0 auto 0.85rem;
+    box-shadow: 0 8px 18px rgba(2, 8, 23, 0.08);
+    transform-origin: center;
+    will-change: transform;
+    transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+    animation: contact-bubble-float 6.8s ease-in-out infinite;
+  }
+  .contact-card .contact-meta:nth-of-type(3) {
+    animation-duration: 7.4s;
+    animation-delay: -1.1s;
+  }
+  .contact-card .contact-meta:nth-of-type(4) {
+    animation-duration: 6.2s;
+    animation-delay: -2.3s;
+  }
+  .contact-card .contact-meta:nth-of-type(5) {
+    animation-duration: 7s;
+    animation-delay: -3.1s;
+  }
+  .contact-meta:hover {
+    animation-play-state: paused;
+    transform: translateY(-3px) scale(1.01);
+    border-color: rgba(56,189,248,0.24);
+    background: rgba(56,189,248,0.1);
+    box-shadow: 0 14px 28px rgba(2, 8, 23, 0.14);
   }
   .contact-primary-actions {
     display: flex;
@@ -798,7 +849,7 @@
     background: var(--bg2); border: 1px solid var(--border);
     border-radius: 1rem; padding: 0;
     opacity: 0; transform: translateY(20px);
-    transition: opacity var(--reveal-duration) var(--reveal-ease), transform var(--reveal-duration) var(--reveal-ease), border-color var(--interactive-duration) ease, box-shadow 240ms ease;
+    transition: opacity var(--reveal-duration) var(--reveal-ease), transform var(--reveal-duration) var(--reveal-ease), border-color 220ms ease, box-shadow 220ms ease;
     display: flex; flex-direction: column; gap: 0;
     overflow: hidden;
     box-shadow: 0 10px 26px rgba(2, 8, 23, 0);
@@ -854,9 +905,9 @@
 
   @media (hover: hover) and (pointer: fine) {
     .case-card:hover {
-      border-color: rgba(56,189,248,0.5);
+      border-color: rgba(56,189,248,0.44);
       transform: translateY(-4px);
-      box-shadow: var(--surface-shadow);
+      box-shadow: 0 18px 40px rgba(2, 8, 23, 0.2);
     }
     .case-card:hover .case-banner { transform: scale(1.01); }
     .case-card:hover .case-title,
@@ -956,6 +1007,13 @@
     line-height: 1.7;
     color: rgba(226, 232, 240, 0.8);
   }
+  #portfolio .case-objective {
+    font-size: 0.73rem;
+    line-height: 1.5;
+    color: rgba(148,163,184,0.82);
+    margin-top: -0.2rem;
+    margin-bottom: -0.1rem;
+  }
   #portfolio .case-role {
     font-size: 0.75rem;
     line-height: 1.5;
@@ -1003,12 +1061,12 @@
   }
   @media (hover: hover) and (pointer: fine) {
     #portfolio .case-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 48px rgba(2, 8, 23, 0.22);
-      border-color: rgba(56,189,248,0.42);
+      transform: translateY(-4px);
+      box-shadow: 0 22px 44px rgba(2, 8, 23, 0.2);
+      border-color: rgba(56,189,248,0.4);
     }
     #portfolio .case-card:hover .case-banner {
-      transform: scale(1.012);
+      transform: scale(1.01);
       filter: brightness(1.03);
     }
     #portfolio .case-card:hover .case-stat {
@@ -1113,9 +1171,10 @@
   #how-i-work .how-card.visible:nth-child(4) { transition-delay: 0.22s; }
   #how-i-work .how-card:hover,
   #how-i-work .how-card:focus-within {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(2, 8, 23, 0.24);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 38px rgba(2, 8, 23, 0.22);
     border-color: rgba(56, 189, 248, 0.32);
+    background: linear-gradient(180deg, rgba(30,41,59,0.98), rgba(30,41,59,0.9));
   }
   #how-i-work .how-grid:hover .how-card.visible,
   #how-i-work .how-grid:focus-within .how-card.visible {
@@ -1133,7 +1192,7 @@
   }
   #how-i-work .how-card:hover .how-icon,
   #how-i-work .how-card:focus-within .how-icon {
-    transform: scale(1.1);
+    transform: scale(1.05);
     filter: brightness(1.08);
   }
 
@@ -1228,6 +1287,20 @@
       transform: translateY(-50%) translateX(12px) scaleX(1.4);
     }
   }
+  @keyframes contact-bubble-float {
+    0%, 100% {
+      transform: translate3d(0, 0, 0);
+    }
+    25% {
+      transform: translate3d(4px, -2px, 0);
+    }
+    50% {
+      transform: translate3d(-2px, -5px, 0);
+    }
+    75% {
+      transform: translate3d(3px, -1px, 0);
+    }
+  }
 
   @media (max-width: 768px) {
     :root {
@@ -1252,21 +1325,30 @@
       max-height: 0;
       overflow: hidden;
       opacity: 0;
+      visibility: hidden;
       transform: translateY(-0.35rem);
       pointer-events: none;
       transition:
         max-height 220ms ease,
         opacity var(--interactive-duration) ease,
         transform var(--interactive-duration) ease,
-        padding-top var(--interactive-duration) ease;
+        padding-top var(--interactive-duration) ease,
+        visibility 0s linear 220ms;
     }
     .site-nav.is-open .nav-links {
       max-height: 22rem;
       opacity: 1;
+      visibility: visible;
       transform: translateY(0);
       pointer-events: auto;
       padding-top: 0.55rem;
       padding-bottom: 0.25rem;
+      transition:
+        max-height 220ms ease,
+        opacity var(--interactive-duration) ease,
+        transform var(--interactive-duration) ease,
+        padding-top var(--interactive-duration) ease,
+        visibility 0s linear 0s;
     }
     nav a {
       display: block;
@@ -1332,6 +1414,61 @@
     #about { padding-top: 3rem; }
     .exp-actions,
     .exp-header { align-items: flex-start; }
+    .contact-card {
+      padding: 2.25rem 1.2rem 2rem;
+    }
+    .contact-card p {
+      margin-bottom: 0.95rem;
+    }
+    .contact-lead {
+      font-size: 1rem !important;
+      line-height: 1.6;
+      max-width: 17rem;
+      margin-bottom: 1.15rem;
+    }
+    .contact-note {
+      font-size: 0.92rem !important;
+      line-height: 1.55;
+      max-width: 18rem;
+      margin-bottom: 1rem;
+    }
+    .contact-meta {
+      animation: none;
+      transform: none;
+      font-size: 0.84rem !important;
+      line-height: 1.5;
+      padding: 0.45rem 0.9rem;
+      margin-bottom: 0.7rem;
+      box-shadow: none;
+    }
+    .contact-meta:hover {
+      transform: none;
+      box-shadow: none;
+    }
+    .contact-card .contact-meta:first-of-type {
+      display: block;
+      width: min(100%, 18.5rem);
+      padding: 0.85rem 1rem;
+      border-radius: 1.4rem;
+      line-height: 1.65;
+      text-wrap: balance;
+      background: rgba(56,189,248,0.08);
+      border-color: rgba(56,189,248,0.16);
+      margin-bottom: 1rem;
+    }
+    .contact-primary-actions {
+      gap: 0.7rem;
+      margin-top: 0.2rem;
+    }
+    .email-btn {
+      width: min(100%, 18.5rem);
+      padding: 0.82rem 3rem 0.82rem 1.8rem;
+      font-size: 0.95rem;
+    }
+    .copy-btn {
+      min-width: 4.5rem;
+      padding: 0.75rem 1.2rem;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
