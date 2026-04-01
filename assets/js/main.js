@@ -181,6 +181,13 @@ function setExpState(card, expand) {
   }
 }
 
+function closeOtherExpCards(activeCard) {
+  expCards.forEach((card) => {
+    if (card === activeCard || !card.classList.contains('is-open')) return;
+    setExpState(card, false);
+  });
+}
+
 expCards.forEach((card) => {
   const toggle = card.querySelector('.exp-toggle');
   const header = card.querySelector('.exp-header');
@@ -200,6 +207,9 @@ expCards.forEach((card) => {
 
   toggle.addEventListener('click', () => {
     const shouldExpand = toggle.getAttribute('aria-expanded') !== 'true';
+    if (shouldExpand) {
+      closeOtherExpCards(card);
+    }
     setExpState(card, shouldExpand);
   });
 
@@ -207,6 +217,9 @@ expCards.forEach((card) => {
     header.addEventListener('click', (event) => {
       if (event.target.closest('.exp-toggle')) return;
       const shouldExpand = toggle.getAttribute('aria-expanded') !== 'true';
+      if (shouldExpand) {
+        closeOtherExpCards(card);
+      }
       setExpState(card, shouldExpand);
     });
   }
