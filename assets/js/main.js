@@ -188,6 +188,36 @@ function closeOtherExpCards(activeCard) {
   });
 }
 
+function scrollExpCardIntoView(card) {
+  if (!card) return;
+
+  const header = card.querySelector('.exp-header') || card;
+  const navOffset = siteNav ? siteNav.getBoundingClientRect().height : 0;
+  const top = header.getBoundingClientRect().top;
+  const minVisibleTop = navOffset + 12;
+  const maxVisibleTop = window.innerHeight * 0.35;
+
+  if (top >= minVisibleTop && top <= maxVisibleTop) return;
+
+  const targetTop = window.scrollY + top - navOffset - 16;
+  window.scrollTo({
+    top: Math.max(targetTop, 0),
+    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+  });
+}
+
+function settleExpCardPosition(card) {
+  scrollExpCardIntoView(card);
+
+  if (prefersReducedMotion) return;
+
+  window.setTimeout(() => {
+    if (card.classList.contains('is-open')) {
+      scrollExpCardIntoView(card);
+    }
+  }, 220);
+}
+
 expCards.forEach((card) => {
   const toggle = card.querySelector('.exp-toggle');
   const header = card.querySelector('.exp-header');
@@ -211,6 +241,9 @@ expCards.forEach((card) => {
       closeOtherExpCards(card);
     }
     setExpState(card, shouldExpand);
+    if (shouldExpand) {
+      settleExpCardPosition(card);
+    }
   });
 
   if (header) {
@@ -221,6 +254,9 @@ expCards.forEach((card) => {
         closeOtherExpCards(card);
       }
       setExpState(card, shouldExpand);
+      if (shouldExpand) {
+        settleExpCardPosition(card);
+      }
     });
   }
 });
