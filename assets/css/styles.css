@@ -2206,7 +2206,8 @@
     .cert-status {
       width: fit-content;
       max-width: 100%;
-      margin-left: 0;
+      margin-left: auto;
+      align-self: flex-start;
     }
     .about-photo-card {
       width: min(100%, 20rem);
