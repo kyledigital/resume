@@ -766,6 +766,26 @@
     border-color: rgba(34,197,94,0.45);
     background: rgba(34,197,94,0.14);
   }
+  .cta-btn,
+  .outline-btn,
+  .copy-btn,
+  .nav-toggle,
+  .exp-toggle {
+    transition:
+      transform 220ms ease-out,
+      box-shadow 220ms ease-out,
+      border-color 220ms ease-out,
+      background-color 220ms ease-out,
+      color 220ms ease-out;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .cta-btn:hover,
+    .outline-btn:hover,
+    .copy-btn:hover,
+    .nav-toggle:hover {
+      transform: translateY(-2px);
+    }
+  }
 
   /* PORTFOLIO */
   .portfolio-grid {
@@ -792,7 +812,7 @@
     display: flex; align-items: center; justify-content: center;
     flex-direction: column; gap: 0.35rem;
     position: relative; overflow: hidden;
-    transition: transform 260ms ease;
+    transition: transform 260ms ease-out, filter 260ms ease-out;
   }
   .case-banner::before {
     content: ''; position: absolute; inset: 0;
@@ -803,7 +823,7 @@
     font-size: 1.65rem; font-weight: 900; color: #fff;
     text-shadow: 0 2px 14px rgba(0,0,0,0.35);
     position: relative; z-index: 1; letter-spacing: -0.02em;
-    transition: transform var(--interactive-duration) ease, text-shadow var(--interactive-duration) ease;
+    transition: transform 240ms ease-out, text-shadow 240ms ease-out, filter 240ms ease-out;
   }
   .case-banner-sub {
     font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em;
@@ -842,6 +862,10 @@
     .case-card:hover .case-banner-kpi {
       text-shadow: 0 4px 20px rgba(56,189,248,0.16);
       transform: translateY(-1px);
+    }
+    .case-card:hover .case-banner-kpi {
+      transform: translateY(-1px) scale(1.02);
+      filter: brightness(1.05);
     }
     .case-card:hover .case-stat {
       border-color: rgba(56,189,248,0.28);
@@ -984,6 +1008,7 @@
     }
     #portfolio .case-card:hover .case-banner {
       transform: scale(1.012);
+      filter: brightness(1.03);
     }
     #portfolio .case-card:hover .case-stat {
       border-color: rgba(56,189,248,0.24);
