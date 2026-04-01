@@ -958,11 +958,11 @@
     transition: border-color 220ms ease, color 220ms ease, background-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
   }
   .exp-actions .exp-toggle {
-    gap: 0.32rem;
-    padding: 0.38rem 0.76rem;
-    font-size: 0.7rem;
+    gap: 0.28rem;
+    padding: 0.3rem 0.62rem;
+    font-size: 0.68rem;
     letter-spacing: 0.02em;
-    box-shadow: 0 8px 18px rgba(2, 8, 23, 0.08);
+    box-shadow: 0 6px 14px rgba(2, 8, 23, 0.06);
   }
   .exp-toggle:hover {
     border-color: rgba(125,211,252,0.34);
@@ -2245,16 +2245,16 @@
       box-shadow: 0 6px 14px rgba(2, 8, 23, 0.08);
     }
     .exp-actions .exp-toggle {
-      padding: 0.34rem 0.68rem;
-      gap: 0.28rem;
-      font-size: 0.66rem;
+      padding: 0.28rem 0.58rem;
+      gap: 0.24rem;
+      font-size: 0.64rem;
       border-radius: 999px;
-      box-shadow: 0 6px 14px rgba(2, 8, 23, 0.06);
+      box-shadow: 0 4px 10px rgba(2, 8, 23, 0.05);
       margin-left: auto;
       flex: 0 0 auto;
     }
     .exp-actions .exp-toggle-icon {
-      font-size: 0.72rem;
+      font-size: 0.66rem;
     }
     .contact-card {
       padding: 2.25rem 1.2rem 2rem;
