@@ -14,15 +14,30 @@
 
 <div class="scroll-progress" aria-hidden="true"></div>
 
-<nav>
-  <a href="#hero">Home</a>
-  <a href="#about">About</a>
-  <a href="#experience">Experience</a>
-  <a href="#portfolio">Case Studies</a>
-  <a href="#builds">Builds</a>
-  <a href="#skills">Skills</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
+<nav class="site-nav" aria-label="Primary">
+  <div class="nav-inner">
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="site-menu"
+    >
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#portfolio">Case Studies</a>
+      <a href="#builds">Builds</a>
+      <a href="#skills">Skills</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -53,8 +68,7 @@
   <h2 class="section-title"><span>#</span> About</h2>
   <div class="summary-card">
     <p>I build and scale campaigns that turn traffic into leads, conversions, and revenue.</p>
-    <p>I build campaigns that drive real results: leads, conversions, and revenue.</p>
-    <p>Experience scaling brands across Caribbean and international markets using Google Ads and Meta Ads.</p>
+    <p>Experience scaling brands across Caribbean and international markets using paid media, content, and performance strategy.</p>
   </div>
 </section>
 
@@ -202,7 +216,7 @@
   <p class="section-intro">Proven campaigns delivering measurable results across paid media and content.</p>
   <div class="portfolio-grid">
 
-    <div class="case-card">
+    <div class="case-card featured">
       <div class="case-banner google-ads">
         <div class="case-banner-icon">📊</div>
         <div class="case-banner-kpi">8.4x ROAS</div>
@@ -221,6 +235,7 @@
           </ul>
         </div>
         <p class="case-body">$1.19M in attributed revenue and 8.4x ROAS from a full-funnel Google Ads strategy built to grow visibility and conversion at scale.</p>
+        <div class="case-role">Role: Strategy, setup, optimisation</div>
         <div class="case-results">
           <div class="case-stat"><span class="case-stat-num" data-target="185" data-suffix="M+">0</span><span class="case-stat-label">Impressions</span></div>
           <div class="case-stat"><span class="case-stat-num" data-target="8.4" data-suffix="x">0</span><span class="case-stat-label">ROAS</span></div>
@@ -249,6 +264,7 @@
           </ul>
         </div>
         <p class="case-body">541K+ impressions and 3,394 profile visits from a $250 Meta Ads campaign shaped around audience segmentation and creative testing to maximize efficient reach.</p>
+        <div class="case-role">Role: Audience targeting, creative testing, optimisation</div>
         <div class="case-results">
           <div class="case-stat"><span class="case-stat-num" data-target="541" data-suffix="K+">0</span><span class="case-stat-label">Impressions</span></div>
           <div class="case-stat"><span class="case-stat-num" data-target="36753">0</span><span class="case-stat-label">Unique Viewers</span></div>
@@ -277,6 +293,7 @@
           </ul>
         </div>
         <p class="case-body">100K+ views and 800+ interactions by leading Brand Camp 2025 strategy, rollout, and creative direction across video content and AI-assisted storytelling.</p>
+        <div class="case-role">Role: Strategy, campaign lead, creative direction</div>
         <div class="case-results">
           <div class="case-stat"><span class="case-stat-num" data-target="100" data-suffix="K+">0</span><span class="case-stat-label">Views</span></div>
           <div class="case-stat"><span class="case-stat-num" data-target="75" data-suffix="K+">0</span><span class="case-stat-label">Reach</span></div>
@@ -292,7 +309,7 @@
         <div class="case-banner-kpi">231K+ Views</div>
         <ul class="case-banner-sub inline-list centered">
           <li>Organic Post</li>
-          <li>Paid + Organic</li>
+          <li>Paid Amplification + Organic Reach</li>
         </ul>
       </div>
       <div class="case-card-body">
@@ -305,6 +322,7 @@
           </ul>
         </div>
         <p class="case-body">Drove 231K+ views on a product launch post, combining strong organic performance with paid amplification.</p>
+        <div class="case-role">Role: Launch planning, amplification, performance review</div>
         <div class="case-results">
           <div class="case-stat"><span class="case-stat-num" data-target="231" data-suffix="K+">0</span><span class="case-stat-label">Views (Single Post)</span></div>
           <div class="case-stat"><span class="case-stat-num" data-target="54.6" data-suffix="K">0</span><span class="case-stat-label">FB Followers</span></div>
@@ -330,6 +348,7 @@
           <div class="case-client">Jamaica Water Relief Initiative</div>
         </div>
         <p class="case-body">220K+ views while supporting 3,000 buckets and 15,000 gallons of water by leading the campaign from concept to launch.</p>
+        <div class="case-role">Role: Campaign concept, launch coordination, execution</div>
         <div class="case-results">
           <div class="case-stat"><span class="case-stat-num" data-target="3000">0</span><span class="case-stat-label">Buckets Distributed</span></div>
           <div class="case-stat"><span class="case-stat-num" data-target="15000">0</span><span class="case-stat-label">Gallons Distributed</span></div>
@@ -344,27 +363,28 @@
 
 <!-- HOW I WORK -->
 <section id="how-i-work">
-  <h2 class="section-title"><span>#</span> How I Work</h2>
+  <h2 class="section-title"><span>#</span> Growth Framework</h2>
+  <p class="section-intro">My approach is built around four principles: objective, alignment, optimisation, and data.</p>
   <div class="how-grid">
     <div class="how-card">
       <div class="how-icon">📈</div>
-      <div class="how-title">Results over vanity metrics</div>
-      <p class="how-desc">Leads, revenue, real growth, not just impressions. Every decision ties back to something that moves the business.</p>
+      <div class="how-title">Clear objectives drive every campaign</div>
+      <p class="how-desc">I start with a clear business objective, whether that is leads, conversions, or revenue, so every campaign stays tied to business impact.</p>
+    </div>
+    <div class="how-card">
+      <div class="how-icon">🎯</div>
+      <div class="how-title">Audience, message, and channel must align</div>
+      <p class="how-desc">Performance improves when the offer, creative, and platform match the audience. Strong alignment is what turns activity into results.</p>
     </div>
     <div class="how-card">
       <div class="how-icon">🧪</div>
-      <div class="how-title">Test fast, optimise early</div>
-      <p class="how-desc">I read data mid-campaign, not after. Test, adjust, and scale what works before the budget runs out.</p>
+      <div class="how-title">Test, learn, and optimise continuously</div>
+      <p class="how-desc">I test early, review performance closely, and improve the parts that move results, from targeting and creative to landing pages.</p>
     </div>
     <div class="how-card">
-      <div class="how-icon">🔗</div>
-      <div class="how-title">Paid and organic, together</div>
-      <p class="how-desc">Strong content lowers paid CPMs. Smart distribution extends organic reach. I build both with intention.</p>
-    </div>
-    <div class="how-card">
-      <div class="how-icon">✂️</div>
-      <div class="how-title">Simple strategies, sharp execution</div>
-      <p class="how-desc">Complexity isn't a strategy. Focused plans, clean execution, and cutting what doesn't earn its place.</p>
+      <div class="how-icon">📊</div>
+      <div class="how-title">Data drives every decision</div>
+      <p class="how-desc">I use data to spot what is helping or hurting performance, then make practical decisions based on what the numbers are saying.</p>
     </div>
   </div>
 </section>
@@ -395,7 +415,7 @@
     </div>
     <div class="case-card">
       <div class="case-card-body">
-        <span class="case-tag social">Live</span>
+        <span class="case-tag social">Prototype</span>
         <div class="case-title">Daily Three Drive</div>
         <p class="case-body">A lightweight productivity tool built to help users stay focused on the three most important priorities each day.</p>
         <div class="case-client">AI-assisted planning, productivity workflow, rapid prototyping</div>
@@ -528,6 +548,7 @@
 
 <section id="services">
   <h2 class="section-title"><span>#</span> How I Can Help</h2>
+  <p class="section-intro">Support across strategy, execution, and AI-assisted experimentation.</p>
   <div class="how-grid">
     <div class="how-card">
       <div class="how-title">Paid Media Support</div>

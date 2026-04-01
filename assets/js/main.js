@@ -86,9 +86,19 @@ window.addEventListener('load', () => {
 });
 
 const navLinks = Array.from(document.querySelectorAll('nav a[href^="#"]'));
+const siteNav = document.querySelector('.site-nav');
+const navToggle = document.querySelector('.nav-toggle');
 const sections = navLinks
   .map((link) => document.querySelector(link.getAttribute('href')))
   .filter(Boolean);
+
+function setMobileNavState(expand) {
+  if (!siteNav || !navToggle) return;
+
+  siteNav.classList.toggle('is-open', expand);
+  navToggle.setAttribute('aria-expanded', expand ? 'true' : 'false');
+  navToggle.setAttribute('aria-label', expand ? 'Close navigation menu' : 'Open navigation menu');
+}
 
 function setActiveNav(id) {
   navLinks.forEach((link) => {
@@ -117,7 +127,25 @@ if ('IntersectionObserver' in window) {
   setActiveNav(sections[0].id);
 }
 
+if (siteNav && navToggle) {
+  navToggle.addEventListener('click', () => {
+    const shouldExpand = navToggle.getAttribute('aria-expanded') !== 'true';
+    setMobileNavState(shouldExpand);
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      setMobileNavState(false);
+    });
+  });
+}
+
 const expCards = Array.from(document.querySelectorAll('[data-exp-card]'));
+const experienceHint = document.querySelector('#experience .section-intro');
+
+if (experienceHint) {
+  experienceHint.textContent = 'Tap a role to view impact and responsibilities.';
+}
 
 function setExpState(card, expand) {
   const toggle = card.querySelector('.exp-toggle');
@@ -136,7 +164,10 @@ function setExpState(card, expand) {
 
   if (expand) {
     details.hidden = false;
-    details.style.maxHeight = `${details.scrollHeight}px`;
+    details.style.maxHeight = '0px';
+    requestAnimationFrame(() => {
+      details.style.maxHeight = `${details.scrollHeight}px`;
+    });
   } else {
     details.style.maxHeight = `${details.scrollHeight}px`;
     requestAnimationFrame(() => {
@@ -182,6 +213,10 @@ expCards.forEach((card) => {
 });
 
 window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    setMobileNavState(false);
+  }
+
   expCards.forEach((card) => {
     if (!card.classList.contains('is-open')) return;
     const details = card.querySelector('.exp-details');
