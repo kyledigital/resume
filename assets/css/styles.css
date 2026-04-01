@@ -184,6 +184,7 @@
     color: #4ade80; padding: 0.35rem 1rem; border-radius: 999px;
     font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em;
     margin-bottom: 0; position: relative; overflow: hidden;
+    text-decoration: none;
     box-shadow: 0 0 0 1px rgba(34,197,94,0.05), 0 10px 28px rgba(15,23,42,0.18), 0 0 26px rgba(34,197,94,0.18);
     transition: border-color var(--interactive-duration) ease, box-shadow 240ms ease, background-color 240ms ease, transform var(--interactive-duration) ease;
   }
