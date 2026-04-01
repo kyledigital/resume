@@ -6,7 +6,7 @@ document.querySelectorAll('.section-title, .section-intro').forEach((el) => {
 });
 
 const animatedEls = document.querySelectorAll(
-  '.reveal-item, .about-photo-card, .stat-card, .summary-card, .exp-card, .role-chip, .skill-pill, .cert-card, .contact-card, .edu-card, .case-card, .what-card, .how-card'
+  '.reveal-item, .stat-card, .summary-card, .exp-card, .role-chip, .skill-pill, .cert-card, .contact-card, .edu-card, .case-card, .what-card, .how-card'
 );
 
 function revealAll() {
