@@ -1,0 +1,490 @@
+[
+  {
+    "id": "yello-hub",
+    "title": "Yello Marketing Intelligence Hub",
+    "subtitle": "Turning marketing reporting into a working intelligence platform",
+    "label": "Internal platform",
+    "discipline": "Marketing intelligence",
+    "categories": [
+      "marketing",
+      "products"
+    ],
+    "group": "selected",
+    "summary": "A stakeholder-facing interactive platform connecting campaign performance, content strategy, creative direction, UX opportunities, product ideas and marketing priorities.",
+    "role": "Concept development, information architecture, marketing strategy, data organisation, UX direction and AI-assisted web and prototype development.",
+    "problem": "Campaign data, content priorities and product opportunities need a shared context for stakeholder discussion.",
+    "thinking": "Bring the evidence and the strategic questions into one navigable experience, while keeping measurement sources distinct.",
+    "built": "A structured stakeholder experience covering performance, strategy, content pillars, sales positioning, training, prototypes, UX opportunities and a roadmap.",
+    "output": "A working internal platform with a published reporting snapshot, rather than a live Meta or GA4 connection.",
+    "evidence": "Captured reporting: 233,738 people reached, 788,941 paid impressions, 17,277 Meta link clicks and approximately 6,300 GA4 campaign sessions across six Caribbean markets. Paid Meta scope: 1 June–15 July 2026; organic social and GA4 scope: 1 April–15 July 2026. Sessions are visits, not leads or sales. These figures describe the campaigns in the hub, not the impact of building the platform.",
+    "status": "Internal platform / evolving. Published reporting snapshot; no adoption or stakeholder outcome claimed.",
+    "question": "How can the next reporting cycle make the connection between evidence and decisions easier to follow?",
+    "image": "yello-hub.png",
+    "imageAlt": "Yello Marketing Intelligence Hub interface preview",
+    "links": [
+      [
+        "Explore the platform",
+        "https://yello-media-stakeholder-report.vercel.app/"
+      ]
+    ],
+    "featured": true,
+    "proof": "Performance, strategy and product thinking in one stakeholder view."
+  },
+  {
+    "id": "sales-academy",
+    "title": "FindYello Sales Academy",
+    "subtitle": "Turning product training into practice",
+    "label": "Prototype",
+    "discipline": "Sales enablement",
+    "categories": [
+      "products",
+      "marketing"
+    ],
+    "group": "selected",
+    "summary": "An interactive sales training experience designed to help team members understand FindYello products and practise recommending them in realistic customer scenarios.",
+    "role": "Concept, learning structure, product interpretation, UX direction and AI-assisted development.",
+    "problem": "Knowing product facts and applying them to a customer conversation are different tasks.",
+    "thinking": "Organise product knowledge around customer needs, recommendations and short practice sessions.",
+    "built": "A learning dashboard, product guide, recommendation lab, refreshers and practice routes.",
+    "output": "An internal enablement prototype covering 11 products, 10 customer scenarios and 20 practice questions.",
+    "evidence": "The linked interface shows the product, scenario and question counts. These describe content coverage, not completed training, usage or improved sales performance.",
+    "status": "Internal enablement prototype. Available to explore; no rollout or adoption claim.",
+    "question": "Which customer scenarios would be most useful to validate with sales colleagues?",
+    "image": "sales-academy.png",
+    "imageAlt": "FindYello Sales Academy interface preview",
+    "links": [
+      [
+        "Explore the academy",
+        "https://yello-media-stakeholder-report.vercel.app/training"
+      ]
+    ],
+    "featured": true,
+    "proof": "11 products · 10 customer scenarios · 20 practice questions"
+  },
+  {
+    "id": "findyello-quest",
+    "title": "FindYello Quest",
+    "subtitle": "What if searching for local businesses felt more like discovering your city?",
+    "label": "Prototype",
+    "discipline": "Product thinking",
+    "categories": [
+      "products"
+    ],
+    "group": "selected",
+    "summary": "A gamified local discovery concept exploring how missions, recommendations, perks and progress could encourage repeat engagement with FindYello.",
+    "role": "Product concept, gamification thinking, user journey, feature ideation, experience direction and AI-assisted development.",
+    "problem": "Local search can be explored as a broader journey involving practical needs, recommendations and plans.",
+    "thinking": "Connect useful discovery actions to guided journeys and relevant rewards, rather than treating engagement as an end in itself.",
+    "built": "A stakeholder prototype with guided discovery, local plans, community recommendations, perks and progress concepts.",
+    "output": "An interactive experience that makes the proposed journeys tangible for discussion.",
+    "evidence": "The working prototype is the evidence of output. Sample providers, recommendations, points and other interface values are demonstration content, not verified adoption or commercial results.",
+    "status": "Product prototype / stakeholder discussion. Not a launched FindYello product.",
+    "question": "Would guided journeys help people find relevant local businesses and give them a useful reason to return?",
+    "image": "quest.png",
+    "imageAlt": "FindYello Quest interface preview",
+    "links": [
+      [
+        "Explore the prototype",
+        "https://findyello-quest-stakeholder.vercel.app/"
+      ]
+    ],
+    "featured": true,
+    "proof": ""
+  },
+  {
+    "id": "yaad-vibes",
+    "title": "Yaad Vibes Map",
+    "subtitle": "Exploring Kingston through culture, not just coordinates",
+    "label": "Prototype",
+    "discipline": "Local discovery",
+    "categories": [
+      "products"
+    ],
+    "group": "selected",
+    "summary": "An interactive Kingston discovery map focused on culture, local knowledge and the feel of places.",
+    "role": "Prototype development and experience direction for a culture-led discovery map.",
+    "problem": "A location alone does not communicate the character, context or local knowledge associated with a place.",
+    "thinking": "Use Jamaican cultural categories and place stories to offer another way into local discovery.",
+    "built": "A map with search, category filtering, place details and a place-suggestion interface. Categories include food, nightlife, history, university life, creative spaces, nature and hidden gems.",
+    "output": "A working experimental discovery prototype for Kingston.",
+    "evidence": "The visible interface provides evidence of the map, search, filters and suggestion flow. No user participation, travel outcomes or adoption figures are claimed.",
+    "status": "Experimental product prototype. Local discovery exploration.",
+    "question": "How should community suggestions be reviewed while preserving local voice?",
+    "image": "yaad-vibes.png",
+    "imageAlt": "Yaad Vibes Map interface preview",
+    "links": [
+      [
+        "Explore the map",
+        "https://yaad-vibes-map.vercel.app/"
+      ]
+    ],
+    "featured": false,
+    "proof": ""
+  },
+  {
+    "id": "ai-creative-systems",
+    "title": "Building Repeatable AI Creative Systems for FindYello",
+    "subtitle": "From individual executions to reusable creative directions",
+    "label": "Experiment",
+    "discipline": "AI & creative",
+    "categories": [
+      "ai",
+      "marketing"
+    ],
+    "group": "selected",
+    "summary": "An ongoing exploration of how AI can help a marketing team develop distinctive, reusable creative systems.",
+    "role": "AI-assisted visual development, creative experimentation, character-led storytelling and trend adaptation.",
+    "problem": "Creative experiments need a consistent brand direction if they are to inform repeatable content.",
+    "thinking": "Explore recognisable worlds and characters across Claymotion, Paper World, Stop Motion and Higgsfield workflows.",
+    "built": "Creative directions and experiments spanning clay-style scenes, layered paper environments, stop-motion execution and character-led storytelling.",
+    "output": "A developing set of creative systems, prompts and production experiments.",
+    "evidence": "The Stop Motion “Who We Are” execution recorded a 3.86% CTR in the captured campaign reporting. This result belongs to that execution only; it is not a result for every AI-assisted asset or the creative system as a whole.",
+    "status": "Creative system / ongoing experiment. Individual executions and reusable directions are at different stages.",
+    "question": "Which elements can remain consistent across formats while leaving room for new stories?",
+    "image": "",
+    "imageAlt": "Building Repeatable AI Creative Systems for FindYello interface preview",
+    "links": [
+      [
+        "View the systems overview",
+        "https://yello-marketing-workload-dashboard.vercel.app/creative-systems"
+      ]
+    ],
+    "featured": false,
+    "proof": "3.86% CTR · Stop Motion “Who We Are” execution only"
+  },
+  {
+    "id": "content-engine",
+    "title": "Building a Content Engine Around Local Discovery",
+    "subtitle": "Connecting editorial ideas to platform-native social content",
+    "label": "Ongoing",
+    "discipline": "Content strategy",
+    "categories": [
+      "marketing",
+      "ai"
+    ],
+    "group": "selected",
+    "summary": "A programme for turning FindYello editorial articles, local discovery themes, trends and business content into social content suited to each platform.",
+    "role": "Article-to-social adaptation, content strategy, social concepts and creative direction.",
+    "problem": "Editorial content needs a clear audience insight and a platform-appropriate format to support social discovery.",
+    "thinking": "Connect each article or theme to an insight, a creative concept and a relevant action back to FindYello.",
+    "built": "An article-to-social workflow that connects editorial themes, creative development, calls to action and paid support where relevant.",
+    "output": "30 pieces in the reporting window: 14 posts and 16 stories, including 27 pieces after the June relaunch.",
+    "evidence": "The reporting counts describe content output within the supplied window. They do not establish conversions, engagement improvement or incremental business impact.",
+    "status": "Content strategy / ongoing programme.",
+    "question": "Which editorial themes translate most naturally into useful social discovery journeys?",
+    "image": "",
+    "imageAlt": "Building a Content Engine Around Local Discovery interface preview",
+    "links": [
+      [
+        "View the content programme",
+        "https://yello-marketing-workload-dashboard.vercel.app/content-engine"
+      ]
+    ],
+    "featured": false,
+    "proof": "30 reported pieces · 14 posts + 16 stories"
+  },
+  {
+    "id": "workload-dashboard",
+    "title": "Making Invisible Marketing Work Visible",
+    "subtitle": "Marketing Contribution & Workload Dashboard",
+    "label": "Internal platform",
+    "discipline": "Marketing operations",
+    "categories": [
+      "products",
+      "marketing"
+    ],
+    "group": "selected",
+    "summary": "A system designed to make marketing contribution, active workstreams, creative systems, prototypes and strategic initiatives easier to see.",
+    "role": "Dashboard development and organisation of marketing contribution, workstreams and strategic initiatives.",
+    "problem": "Recurring delivery and less visible strategic work need to be understood together without losing their different statuses.",
+    "thinking": "Separate the operating rhythm from projects, creative systems, innovation inputs and strategic presentations.",
+    "built": "An internal operations dashboard with workload, projects, creative systems, content, innovation, enablement and evidence views.",
+    "output": "A documented portfolio of 20 recurring workstreams, 19 active/ongoing/live items, 4 creative systems, 10 product/innovation inputs and 7 strategic presentations.",
+    "evidence": "These are documented scope and inventory counts. They are not hours worked, productivity increases, time savings or adoption measures.",
+    "status": "Internal operations platform. A structured view of contribution and ongoing work.",
+    "question": "How can scope stay visible without confusing activity counts with value or effort?",
+    "image": "workload.png",
+    "imageAlt": "Making Invisible Marketing Work Visible interface preview",
+    "links": [
+      [
+        "Explore the dashboard",
+        "https://yello-marketing-workload-dashboard.vercel.app/"
+      ]
+    ],
+    "featured": false,
+    "proof": ""
+  },
+  {
+    "id": "yello-finds-audi",
+    "title": "Yello Finds / Audi Concept",
+    "subtitle": "Connecting mobility, destination storytelling and local discovery",
+    "label": "Strategic concept",
+    "discipline": "Partnership strategy",
+    "categories": [
+      "marketing"
+    ],
+    "group": "selected",
+    "summary": "A branded local discovery series concept combining mobility, destination storytelling, local search and partnership opportunities.",
+    "role": "Strategic concept development and partnership storytelling.",
+    "problem": "A proposed partnership needs a clear connection between the brand, the destinations and the local discovery experience.",
+    "thinking": "Explore how a mobility-led series could connect people and places with FindYello discovery.",
+    "built": "A strategic concept for a branded local discovery series and potential partnership.",
+    "output": "A proposal for discussion, not a delivered campaign.",
+    "evidence": "The concept is documented in the strategy portfolio. No partnership agreement, launch, performance or commercial result is claimed.",
+    "status": "Strategic Concept — Not Yet Launched.",
+    "question": "What would a useful pilot need to establish before a partnership or production commitment?",
+    "image": "",
+    "imageAlt": "Yello Finds / Audi Concept interface preview",
+    "links": [
+      [
+        "View the strategy portfolio",
+        "https://yello-marketing-workload-dashboard.vercel.app/strategy-portfolio"
+      ]
+    ],
+    "featured": false,
+    "proof": ""
+  },
+  {
+    "id": "psychology-of-jamaicans",
+    "title": "The Psychology of Jamaicans",
+    "subtitle": "Turning an independent book into an interactive cultural platform",
+    "label": "Live product",
+    "discipline": "Independent publishing",
+    "categories": [
+      "independent",
+      "products"
+    ],
+    "group": "independent",
+    "summary": "An independent project that began as a book and evolved into an interactive cultural platform.",
+    "role": "Author and independent product creator; cultural content development and AI-assisted digital development.",
+    "problem": "A book offers depth, while a digital experience can offer different ways to explore cultural ideas and contribute observations.",
+    "thinking": "Extend the written work through cultural signals, an interactive decoder and the Jamaica Pulse interface.",
+    "built": "A 28-chapter book in four sections, a cultural platform, book commerce routes and a community contribution interface.",
+    "output": "A published book and accessible digital experience, with digital and Amazon print purchase routes.",
+    "evidence": "The live site shows 28 chapters, four parts, Jamaica Pulse, contribution fields and commerce links. Availability is not evidence of revenue, readership or community participation. Cultural signals are interface content, not portfolio performance metrics.",
+    "status": "Independent digital product / live website.",
+    "question": "How can a book and an interactive experience offer complementary ways to explore the same cultural ideas?",
+    "image": "psychology.png",
+    "imageAlt": "The Psychology of Jamaicans interface preview",
+    "links": [
+      [
+        "Explore the cultural platform",
+        "https://jamaicanpsychology.kylehector.com/"
+      ]
+    ],
+    "featured": true,
+    "proof": ""
+  },
+  {
+    "id": "photolab",
+    "title": "PhotoLab",
+    "subtitle": "Learn photography by seeing it",
+    "label": "Live product",
+    "discipline": "Interactive learning",
+    "categories": [
+      "independent",
+      "products"
+    ],
+    "group": "independent",
+    "summary": "An interactive photography learning experience based on visual understanding and experimentation.",
+    "role": "Independent learning-product development and AI-assisted implementation.",
+    "problem": "Camera settings are easier to explore when their visual relationships can be seen.",
+    "thinking": "Connect controls for exposure, motion, depth and focal length to illustrative previews.",
+    "built": "A camera simulator, Motion Lab, depth-of-field controls, lens comparisons and guided practice missions visible in the interface.",
+    "output": "An accessible interactive learning build. The interface identifies its simulations as visual models, not measurement tools.",
+    "evidence": "The live interface supports the described learning features. The photo-upload AI coach is marked coming soon and is not presented here as a completed feature. No learning gains or usage counts are claimed.",
+    "status": "Interactive learning product / live working build.",
+    "question": "Which visual explanations best help a learner connect a setting to a photographic choice?",
+    "image": "photolab.png",
+    "imageAlt": "PhotoLab interface preview",
+    "links": [
+      [
+        "Explore PhotoLab",
+        "https://photolab-gamma.vercel.app/"
+      ]
+    ],
+    "featured": false,
+    "proof": ""
+  },
+  {
+    "id": "marketing-practice-lab",
+    "title": "Marketing Practice Lab",
+    "subtitle": "Turning professional study into interactive practice",
+    "label": "Live product",
+    "discipline": "Interactive learning",
+    "categories": [
+      "independent",
+      "products"
+    ],
+    "group": "independent",
+    "summary": "An interactive learning product connecting professional marketing study with practical recall and current-platform learning.",
+    "role": "Independent study-product development and AI-assisted implementation.",
+    "problem": "Professional study benefits from opportunities to practise decisions as well as review material.",
+    "thinking": "Combine searchable study notes, topic-based practice and dated platform updates in one experience.",
+    "built": "A practice interface with study notes, role and topic selections, short sprints and a certification rehearsal route.",
+    "output": "A live working learning product developed from professional study.",
+    "evidence": "The visible interface supports these features. Certification practice is not official DMI exam content. No pass-rate improvement, adoption or adaptive learning claim is made.",
+    "status": "Interactive learning product / live working build.",
+    "question": "How can practice remain useful as platform guidance changes?",
+    "image": "practice-lab.png",
+    "imageAlt": "Marketing Practice Lab interface preview",
+    "links": [
+      [
+        "Explore the practice lab",
+        "https://dmi-pro-test-examiner-tuner.vercel.app/"
+      ]
+    ],
+    "featured": false,
+    "proof": ""
+  },
+  {
+    "id": "enersave",
+    "title": "Enersave Solutions: Google Ads Performance",
+    "subtitle": "Revenue Growth & Lead Generation",
+    "label": "Campaign",
+    "discipline": "Google Ads",
+    "categories": [
+      "marketing"
+    ],
+    "group": "selected",
+    "summary": "$1.19M in attributed revenue and 8.4x ROAS from a full-funnel Google Ads strategy built to grow visibility and conversion at scale.",
+    "role": "Strategy, setup, optimisation",
+    "problem": "Revenue Growth & Lead Generation.",
+    "thinking": "Connect the campaign objective with audience, creative and channel decisions.",
+    "built": "$1.19M in attributed revenue and 8.4x ROAS from a full-funnel Google Ads strategy built to grow visibility and conversion at scale.",
+    "output": "Campaign execution and the performance record shown below.",
+    "evidence": "185M+ Impressions; 8.4x ROAS; $1.19M Attributed Revenue; 3.38M Clicks. Figures retained from the existing portfolio. Reporting dates and attribution detail were not supplied with this update.",
+    "status": "Campaign / existing portfolio record.",
+    "question": "What additional reporting context would make the relationship between the campaign and its outcomes clearer?",
+    "image": "",
+    "imageAlt": "Enersave Solutions: Google Ads Performance interface preview",
+    "links": [],
+    "featured": true,
+    "proof": "8.4x ROAS"
+  },
+  {
+    "id": "findyello-meta",
+    "title": "FindYello: Maximum Reach on Minimum Budget",
+    "subtitle": "Brand Awareness & Reach Expansion",
+    "label": "Campaign",
+    "discipline": "Paid Social",
+    "categories": [
+      "marketing"
+    ],
+    "group": "selected",
+    "summary": "Delivered 541K+ impressions, 36,753 unique viewers, and 3,394 profile visits from a $250 Meta Ads campaign, expanding visibility at a lean budget.",
+    "role": "Audience targeting, creative testing, optimisation",
+    "problem": "Brand Awareness & Reach Expansion.",
+    "thinking": "Connect the campaign objective with audience, creative and channel decisions.",
+    "built": "Delivered 541K+ impressions, 36,753 unique viewers, and 3,394 profile visits from a $250 Meta Ads campaign, expanding visibility at a lean budget.",
+    "output": "Campaign execution and the performance record shown below.",
+    "evidence": "541K+ Impressions; 36753 Unique Viewers; $250 Budget; 3394 Profile Visits. Figures retained from the existing portfolio. Reporting dates and attribution detail were not supplied with this update.",
+    "status": "Campaign / existing portfolio record.",
+    "question": "What additional reporting context would make the relationship between the campaign and its outcomes clearer?",
+    "image": "",
+    "imageAlt": "FindYello: Maximum Reach on Minimum Budget interface preview",
+    "links": [],
+    "featured": false,
+    "proof": "541K+ Impressions"
+  },
+  {
+    "id": "brand-camp",
+    "title": "Brand Camp 2025: Campaign Lead, Content & Creative Direction",
+    "subtitle": "Event Promotion & Audience Engagement",
+    "label": "Campaign",
+    "discipline": "Campaign Strategy",
+    "categories": [
+      "marketing"
+    ],
+    "group": "selected",
+    "summary": "100K+ views and 800+ interactions by leading Brand Camp 2025 strategy, rollout, and creative direction across video content and AI-assisted storytelling.",
+    "role": "Strategy, campaign lead, creative direction",
+    "problem": "Event Promotion & Audience Engagement.",
+    "thinking": "Connect the campaign objective with audience, creative and channel decisions.",
+    "built": "100K+ views and 800+ interactions by leading Brand Camp 2025 strategy, rollout, and creative direction across video content and AI-assisted storytelling.",
+    "output": "Campaign execution and the performance record shown below.",
+    "evidence": "100K+ Views; 75K+ Reach; 800+ Interactions; 7-8 Slide Story Series. Figures retained from the existing portfolio. Reporting dates and attribution detail were not supplied with this update.",
+    "status": "Campaign / existing portfolio record.",
+    "question": "What additional reporting context would make the relationship between the campaign and its outcomes clearer?",
+    "image": "",
+    "imageAlt": "Brand Camp 2025: Campaign Lead, Content & Creative Direction interface preview",
+    "links": [],
+    "featured": false,
+    "proof": "100K+ Views"
+  },
+  {
+    "id": "directory-launch",
+    "title": "Yello 2026 Directory: Product Launch",
+    "subtitle": "Product Awareness & Engagement",
+    "label": "Campaign",
+    "discipline": "Organic Social",
+    "categories": [
+      "marketing"
+    ],
+    "group": "selected",
+    "summary": "Drove 231K+ views on a product launch post, combining organic traction with paid amplification to extend reach.",
+    "role": "Launch planning, amplification, performance review",
+    "problem": "Product Awareness & Engagement.",
+    "thinking": "Connect the campaign objective with audience, creative and channel decisions.",
+    "built": "Drove 231K+ views on a product launch post, combining organic traction with paid amplification to extend reach.",
+    "output": "Campaign execution and the performance record shown below.",
+    "evidence": "231K+ Views (Single Post); 54.6K FB Followers; 1303 Organic Reach / Reel; 66.7% DM Response Rate. Figures retained from the existing portfolio. Reporting dates and attribution detail were not supplied with this update.",
+    "status": "Campaign / existing portfolio record.",
+    "question": "What additional reporting context would make the relationship between the campaign and its outcomes clearer?",
+    "image": "",
+    "imageAlt": "Yello 2026 Directory: Product Launch interface preview",
+    "links": [],
+    "featured": false,
+    "proof": "231K+ Views"
+  },
+  {
+    "id": "yello-finds",
+    "title": "Yello Finds: Humanising the Brand",
+    "subtitle": "Brand Perception & Organic Engagement",
+    "label": "Campaign",
+    "discipline": "Brand & Content Strategy",
+    "categories": [
+      "marketing"
+    ],
+    "group": "selected",
+    "summary": "Developed and led a content series designed to make the Yello brand more modern, relatable, and discovery-driven through human-centred storytelling.",
+    "role": "Content concept, storytelling, brand direction",
+    "problem": "Brand Perception & Organic Engagement.",
+    "thinking": "Connect the campaign objective with audience, creative and channel decisions.",
+    "built": "Developed and led a content series designed to make the Yello brand more modern, relatable, and discovery-driven through human-centred storytelling.",
+    "output": "Campaign execution and the performance record shown below.",
+    "evidence": "1K Organic Views / Post; 30+ Interactions / Post; Consistent Multi-Post Engagement. Figures retained from the existing portfolio. Reporting dates and attribution detail were not supplied with this update.",
+    "status": "Campaign / existing portfolio record.",
+    "question": "What additional reporting context would make the relationship between the campaign and its outcomes clearer?",
+    "image": "",
+    "imageAlt": "Yello Finds: Humanising the Brand interface preview",
+    "links": [],
+    "featured": false,
+    "proof": "~1K Views/Post"
+  },
+  {
+    "id": "refill-hope",
+    "title": "Refill Hope: Campaign from Concept to Launch",
+    "subtitle": "Awareness & Community Impact",
+    "label": "Campaign",
+    "discipline": "Cause Marketing",
+    "categories": [
+      "marketing"
+    ],
+    "group": "selected",
+    "summary": "220K+ views while supporting 3,000 buckets and 15,000 gallons of water by leading the campaign from concept to launch.",
+    "role": "Campaign concept, launch coordination, execution",
+    "problem": "Awareness & Community Impact.",
+    "thinking": "Connect the campaign objective with audience, creative and channel decisions.",
+    "built": "220K+ views while supporting 3,000 buckets and 15,000 gallons of water by leading the campaign from concept to launch.",
+    "output": "Campaign execution and the performance record shown below.",
+    "evidence": "3000 Buckets Distributed; 15000 Gallons Distributed; 220K+ Total Views; 3900+ Interactions. Figures retained from the existing portfolio. Reporting dates and attribution detail were not supplied with this update.",
+    "status": "Campaign / existing portfolio record.",
+    "question": "What additional reporting context would make the relationship between the campaign and its outcomes clearer?",
+    "image": "",
+    "imageAlt": "Refill Hope: Campaign from Concept to Launch interface preview",
+    "links": [],
+    "featured": false,
+    "proof": "Refill Hope"
+  }
+]
