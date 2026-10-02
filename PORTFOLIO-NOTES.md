@@ -1,30 +1,46 @@
-# Portfolio update
+# Portfolio maintenance
 
-The site stays static HTML, CSS and JavaScript for GitHub Pages. The existing colour and typography system is retained.
+The site remains static HTML, CSS and JavaScript for GitHub Pages. The slate/cyan visual system, portrait, navigation, independent projects and existing project URLs are preserved.
 
-## Editing projects
+## Content update: 1 October 2026
 
-Edit `assets/data/projects.json`, then run `python scripts/build_portfolio.py` from the repository root. Commit both the data and generated HTML. The builder updates only the marked project collections in `index.html` and the standalone pages in `work/`.
+- Added authentic Refill Hope Instagram previews, direct post links and carefully scoped historical reporting; see `REFILL-HOPE-SOURCES.md`
+- Enersave is an independent freelance client: separate experience entry, independent collection and marketing/independent filters
+- Marketing-led headline and featured work: content strategy, paid media, reporting and practical AI-assisted delivery
+- Added VW Plus, Asher’s Fleet and The New Best Decorators, with actual homepage screenshots captured on 1 October
+- Refreshed the Yello Marketing Intelligence Hub and Sales Academy / Ask Yello entries and screenshots
+- Replaced inherited revenue, ROAS, percentage and audience-growth claims lacking adequate reporting context with the specific contributions and delivered work
+- Confirmed DMI title and issue date; current Yello role starts May 2026
+- Grouped earlier Yello roles without uncertain intermediate dates or any continuous-tenure claim
+- Added AI-LIGNED facilitation, without including a future Pitch-a-thon proposal as delivered work
+- Replaced the downloadable PDF with the corrected two-page generic résumé
 
-Run `python scripts/check_portfolio.py` for local links, fragment targets, unique IDs, page headings and content guardrails. Browser verification also covers category filtering and mobile navigation.
+## Editing and verification
 
-## Evidence and assets
+Edit `assets/data/projects.json`, then run:
 
-The user-supplied brief provides project descriptions, contributions and reporting figures. The eight PNG images under `assets/images/projects/` are actual interface captures from the linked sites, inspected on 8 September 2026. They are snapshots, not live embeds.
+```sh
+python3 scripts/build_portfolio.py
+python3 scripts/check_portfolio.py
+node scripts/check_filters.mjs
+python3 scripts/test_campaign_media.py
+node --check assets/js/main.js
+node --check assets/js/portfolio.js
+```
 
-- Intelligence Hub: homepage confirms six-market scope, reach, impressions, GA4 campaign sessions, and separated reporting dates. Snapshot; not a live analytics connection.
-- Sales Academy: `/training` confirms 11 products, 10 scenarios and 20 questions. Retained the user's conservative internal prototype status despite the source's live/internal wording.
-- Quest: discovered the working URL from the operations dashboard's `/prototypes` page. Demo data is not treated as adoption.
-- Yaad Vibes: map, categories, search and place suggestions are visible.
-- Workload dashboard: 20 workstreams, 19 active items, 4 creative systems, 10 innovation inputs and 7 presentations. Counts describe scope, not productivity.
-- Psychology of Jamaicans: 28 chapters, four parts, commerce links, Pulse and contribution interface are visible. No sales or usage claims.
-- PhotoLab: visible simulator, motion, depth, lenses and missions. The upcoming AI coach is excluded from completed features.
-- Marketing Practice Lab: visible study notes, practice selection, sprints and rehearsal. No claim of official DMI exam content or improved pass rates.
+Commit both data and generated HTML. The builder updates only the marked project collections in `index.html` and the standalone pages in `work/`. The checks cover local links, fragment targets, unique IDs, headings, project inventory, stale-claim guardrails and filtering logic. DOM-contract tests are not browser or accessibility tests.
 
-Creative-system source pages have asset-evidence placeholders. No substitute campaign artwork was invented. Creative Systems, Content Engine and Audi use text-led cards until approved frames or execution images are supplied. Content Engine includes an HTML process diagram.
+Preview locally with `python3 -m http.server 8765`, then open `http://localhost:8765`.
 
-Six original campaign records remain in Marketing, with their original metrics preserved on detail pages. Their reporting periods were not supplied; no dates or extra results were invented.
+Before publishing, verify desktop and mobile layouts, all category buttons, direct category URLs, Back/Forward, repeated filtering, mobile menu opening and closing, experience/About disclosures, project-page navigation and the PDF download. Check at 360, 390, 768 and 1440 pixels, keyboard-only navigation, horizontal overflow and browser console errors.
 
-Personal retrospective statements were not provided. Detail pages use `Learning / Next question` instead of fabricated first-person lessons. Add a `learning` value to a project to replace that section with `What I Learned` once supplied.
+## Project scope and public evidence
 
-The downloadable resume PDF has not been edited as part of this website update.
+- https://yello-media-stakeholder-report.vercel.app/ — published reporting snapshots; latest Meta through 13 September and FindYello usage through 9 September 2026. Separate data periods remain visible
+- https://yello-media-stakeholder-report.vercel.app/training — sales-enablement prototype with device-local progress. No production AI backend or organisation-wide adoption claim
+- https://vwplus-website.vercel.app/ — public enquiry, vehicle selection, services, troubleshooting and workshop case pages. A separate sample customer dashboard is a prototype
+- https://ashers-fleet.vercel.app/ — fleet information and customer-reviewed WhatsApp enquiries. No checkout or automatic booking confirmation
+- https://newbestdecorators.kahnec.com/ — services, inspiration gallery and structured estimate enquiries. No client acceptance, payment, enquiries or revenue claimed
+- https://certs.digitalmarketinginstitute.com/7b29222d-3b2e-4398-9184-5ac1baf4b336 — Certified Digital Marketing Professional, issued 14 September 2026
+
+All new interface images are real site captures, not substitute artwork. Earlier campaign projects remain available under their original URLs. Existing independent products and concepts retain their status distinctions.

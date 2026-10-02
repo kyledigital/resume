@@ -2,7 +2,7 @@
   {
     "id": "yello-hub",
     "title": "Yello Marketing Intelligence Hub",
-    "subtitle": "Turning marketing reporting into a working intelligence platform",
+    "subtitle": "Making campaign reporting useful for the next decision",
     "label": "Internal platform",
     "discipline": "Marketing intelligence",
     "categories": [
@@ -10,16 +10,16 @@
       "products"
     ],
     "group": "selected",
-    "summary": "A stakeholder-facing interactive platform connecting campaign performance, content strategy, creative direction, UX opportunities, product ideas and marketing priorities.",
-    "role": "Concept development, information architecture, marketing strategy, data organisation, UX direction and AI-assisted web and prototype development.",
+    "summary": "A navigable marketing report that brings campaign results, content priorities and sales resources into one stakeholder view.",
+    "role": "Marketing strategy, reporting structure, content organisation, UX direction and AI-assisted development.",
     "problem": "Campaign data, content priorities and product opportunities need a shared context for stakeholder discussion.",
     "thinking": "Bring the evidence and the strategic questions into one navigable experience, while keeping measurement sources distinct.",
-    "built": "A structured stakeholder experience covering performance, strategy, content pillars, sales positioning, training, prototypes, UX opportunities and a roadmap.",
-    "output": "A working internal platform with a published reporting snapshot, rather than a live Meta or GA4 connection.",
-    "evidence": "Captured reporting: 233,738 people reached, 788,941 paid impressions, 17,277 Meta link clicks and approximately 6,300 GA4 campaign sessions across six Caribbean markets. Paid Meta scope: 1 June–15 July 2026; organic social and GA4 scope: 1 April–15 July 2026. Sessions are visits, not leads or sales. These figures describe the campaigns in the hub, not the impact of building the platform.",
-    "status": "Internal platform / evolving. Published reporting snapshot; no adoption or stakeholder outcome claimed.",
+    "built": "A management review, campaign and content reporting, strategic recommendations, source references and linked sales-enablement tools.",
+    "output": "A published reporting hub, refreshed in September 2026, with separate views for the original April–July report and the later management review.",
+    "evidence": "The published report keeps Meta campaign reporting and FindYello usage in their own reporting periods. The latest review includes Meta data through 13 September 2026 and FindYello usage through 9 September. Sessions are visits, not leads or sales.",
+    "status": "Published stakeholder resource, based on reporting snapshots.",
     "question": "How can the next reporting cycle make the connection between evidence and decisions easier to follow?",
-    "image": "yello-hub.png",
+    "image": "yello-hub-current.png",
     "imageAlt": "Yello Marketing Intelligence Hub interface preview",
     "links": [
       [
@@ -28,12 +28,99 @@
       ]
     ],
     "featured": true,
-    "proof": "Performance, strategy and product thinking in one stakeholder view."
+    "proof": "Campaign reporting · content priorities · recommendations"
+  },
+  {
+    "id": "content-engine",
+    "title": "A Content Engine for Local Discovery",
+    "subtitle": "Connecting articles, social ideas and campaign delivery",
+    "label": "Ongoing",
+    "discipline": "Content strategy",
+    "categories": [
+      "marketing",
+      "ai"
+    ],
+    "group": "selected",
+    "summary": "An article-to-social workflow connecting local discovery stories with platform-specific creative, calls to action and paid support.",
+    "role": "Article-to-social adaptation, content strategy, social concepts and creative direction.",
+    "problem": "Editorial content needs a clear audience insight and a platform-appropriate format to support social discovery.",
+    "thinking": "Connect each article or theme to an insight, a creative concept and a relevant action back to FindYello.",
+    "built": "An article-to-social workflow that connects editorial themes, creative development, calls to action and paid support where relevant.",
+    "output": "Editorial themes, social concepts and creative direction organised into a repeatable content workflow.",
+    "evidence": "The content programme documents the relationship between editorial stories, social assets and campaign delivery.",
+    "status": "Content strategy / ongoing programme.",
+    "question": "Which editorial themes translate most naturally into useful social discovery journeys?",
+    "image": "",
+    "imageAlt": "Building a Content Engine Around Local Discovery interface preview",
+    "links": [
+      [
+        "View the content programme",
+        "https://yello-marketing-workload-dashboard.vercel.app/content-engine"
+      ]
+    ],
+    "featured": true,
+    "proof": ""
+  },
+  {
+    "id": "brand-camp",
+    "title": "Brand Camp 2025",
+    "subtitle": "Campaign strategy and creative direction",
+    "label": "Campaign",
+    "discipline": "Campaign Strategy",
+    "categories": [
+      "marketing"
+    ],
+    "group": "selected",
+    "summary": "Led campaign strategy and rollout, bringing promotional video, designer collaboration and AI-assisted comic-style storytelling together.",
+    "role": "Campaign planning, creative direction, video production and rollout coordination.",
+    "problem": "Campaign strategy and creative direction.",
+    "thinking": "Give the event a consistent story across formats while supporting the speaker and sponsor presence.",
+    "built": "A coordinated set of campaign concepts, promotional videos and social storytelling.",
+    "output": "Campaign delivery across the stated scope.",
+    "evidence": "The project demonstrates campaign planning, creative direction, video production and rollout coordination.",
+    "status": "Completed campaign work.",
+    "question": "What would the next campaign build on or test differently?",
+    "image": "",
+    "imageAlt": "Brand Camp 2025: Campaign Lead, Content & Creative Direction interface preview",
+    "links": [],
+    "featured": true,
+    "proof": ""
+  },
+  {
+    "id": "ai-creative-systems",
+    "title": "AI-Assisted Creative Systems",
+    "subtitle": "Reusable visual directions for FindYello content",
+    "label": "Experiment",
+    "discipline": "AI & creative",
+    "categories": [
+      "ai",
+      "marketing"
+    ],
+    "group": "selected",
+    "summary": "An ongoing exploration of how AI can help a marketing team develop distinctive, reusable creative systems.",
+    "role": "AI-assisted visual development, creative experimentation, character-led storytelling and trend adaptation.",
+    "problem": "Creative experiments need a consistent brand direction if they are to inform repeatable content.",
+    "thinking": "Explore recognisable worlds and characters across Claymotion, Paper World, Stop Motion and Higgsfield workflows.",
+    "built": "Creative directions and experiments spanning clay-style scenes, layered paper environments, stop-motion execution and character-led storytelling.",
+    "output": "A developing set of creative systems, prompts and production experiments.",
+    "evidence": "Creative directions span clay-style scenes, paper worlds, stop-motion and character-led storytelling. The work demonstrates concept development and repeatable production approaches.",
+    "status": "Creative system / ongoing experiment. Individual executions and reusable directions are at different stages.",
+    "question": "Which elements can remain consistent across formats while leaving room for new stories?",
+    "image": "",
+    "imageAlt": "Building Repeatable AI Creative Systems for FindYello interface preview",
+    "links": [
+      [
+        "View the systems overview",
+        "https://yello-marketing-workload-dashboard.vercel.app/creative-systems"
+      ]
+    ],
+    "featured": true,
+    "proof": ""
   },
   {
     "id": "sales-academy",
-    "title": "FindYello Sales Academy",
-    "subtitle": "Turning product training into practice",
+    "title": "FindYello Sales Academy & Ask Yello",
+    "subtitle": "Helping product knowledge become a better customer conversation",
     "label": "Prototype",
     "discipline": "Sales enablement",
     "categories": [
@@ -41,16 +128,16 @@
       "marketing"
     ],
     "group": "selected",
-    "summary": "An interactive sales training experience designed to help team members understand FindYello products and practise recommending them in realistic customer scenarios.",
+    "summary": "A sales-enablement prototype that connects product guides, customer scenarios, practice questions and an Ask Yello recommendation interface.",
     "role": "Concept, learning structure, product interpretation, UX direction and AI-assisted development.",
     "problem": "Knowing product facts and applying them to a customer conversation are different tasks.",
     "thinking": "Organise product knowledge around customer needs, recommendations and short practice sessions.",
-    "built": "A learning dashboard, product guide, recommendation lab, refreshers and practice routes.",
-    "output": "An internal enablement prototype covering 11 products, 10 customer scenarios and 20 practice questions.",
-    "evidence": "The linked interface shows the product, scenario and question counts. These describe content coverage, not completed training, usage or improved sales performance.",
-    "status": "Internal enablement prototype. Available to explore; no rollout or adoption claim.",
+    "built": "A learning dashboard, searchable product guide, customer scenarios, refreshers, knowledge checks and the Ask Yello product-help interface.",
+    "output": "A working prototype with device-local practice progress and product guidance for customer conversations.",
+    "evidence": "The interface provides product exploration, scenario practice and knowledge checks. Progress is saved on the device. Ask Yello is presented as a prototype, without a production AI-service or rollout claim.",
+    "status": "Internal sales-enablement prototype.",
     "question": "Which customer scenarios would be most useful to validate with sales colleagues?",
-    "image": "sales-academy.png",
+    "image": "yello-training-current.png",
     "imageAlt": "FindYello Sales Academy interface preview",
     "links": [
       [
@@ -59,7 +146,103 @@
       ]
     ],
     "featured": true,
-    "proof": "11 products · 10 customer scenarios · 20 practice questions"
+    "proof": "Product guides · customer scenarios · guided practice"
+  },
+  {
+    "id": "vw-plus",
+    "title": "VW Plus",
+    "subtitle": "From a warning light to a useful workshop enquiry",
+    "label": "Live website",
+    "discipline": "Service website",
+    "categories": [
+      "marketing",
+      "products",
+      "websites"
+    ],
+    "group": "selected",
+    "summary": "A responsive automotive website that helps drivers describe a problem, explore specialist services and start a more informed workshop conversation.",
+    "role": "Content strategy, customer-journey design, visual direction and AI-assisted website development.",
+    "problem": "Drivers need a clear first step, whether they have a symptom, a service need or a restoration project.",
+    "thinking": "Organise the journey around the car and the owner’s immediate need, then make workshop evidence easy to explore.",
+    "built": "Vehicle selection, troubleshooting pathways, service pages, structured enquiries and a workshop case archive, including a documented Jetta repair journey.",
+    "output": "A live customer-facing website, designed for mobile use as well as desktop.",
+    "evidence": "The public site provides the service, troubleshooting and enquiry journeys. The separate customer-dashboard concept uses sample data and remains a prototype.",
+    "status": "Published website.",
+    "question": "How can the next iteration make the enquiry journey clearer?",
+    "image": "vw-plus.png",
+    "imageAlt": "VW Plus homepage, captured October 2026",
+    "links": [
+      [
+        "Visit the website",
+        "https://vwplus-website.vercel.app/"
+      ]
+    ],
+    "featured": true,
+    "proof": ""
+  },
+  {
+    "id": "ashers-fleet",
+    "title": "Asher’s Fleet",
+    "subtitle": "A clearer path from vehicle browsing to a rental enquiry",
+    "label": "Live website",
+    "discipline": "Rental website",
+    "categories": [
+      "marketing",
+      "products",
+      "websites"
+    ],
+    "group": "selected",
+    "summary": "A car-rental website connecting vehicle choice, travel dates and pickup plans to a customer-reviewed WhatsApp enquiry.",
+    "role": "Content structure, enquiry-flow planning, visual direction and AI-assisted website development.",
+    "problem": "Renters need to compare vehicles and share enough detail for a useful availability conversation.",
+    "thinking": "Keep the website focused on the choice and the enquiry, with the rental team confirming availability and terms.",
+    "built": "A six-model vehicle collection, individual vehicle pages, rental guidance, FAQs and a structured availability enquiry.",
+    "output": "A live responsive website with WhatsApp enquiry handoff.",
+    "evidence": "The enquiry prepares a WhatsApp message for the customer to review and send. Availability and booking are confirmed by the rental team.",
+    "status": "Published website.",
+    "question": "How can the next iteration make the enquiry journey clearer?",
+    "image": "ashers-fleet.png",
+    "imageAlt": "Asher’s Fleet homepage, captured October 2026",
+    "links": [
+      [
+        "Visit the website",
+        "https://ashers-fleet.vercel.app/"
+      ]
+    ],
+    "featured": false,
+    "proof": ""
+  },
+  {
+    "id": "new-best-decorators",
+    "title": "The New Best Decorators",
+    "subtitle": "Making a made-to-measure service easier to explore",
+    "label": "Live website",
+    "discipline": "Interior décor website",
+    "categories": [
+      "marketing",
+      "products",
+      "websites"
+    ],
+    "group": "selected",
+    "summary": "A service-led website presenting custom drapery, furnishings and interior décor with a guided estimate-request journey.",
+    "role": "Website copy, service organisation, visual direction and AI-assisted website development.",
+    "problem": "Customers need to understand the services, picture the possibilities and explain what their space needs.",
+    "thinking": "Combine clear service descriptions, visual inspiration and the steps from measurement to installation.",
+    "built": "Service sections, a filterable inspiration gallery, a process overview and an estimate form that organises project details for WhatsApp review.",
+    "output": "A live responsive website for the Mandeville business.",
+    "evidence": "The site presents service information and a structured enquiry. Inspiration imagery is identified on the website; it is not all presented as completed client work.",
+    "status": "Published website.",
+    "question": "How can the next iteration make the enquiry journey clearer?",
+    "image": "new-best-decorators.png",
+    "imageAlt": "The New Best Decorators homepage, captured October 2026",
+    "links": [
+      [
+        "Visit the website",
+        "https://newbestdecorators.kahnec.com/"
+      ]
+    ],
+    "featured": false,
+    "proof": ""
   },
   {
     "id": "findyello-quest",
@@ -88,7 +271,7 @@
         "https://findyello-quest-stakeholder.vercel.app/"
       ]
     ],
-    "featured": true,
+    "featured": false,
     "proof": ""
   },
   {
@@ -120,68 +303,6 @@
     ],
     "featured": false,
     "proof": ""
-  },
-  {
-    "id": "ai-creative-systems",
-    "title": "Building Repeatable AI Creative Systems for FindYello",
-    "subtitle": "From individual executions to reusable creative directions",
-    "label": "Experiment",
-    "discipline": "AI & creative",
-    "categories": [
-      "ai",
-      "marketing"
-    ],
-    "group": "selected",
-    "summary": "An ongoing exploration of how AI can help a marketing team develop distinctive, reusable creative systems.",
-    "role": "AI-assisted visual development, creative experimentation, character-led storytelling and trend adaptation.",
-    "problem": "Creative experiments need a consistent brand direction if they are to inform repeatable content.",
-    "thinking": "Explore recognisable worlds and characters across Claymotion, Paper World, Stop Motion and Higgsfield workflows.",
-    "built": "Creative directions and experiments spanning clay-style scenes, layered paper environments, stop-motion execution and character-led storytelling.",
-    "output": "A developing set of creative systems, prompts and production experiments.",
-    "evidence": "The Stop Motion “Who We Are” execution recorded a 3.86% CTR in the captured campaign reporting. This result belongs to that execution only; it is not a result for every AI-assisted asset or the creative system as a whole.",
-    "status": "Creative system / ongoing experiment. Individual executions and reusable directions are at different stages.",
-    "question": "Which elements can remain consistent across formats while leaving room for new stories?",
-    "image": "",
-    "imageAlt": "Building Repeatable AI Creative Systems for FindYello interface preview",
-    "links": [
-      [
-        "View the systems overview",
-        "https://yello-marketing-workload-dashboard.vercel.app/creative-systems"
-      ]
-    ],
-    "featured": false,
-    "proof": "3.86% CTR · Stop Motion “Who We Are” execution only"
-  },
-  {
-    "id": "content-engine",
-    "title": "Building a Content Engine Around Local Discovery",
-    "subtitle": "Connecting editorial ideas to platform-native social content",
-    "label": "Ongoing",
-    "discipline": "Content strategy",
-    "categories": [
-      "marketing",
-      "ai"
-    ],
-    "group": "selected",
-    "summary": "A programme for turning FindYello editorial articles, local discovery themes, trends and business content into social content suited to each platform.",
-    "role": "Article-to-social adaptation, content strategy, social concepts and creative direction.",
-    "problem": "Editorial content needs a clear audience insight and a platform-appropriate format to support social discovery.",
-    "thinking": "Connect each article or theme to an insight, a creative concept and a relevant action back to FindYello.",
-    "built": "An article-to-social workflow that connects editorial themes, creative development, calls to action and paid support where relevant.",
-    "output": "30 pieces in the reporting window: 14 posts and 16 stories, including 27 pieces after the June relaunch.",
-    "evidence": "The reporting counts describe content output within the supplied window. They do not establish conversions, engagement improvement or incremental business impact.",
-    "status": "Content strategy / ongoing programme.",
-    "question": "Which editorial themes translate most naturally into useful social discovery journeys?",
-    "image": "",
-    "imageAlt": "Building a Content Engine Around Local Discovery interface preview",
-    "links": [
-      [
-        "View the content programme",
-        "https://yello-marketing-workload-dashboard.vercel.app/content-engine"
-      ]
-    ],
-    "featured": false,
-    "proof": "30 reported pieces · 14 posts + 16 stories"
   },
   {
     "id": "workload-dashboard",
@@ -272,7 +393,7 @@
         "https://jamaicanpsychology.kylehector.com/"
       ]
     ],
-    "featured": true,
+    "featured": false,
     "proof": ""
   },
   {
@@ -303,7 +424,7 @@
         "https://photolab-gamma.vercel.app/"
       ]
     ],
-    "featured": true,
+    "featured": false,
     "proof": ""
   },
   {
@@ -339,152 +460,197 @@
   },
   {
     "id": "enersave",
-    "title": "Enersave Solutions: Google Ads Performance",
-    "subtitle": "Revenue Growth & Lead Generation",
-    "label": "Campaign",
-    "discipline": "Google Ads",
+    "title": "Enersave Solutions: Google Ads",
+    "subtitle": "Independent freelance Google Ads strategy",
+    "label": "Freelance client",
+    "discipline": "Independent paid media",
     "categories": [
-      "marketing"
+      "marketing",
+      "independent"
     ],
-    "group": "selected",
-    "summary": "$1.19M in attributed revenue and 8.4x ROAS from a full-funnel Google Ads strategy built to grow visibility and conversion at scale.",
-    "role": "Strategy, setup, optimisation",
-    "problem": "Revenue Growth & Lead Generation.",
-    "thinking": "Connect the campaign objective with audience, creative and channel decisions.",
-    "built": "$1.19M in attributed revenue and 8.4x ROAS from a full-funnel Google Ads strategy built to grow visibility and conversion at scale.",
-    "output": "Campaign execution and the performance record shown below.",
-    "evidence": "185M+ Impressions; 8.4x ROAS; $1.19M Attributed Revenue; 3.38M Clicks. Figures retained from the existing portfolio. Reporting dates and attribution detail were not supplied with this update.",
-    "status": "Campaign / existing portfolio record.",
-    "question": "What additional reporting context would make the relationship between the campaign and its outcomes clearer?",
+    "group": "independent",
+    "summary": "Planned, set up and optimised Google Ads activity for Enersave Solutions, my independent freelance client.",
+    "role": "Independent freelance paid-media strategy, account setup, optimisation and reporting.",
+    "problem": "Connect the client’s offering with relevant search demand and a clear enquiry journey.",
+    "thinking": "Connect the business offering with relevant search intent and a clear conversion journey.",
+    "built": "Google Ads campaign planning, setup, optimisation and performance review.",
+    "output": "Google Ads campaign delivery for an independent freelance client.",
+    "evidence": "Direct freelance work covering campaign strategy, account setup, optimisation and reporting.",
+    "status": "Independent freelance client work.",
+    "question": "What would the next campaign build on or test differently?",
     "image": "",
-    "imageAlt": "Enersave Solutions: Google Ads Performance interface preview",
+    "imageAlt": "Enersave Solutions: independent freelance Google Ads project",
     "links": [],
-    "featured": true,
-    "proof": "8.4x ROAS"
+    "featured": false,
+    "proof": "",
+    "client": "Enersave Solutions",
+    "client_relationship": "Independent freelance client"
   },
   {
     "id": "findyello-meta",
-    "title": "FindYello: Maximum Reach on Minimum Budget",
-    "subtitle": "Brand Awareness & Reach Expansion",
+    "title": "FindYello: Paid Social",
+    "subtitle": "Audience targeting and creative testing",
     "label": "Campaign",
     "discipline": "Paid Social",
     "categories": [
       "marketing"
     ],
     "group": "selected",
-    "summary": "Delivered 541K+ impressions, 36,753 unique viewers, and 3,394 profile visits from a $250 Meta Ads campaign, expanding visibility at a lean budget.",
-    "role": "Audience targeting, creative testing, optimisation",
-    "problem": "Brand Awareness & Reach Expansion.",
-    "thinking": "Connect the campaign objective with audience, creative and channel decisions.",
-    "built": "Delivered 541K+ impressions, 36,753 unique viewers, and 3,394 profile visits from a $250 Meta Ads campaign, expanding visibility at a lean budget.",
-    "output": "Campaign execution and the performance record shown below.",
-    "evidence": "541K+ Impressions; 36753 Unique Viewers; $250 Budget; 3394 Profile Visits. Figures retained from the existing portfolio. Reporting dates and attribution detail were not supplied with this update.",
-    "status": "Campaign / existing portfolio record.",
-    "question": "What additional reporting context would make the relationship between the campaign and its outcomes clearer?",
+    "summary": "Managed Meta campaign activity to support FindYello visibility and audience engagement.",
+    "role": "Audience targeting, creative testing, optimisation and reporting.",
+    "problem": "Audience targeting and creative testing.",
+    "thinking": "Match the audience, message and creative to the campaign objective.",
+    "built": "Meta campaign targeting, creative testing and performance review.",
+    "output": "Campaign delivery across the stated scope.",
+    "evidence": "The project demonstrates audience targeting, creative testing, optimisation and reporting.",
+    "status": "Completed campaign work.",
+    "question": "What would the next campaign build on or test differently?",
     "image": "",
     "imageAlt": "FindYello: Maximum Reach on Minimum Budget interface preview",
     "links": [],
     "featured": false,
-    "proof": "541K+ Impressions"
-  },
-  {
-    "id": "brand-camp",
-    "title": "Brand Camp 2025: Campaign Lead, Content & Creative Direction",
-    "subtitle": "Event Promotion & Audience Engagement",
-    "label": "Campaign",
-    "discipline": "Campaign Strategy",
-    "categories": [
-      "marketing"
-    ],
-    "group": "selected",
-    "summary": "100K+ views and 800+ interactions by leading Brand Camp 2025 strategy, rollout, and creative direction across video content and AI-assisted storytelling.",
-    "role": "Strategy, campaign lead, creative direction",
-    "problem": "Event Promotion & Audience Engagement.",
-    "thinking": "Connect the campaign objective with audience, creative and channel decisions.",
-    "built": "100K+ views and 800+ interactions by leading Brand Camp 2025 strategy, rollout, and creative direction across video content and AI-assisted storytelling.",
-    "output": "Campaign execution and the performance record shown below.",
-    "evidence": "100K+ Views; 75K+ Reach; 800+ Interactions; 7-8 Slide Story Series. Figures retained from the existing portfolio. Reporting dates and attribution detail were not supplied with this update.",
-    "status": "Campaign / existing portfolio record.",
-    "question": "What additional reporting context would make the relationship between the campaign and its outcomes clearer?",
-    "image": "",
-    "imageAlt": "Brand Camp 2025: Campaign Lead, Content & Creative Direction interface preview",
-    "links": [],
-    "featured": false,
-    "proof": "100K+ Views"
+    "proof": ""
   },
   {
     "id": "directory-launch",
-    "title": "Yello 2026 Directory: Product Launch",
-    "subtitle": "Product Awareness & Engagement",
+    "title": "Yello 2026 Directory Launch",
+    "subtitle": "Product awareness and launch content",
     "label": "Campaign",
     "discipline": "Organic Social",
     "categories": [
       "marketing"
     ],
     "group": "selected",
-    "summary": "Drove 231K+ views on a product launch post, combining organic traction with paid amplification to extend reach.",
-    "role": "Launch planning, amplification, performance review",
-    "problem": "Product Awareness & Engagement.",
-    "thinking": "Connect the campaign objective with audience, creative and channel decisions.",
-    "built": "Drove 231K+ views on a product launch post, combining organic traction with paid amplification to extend reach.",
-    "output": "Campaign execution and the performance record shown below.",
-    "evidence": "231K+ Views (Single Post); 54.6K FB Followers; 1303 Organic Reach / Reel; 66.7% DM Response Rate. Figures retained from the existing portfolio. Reporting dates and attribution detail were not supplied with this update.",
-    "status": "Campaign / existing portfolio record.",
-    "question": "What additional reporting context would make the relationship between the campaign and its outcomes clearer?",
+    "summary": "Supported the directory launch through content planning, social publishing and campaign review.",
+    "role": "Launch planning, content coordination and performance review.",
+    "problem": "Product awareness and launch content.",
+    "thinking": "Make the directory relevant to the audience through a clear launch message and useful content.",
+    "built": "Product-launch content and social campaign delivery.",
+    "output": "Campaign delivery across the stated scope.",
+    "evidence": "The project demonstrates launch planning, content coordination and performance review.",
+    "status": "Completed campaign work.",
+    "question": "What would the next campaign build on or test differently?",
     "image": "",
     "imageAlt": "Yello 2026 Directory: Product Launch interface preview",
     "links": [],
     "featured": false,
-    "proof": "231K+ Views"
+    "proof": ""
   },
   {
     "id": "yello-finds",
-    "title": "Yello Finds: Humanising the Brand",
-    "subtitle": "Brand Perception & Organic Engagement",
+    "title": "Yello Finds",
+    "subtitle": "Local discovery through human-centred storytelling",
     "label": "Campaign",
     "discipline": "Brand & Content Strategy",
     "categories": [
       "marketing"
     ],
     "group": "selected",
-    "summary": "Developed and led a content series designed to make the Yello brand more modern, relatable, and discovery-driven through human-centred storytelling.",
-    "role": "Content concept, storytelling, brand direction",
-    "problem": "Brand Perception & Organic Engagement.",
-    "thinking": "Connect the campaign objective with audience, creative and channel decisions.",
-    "built": "Developed and led a content series designed to make the Yello brand more modern, relatable, and discovery-driven through human-centred storytelling.",
-    "output": "Campaign execution and the performance record shown below.",
-    "evidence": "1K Organic Views / Post; 30+ Interactions / Post; Consistent Multi-Post Engagement. Figures retained from the existing portfolio. Reporting dates and attribution detail were not supplied with this update.",
-    "status": "Campaign / existing portfolio record.",
-    "question": "What additional reporting context would make the relationship between the campaign and its outcomes clearer?",
+    "summary": "Created and led a content series designed to make the Yello brand more relatable through local people, places and discoveries.",
+    "role": "Content concept, storytelling and creative direction.",
+    "problem": "Local discovery through human-centred storytelling.",
+    "thinking": "Build the story around real experiences and local discovery.",
+    "built": "A recurring content-series concept and social storytelling.",
+    "output": "Campaign delivery across the stated scope.",
+    "evidence": "The project demonstrates content concept, storytelling and creative direction.",
+    "status": "Completed campaign work.",
+    "question": "What would the next campaign build on or test differently?",
     "image": "",
     "imageAlt": "Yello Finds: Humanising the Brand interface preview",
     "links": [],
     "featured": false,
-    "proof": "~1K Views/Post"
+    "proof": ""
   },
   {
     "id": "refill-hope",
-    "title": "Refill Hope: Campaign from Concept to Launch",
-    "subtitle": "Awareness & Community Impact",
+    "title": "Refill Hope",
+    "subtitle": "Yello campaign storytelling for a community water initiative",
     "label": "Campaign",
     "discipline": "Cause Marketing",
     "categories": [
       "marketing"
     ],
     "group": "selected",
-    "summary": "220K+ views while supporting 3,000 buckets and 15,000 gallons of water by leading the campaign from concept to launch.",
-    "role": "Campaign concept, launch coordination, execution",
-    "problem": "Awareness & Community Impact.",
-    "thinking": "Connect the campaign objective with audience, creative and channel decisions.",
-    "built": "220K+ views while supporting 3,000 buckets and 15,000 gallons of water by leading the campaign from concept to launch.",
-    "output": "Campaign execution and the performance record shown below.",
-    "evidence": "3000 Buckets Distributed; 15000 Gallons Distributed; 220K+ Total Views; 3900+ Interactions. Figures retained from the existing portfolio. Reporting dates and attribution detail were not supplied with this update.",
-    "status": "Campaign / existing portfolio record.",
-    "question": "What additional reporting context would make the relationship between the campaign and its outcomes clearer?",
-    "image": "",
-    "imageAlt": "Refill Hope: Campaign from Concept to Launch interface preview",
-    "links": [],
+    "summary": "Led Refill Hope from concept to launch for Yello, coordinating campaign content and rollout around a community water-distribution initiative with the National Water Commission.",
+    "role": "Campaign concept, launch coordination and execution.",
+    "problem": "Communicate the water-relief initiative clearly and give the campaign a consistent story across social updates.",
+    "thinking": "Connect the practical need for water with campaign content people could follow and share.",
+    "built": "Campaign planning, creative content and rollout coordination, supported by social videos and community updates.",
+    "output": "Campaign delivery across the stated scope.",
+    "evidence": "The post links show campaign videos and community updates. Reported figures are summed from six dated posts in the March 2026 internal campaign record; they are historical reporting snapshots rather than live counters. The Office of Utilities Regulation’s NWC restoration report for 22–29 December 2025 separately documents the NWC/Yello water-distribution partnership.",
+    "status": "Completed campaign work.",
+    "question": "What would the next campaign build on or test differently?",
+    "image": "refill-hope-community-message.jpg",
+    "imageAlt": "Published Yello and NWC Refill Hope artwork calling for support for families recovering from Hurricane Melissa",
+    "links": [
+      [
+        "View Yello’s campaign post",
+        "https://www.facebook.com/findyellonow/posts/jamaica-water-relief-initiative-refill-hopeyello-media-group-partnered-with-the-/1263890875784590/"
+      ],
+      [
+        "Read the NWC restoration update",
+        "https://our.org.jm/wp-content/uploads/2025/11/NWC-Restoration-updates-December-22-29.pdf"
+      ]
+    ],
     "featured": false,
-    "proof": "Refill Hope"
+    "proof": "Yello × NWC · community water initiative",
+    "client": "Yello Media Group",
+    "client_relationship": "Yello campaign work",
+    "media": [
+      {
+        "title": "Prime Minister Andrew Holness reel",
+        "kind": "Video",
+        "url": "https://www.instagram.com/reel/DSOKopOgUv-/?hl=en",
+        "published": "13 December 2025",
+        "description": "A campaign collaboration featuring the Prime Minister, FindYello and the National Water Commission.",
+        "source_name": "Instagram",
+        "image": "refill-hope-pm-reel.jpg",
+        "alt": "Paused campaign reel showing three representatives beside a truck with a branded Refill Hope water bucket"
+      },
+      {
+        "title": "The Refill Hope water-relief partnership",
+        "kind": "Carousel",
+        "url": "https://www.instagram.com/p/DSaXMqcD_yz/",
+        "published": "18 December 2025",
+        "description": "Published campaign artwork introducing the partnership and its stated water-relief scale.",
+        "source_name": "Instagram",
+        "image": "refill-hope-partnership.jpg",
+        "alt": "Refill Hope campaign artwork with Yello and NWC branding, water imagery and the campaign’s stated bucket and gallon figures"
+      },
+      {
+        "title": "Middle Quarters: community distribution",
+        "kind": "Carousel",
+        "url": "https://www.instagram.com/p/DSibVIXFpU1/?hl=en",
+        "published": "21 December 2025",
+        "description": "NWC and Yello’s photo update from the Middle Quarters community event.",
+        "source_name": "Instagram",
+        "image": "refill-hope-middle-quarters.jpg",
+        "alt": "Campaign representatives holding a branded water bucket beside a truck"
+      },
+      {
+        "title": "Ramble, Hanover: weekend throwback",
+        "kind": "Carousel",
+        "url": "https://www.instagram.com/p/DTa4CmUES06/",
+        "published": "12 January 2026",
+        "description": "A community update from Ramble, Hanover.",
+        "source_name": "Instagram",
+        "image": "refill-hope-ramble.jpg",
+        "alt": "Community partners standing together at the outdoor Ramble event, with water buckets nearby"
+      }
+    ],
+    "metrics": [
+      {
+        "label": "Reported post views",
+        "value": "219,652",
+        "scope": "Sum of six posts, including a crosspost, published 12 Dec 2025–12 Jan 2026. Historical snapshot, not live totals.",
+        "source_label": "Source: internal campaign record, March 2026"
+      },
+      {
+        "label": "Reported interactions",
+        "value": "3,891",
+        "scope": "Sum across the same six posts. This is a count of interactions, not unique people.",
+        "source_label": "Source: internal campaign record, March 2026"
+      }
+    ]
   }
 ]

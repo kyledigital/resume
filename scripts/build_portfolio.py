@@ -25,6 +25,28 @@ def card(p):
       <p>{e(p['summary'])}</p>{proof}<p class="project-role"><strong>My contribution</strong> {e(p['role'])}</p>
       <a class="project-read" href="work/{p['id']}.html">Explore project <span aria-hidden="true">→</span><span class="sr-only">: {e(p['title'])}</span></a></div></article>'''
 
+def campaign_media(p):
+    """Link authentic local previews to their corresponding original posts."""
+    if not p.get('media'):
+        return ''
+    cards=[]
+    for item in p['media']:
+        date=f'<span>{e(item["published"])}</span>' if item.get('published') else ''
+        icon='▶' if item['kind']=='Video' else '↗'
+        visual=f'<div class="campaign-media-frame"><img src="../assets/images/projects/{e(item["image"])}" alt="{e(item["alt"])}" loading="lazy"><span class="campaign-media-open" aria-hidden="true">{icon} {e(item["kind"])}</span></div>' if item.get('image') else ''
+        kind=f'<span class="maturity">{e(item["kind"])}</span>' if not item.get('image') else ''
+        cards.append(f'''<article class="campaign-media-card"><a class="campaign-media-link" href="{e(item['url'])}" target="_blank" rel="noopener noreferrer" aria-label="{e(item['title'])} — open original {e(item['kind'].lower())} on {e(item['source_name'])}">{visual}<div class="campaign-media-copy">{kind}<h3>{e(item['title'])}</h3><p>{e(item['description'])}</p><div class="campaign-media-meta"><span>{e(item['source_name'])}</span>{date}</div><span class="campaign-media-cta">Open original post <span aria-hidden="true">↗</span></span></div></a></article>''')
+    return '<section class="campaign-media" aria-labelledby="campaign-media-title"><h2 id="campaign-media-title">Campaign moments</h2><p class="campaign-media-intro">Films and updates from the campaign. Select a card to open the original post on Instagram.</p><div class="campaign-media-grid">'+''.join(cards)+'</div></section>'
+
+def campaign_metrics(p):
+    if not p.get('metrics'):
+        return ''
+    cards=[]
+    for item in p['metrics']:
+        source=f'<a href="{e(item["source_url"])}" target="_blank" rel="noopener noreferrer">{e(item["source_label"])} ↗</a>' if item.get('source_url') else f'<p class="campaign-results-source">{e(item["source_label"])}</p>'
+        cards.append(f'<div><dt>{e(item["label"])}</dt><dd><strong>{e(item["value"])}</strong><p>{e(item["scope"])}</p>{source}</dd></div>')
+    return '<section class="campaign-results" aria-labelledby="campaign-results-title"><h2 id="campaign-results-title">Reported figures</h2><dl class="campaign-results-grid">'+''.join(cards)+'</dl></section>'
+
 def case_page(p):
     links = ''.join(f'<a class="outline-btn" href="{e(url)}" target="_blank" rel="noopener noreferrer">{e(label)} <span aria-hidden="true">↗</span></a>' for label,url in p.get('links',[]))
     sections = [('Context',p['summary']),('Problem',p['problem']),('Idea / Thinking',p['thinking']),('My Role',p['role']),('What I Built / Did',p['built']),('Output',p['output']),('Evidence',p['evidence']),('Status',p['status'])]
@@ -45,7 +67,7 @@ def case_page(p):
 <body class="case-page"><a class="skip-link" href="#main">Skip to case study</a>
 <header class="case-navigation"><a href="../index.html#portfolio">← Selected Work</a><a href="../index.html#contact">Contact Kyle</a></header>
 <main id="main"><header class="case-hero"><p class="eyebrow">{e(p['discipline'])} / <span class="maturity">{e(p['label'])}</span></p><h1>{e(p['title'])}</h1><p class="case-deck">{e(p['subtitle'])}</p><div class="project-links">{links}</div></header>
-<figure class="case-cover">{picture(p,'../')}</figure><div class="case-narrative">{body}</div>
+<figure class="case-cover">{picture(p,'../') if not p.get('media') else ''}</figure>{campaign_media(p)}{campaign_metrics(p)}<div class="case-narrative">{body}</div>
 <footer class="case-bottom"><p>Explore the rest of my work.</p><a class="cta-btn" href="../index.html#portfolio">Back to Selected Work</a></footer></main></body></html>'''
 
 def main():
