@@ -31,6 +31,98 @@
     "proof": "Campaign reporting · content priorities · recommendations"
   },
   {
+    "id": "refill-hope",
+    "title": "Refill Hope",
+    "subtitle": "Yello campaign storytelling for a community water initiative",
+    "label": "Campaign",
+    "discipline": "Cause Marketing",
+    "categories": [
+      "marketing"
+    ],
+    "group": "selected",
+    "summary": "Led Refill Hope from concept to launch for Yello, coordinating campaign content and rollout around a community water-distribution initiative with the National Water Commission.",
+    "role": "Campaign concept, launch coordination and execution.",
+    "problem": "Communicate the water-relief initiative clearly and give the campaign a consistent story across social updates.",
+    "thinking": "Connect the practical need for water with campaign content people could follow and share.",
+    "built": "Campaign planning, creative content and rollout coordination, supported by social videos and community updates.",
+    "output": "Campaign delivery across the stated scope.",
+    "evidence": "The post links show campaign videos and community updates. Reported figures are summed from six dated posts in the March 2026 internal campaign record; they are historical reporting snapshots rather than live counters. The Office of Utilities Regulation’s NWC restoration report for 22–29 December 2025 separately documents the NWC/Yello water-distribution partnership.",
+    "status": "Completed campaign work.",
+    "question": "What would the next campaign build on or test differently?",
+    "image": "refill-hope-community-message.jpg",
+    "imageAlt": "Published Yello and NWC Refill Hope artwork calling for support for families recovering from Hurricane Melissa",
+    "links": [
+      [
+        "View Yello’s campaign post",
+        "https://www.facebook.com/findyellonow/posts/jamaica-water-relief-initiative-refill-hopeyello-media-group-partnered-with-the-/1263890875784590/"
+      ],
+      [
+        "Read the NWC restoration update",
+        "https://our.org.jm/wp-content/uploads/2025/11/NWC-Restoration-updates-December-22-29.pdf"
+      ]
+    ],
+    "featured": true,
+    "proof": "Yello × NWC · community water initiative",
+    "client": "Yello Media Group",
+    "client_relationship": "Yello campaign work",
+    "media": [
+      {
+        "title": "Prime Minister Andrew Holness reel",
+        "kind": "Video",
+        "url": "https://www.instagram.com/reel/DSOKopOgUv-/?hl=en",
+        "published": "13 December 2025",
+        "description": "A campaign collaboration featuring the Prime Minister, FindYello and the National Water Commission.",
+        "source_name": "Instagram",
+        "image": "refill-hope-pm-reel.jpg",
+        "alt": "Paused campaign reel showing three representatives beside a truck with a branded Refill Hope water bucket"
+      },
+      {
+        "title": "The Refill Hope water-relief partnership",
+        "kind": "Carousel",
+        "url": "https://www.instagram.com/p/DSaXMqcD_yz/",
+        "published": "18 December 2025",
+        "description": "Published campaign artwork introducing the partnership and its stated water-relief scale.",
+        "source_name": "Instagram",
+        "image": "refill-hope-partnership.jpg",
+        "alt": "Refill Hope campaign artwork with Yello and NWC branding, water imagery and the campaign’s stated bucket and gallon figures"
+      },
+      {
+        "title": "Middle Quarters: community distribution",
+        "kind": "Carousel",
+        "url": "https://www.instagram.com/p/DSibVIXFpU1/?hl=en",
+        "published": "21 December 2025",
+        "description": "NWC and Yello’s photo update from the Middle Quarters community event.",
+        "source_name": "Instagram",
+        "image": "refill-hope-middle-quarters.jpg",
+        "alt": "Campaign representatives holding a branded water bucket beside a truck"
+      },
+      {
+        "title": "Ramble, Hanover: weekend throwback",
+        "kind": "Carousel",
+        "url": "https://www.instagram.com/p/DTa4CmUES06/",
+        "published": "12 January 2026",
+        "description": "A community update from Ramble, Hanover.",
+        "source_name": "Instagram",
+        "image": "refill-hope-ramble.jpg",
+        "alt": "Community partners standing together at the outdoor Ramble event, with water buckets nearby"
+      }
+    ],
+    "metrics": [
+      {
+        "label": "Reported post views",
+        "value": "219,652",
+        "scope": "Sum of six posts, including a crosspost, published 12 Dec 2025–12 Jan 2026. Historical snapshot, not live totals.",
+        "source_label": "Source: internal campaign record, March 2026"
+      },
+      {
+        "label": "Reported interactions",
+        "value": "3,891",
+        "scope": "Sum across the same six posts. This is a count of interactions, not unique people.",
+        "source_label": "Source: internal campaign record, March 2026"
+      }
+    ]
+  },
+  {
     "id": "content-engine",
     "title": "A Content Engine for Local Discovery",
     "subtitle": "Connecting articles, social ideas and campaign delivery",
@@ -560,97 +652,5 @@
     "links": [],
     "featured": false,
     "proof": ""
-  },
-  {
-    "id": "refill-hope",
-    "title": "Refill Hope",
-    "subtitle": "Yello campaign storytelling for a community water initiative",
-    "label": "Campaign",
-    "discipline": "Cause Marketing",
-    "categories": [
-      "marketing"
-    ],
-    "group": "selected",
-    "summary": "Led Refill Hope from concept to launch for Yello, coordinating campaign content and rollout around a community water-distribution initiative with the National Water Commission.",
-    "role": "Campaign concept, launch coordination and execution.",
-    "problem": "Communicate the water-relief initiative clearly and give the campaign a consistent story across social updates.",
-    "thinking": "Connect the practical need for water with campaign content people could follow and share.",
-    "built": "Campaign planning, creative content and rollout coordination, supported by social videos and community updates.",
-    "output": "Campaign delivery across the stated scope.",
-    "evidence": "The post links show campaign videos and community updates. Reported figures are summed from six dated posts in the March 2026 internal campaign record; they are historical reporting snapshots rather than live counters. The Office of Utilities Regulation’s NWC restoration report for 22–29 December 2025 separately documents the NWC/Yello water-distribution partnership.",
-    "status": "Completed campaign work.",
-    "question": "What would the next campaign build on or test differently?",
-    "image": "refill-hope-community-message.jpg",
-    "imageAlt": "Published Yello and NWC Refill Hope artwork calling for support for families recovering from Hurricane Melissa",
-    "links": [
-      [
-        "View Yello’s campaign post",
-        "https://www.facebook.com/findyellonow/posts/jamaica-water-relief-initiative-refill-hopeyello-media-group-partnered-with-the-/1263890875784590/"
-      ],
-      [
-        "Read the NWC restoration update",
-        "https://our.org.jm/wp-content/uploads/2025/11/NWC-Restoration-updates-December-22-29.pdf"
-      ]
-    ],
-    "featured": false,
-    "proof": "Yello × NWC · community water initiative",
-    "client": "Yello Media Group",
-    "client_relationship": "Yello campaign work",
-    "media": [
-      {
-        "title": "Prime Minister Andrew Holness reel",
-        "kind": "Video",
-        "url": "https://www.instagram.com/reel/DSOKopOgUv-/?hl=en",
-        "published": "13 December 2025",
-        "description": "A campaign collaboration featuring the Prime Minister, FindYello and the National Water Commission.",
-        "source_name": "Instagram",
-        "image": "refill-hope-pm-reel.jpg",
-        "alt": "Paused campaign reel showing three representatives beside a truck with a branded Refill Hope water bucket"
-      },
-      {
-        "title": "The Refill Hope water-relief partnership",
-        "kind": "Carousel",
-        "url": "https://www.instagram.com/p/DSaXMqcD_yz/",
-        "published": "18 December 2025",
-        "description": "Published campaign artwork introducing the partnership and its stated water-relief scale.",
-        "source_name": "Instagram",
-        "image": "refill-hope-partnership.jpg",
-        "alt": "Refill Hope campaign artwork with Yello and NWC branding, water imagery and the campaign’s stated bucket and gallon figures"
-      },
-      {
-        "title": "Middle Quarters: community distribution",
-        "kind": "Carousel",
-        "url": "https://www.instagram.com/p/DSibVIXFpU1/?hl=en",
-        "published": "21 December 2025",
-        "description": "NWC and Yello’s photo update from the Middle Quarters community event.",
-        "source_name": "Instagram",
-        "image": "refill-hope-middle-quarters.jpg",
-        "alt": "Campaign representatives holding a branded water bucket beside a truck"
-      },
-      {
-        "title": "Ramble, Hanover: weekend throwback",
-        "kind": "Carousel",
-        "url": "https://www.instagram.com/p/DTa4CmUES06/",
-        "published": "12 January 2026",
-        "description": "A community update from Ramble, Hanover.",
-        "source_name": "Instagram",
-        "image": "refill-hope-ramble.jpg",
-        "alt": "Community partners standing together at the outdoor Ramble event, with water buckets nearby"
-      }
-    ],
-    "metrics": [
-      {
-        "label": "Reported post views",
-        "value": "219,652",
-        "scope": "Sum of six posts, including a crosspost, published 12 Dec 2025–12 Jan 2026. Historical snapshot, not live totals.",
-        "source_label": "Source: internal campaign record, March 2026"
-      },
-      {
-        "label": "Reported interactions",
-        "value": "3,891",
-        "scope": "Sum across the same six posts. This is a count of interactions, not unique people.",
-        "source_label": "Source: internal campaign record, March 2026"
-      }
-    ]
   }
 ]
