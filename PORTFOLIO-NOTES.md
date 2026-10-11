@@ -17,6 +17,8 @@ The site remains static HTML, CSS and JavaScript for GitHub Pages. The slate/cya
 
 ## Editing and verification
 
+The 11 October visual update adds Brand Camp's original campaign chapters, desktop/mobile website pairs and public AI reel references. Source provenance and the design brief are in `PROJECT-VISUALS-SOURCES.md`. Refill Hope remains the campaign gallery reference, with its own original imagery and historical reporting.
+
 Edit `assets/data/projects.json`, then run:
 
 ```sh

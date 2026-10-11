@@ -165,18 +165,88 @@
     "group": "selected",
     "summary": "Led campaign strategy and rollout, bringing promotional video, designer collaboration and AI-assisted comic-style storytelling together.",
     "role": "Campaign planning, creative direction, video production and rollout coordination.",
-    "problem": "Campaign strategy and creative direction.",
+    "problem": "Bring Yello’s rebrand story into the Brand Camp event conversation through a consistent campaign across formats.",
     "thinking": "Give the event a consistent story across formats while supporting the speaker and sponsor presence.",
-    "built": "A coordinated set of campaign concepts, promotional videos and social storytelling.",
-    "output": "Campaign delivery across the stated scope.",
-    "evidence": "The project demonstrates campaign planning, creative direction, video production and rollout coordination.",
+    "built": "Campaign planning, promotional video, designer collaboration and a comic-style social sequence leading into the event.",
+    "output": "Promotional videos and published social storytelling supporting Yello’s Brand Camp 2025 presence.",
+    "evidence": "The published May 5–7 carousel sequence shows the campaign’s comic-style storytelling. The May 8 recap reel and Yello’s event coverage provide the event context. These links demonstrate delivered work, without claiming attendance or campaign performance.",
     "status": "Completed campaign work.",
     "question": "What would the next campaign build on or test differently?",
-    "image": "",
-    "imageAlt": "Brand Camp 2025: Campaign Lead, Content & Creative Direction interface preview",
-    "links": [],
+    "image": "brand-camp-secret-mission.webp",
+    "imageAlt": "Published Brand Camp comic artwork: two Yello explorers receive an invitation to share the rebrand story",
+    "links": [
+      [
+        "Watch the Brand Camp recap",
+        "https://www.instagram.com/reel/DJZ1rGLRjHY/"
+      ],
+      [
+        "Read Yello’s event coverage",
+        "https://yellomediagroup.com/inside-brand-camp-2025/"
+      ]
+    ],
     "featured": true,
-    "proof": ""
+    "proof": "Yello Media Group · campaign strategy and creative rollout",
+    "imageSmall": "brand-camp-secret-mission-720.webp",
+    "imageWidth": 1080,
+    "imageHeight": 1350,
+    "imageTreatment": "artwork",
+    "mediaTitle": "A campaign told in chapters",
+    "mediaIntro": "An invitation, a trail, a brand story and an event-day reveal. The published comic sequence carries the same characters and visual language from one chapter to the next.",
+    "mediaNote": "Published by Yello Media Group, 5–7 May 2025. Select an image to open its original carousel on Instagram; Instagram may ask you to sign in.",
+    "media": [
+      {
+        "title": "01 / The secret mission",
+        "kind": "Carousel",
+        "url": "https://www.instagram.com/p/DJSvITcN9Gq/",
+        "published": "5 May 2025",
+        "description": "The opening invitation introduces Yello’s rebrand story through a comic-style adventure.",
+        "source_name": "Yello on Instagram",
+        "image": "brand-camp-secret-mission.webp",
+        "imageSmall": "brand-camp-secret-mission-720.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Yello Media has a secret mission: two illustrated explorers hold a Brand Camp invitation"
+      },
+      {
+        "title": "02 / Following the Yellow Trail",
+        "kind": "Carousel",
+        "url": "https://www.instagram.com/p/DJUhkiMvmvK/",
+        "published": "6 May 2025",
+        "description": "An illustrated map connects Yello’s legacy with local discovery and the journey to Brand Camp.",
+        "source_name": "Yello on Instagram",
+        "image": "brand-camp-yellow-trail.webp",
+        "imageSmall": "brand-camp-yellow-trail-720.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Illustrated FindYello map with a Yellow Trail, a directory, social icons and the UWI Mona entrance"
+      },
+      {
+        "title": "03 / Protecting the brand story",
+        "kind": "Carousel",
+        "url": "https://www.instagram.com/p/DJU6LRHJH_D/",
+        "published": "6 May 2025",
+        "description": "The next chapter uses a key and treasure chest to connect the brand’s history with new possibilities.",
+        "source_name": "Yello on Instagram",
+        "image": "brand-camp-guard-the-story.webp",
+        "imageSmall": "brand-camp-guard-the-story-720.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Guard the story: two illustrated explorers discover a glowing key and treasure chest"
+      },
+      {
+        "title": "04 / Taking the stage",
+        "kind": "Carousel",
+        "url": "https://www.instagram.com/p/DJW1JQqsqho/",
+        "published": "7 May 2025",
+        "description": "The event-day post follows the characters through a social-media forest and announces Yello’s Brand Camp presentation.",
+        "source_name": "Yello on Instagram",
+        "image": "brand-camp-social-forest.webp",
+        "imageSmall": "brand-camp-social-forest-720.webp",
+        "width": 1080,
+        "height": 1350,
+        "alt": "Two Yello explorers follow a map through a forest with LinkedIn, Facebook and social reaction symbols"
+      }
+    ]
   },
   {
     "id": "ai-creative-systems",
@@ -207,7 +277,40 @@
       ]
     ],
     "featured": true,
-    "proof": ""
+    "proof": "",
+    "mediaTitle": "Published AI video experiments",
+    "mediaIntro": "Four short-form experiments published on Yello’s Instagram. Explore how visual concepts move into service discovery, explanation and storytelling.",
+    "mediaNote": "Published during my work at Yello Media Group. Open the original reels on Instagram; Instagram may ask you to sign in.",
+    "media": [
+      {
+        "title": "Finding AC repair",
+        "kind": "Video",
+        "url": "https://www.instagram.com/reel/DbL8MtxEyx-/",
+        "description": "A short-form service-discovery concept connecting Caribbean heat with finding local AC repair.",
+        "source_name": "Yello on Instagram"
+      },
+      {
+        "title": "El Niño explainer",
+        "kind": "Video",
+        "url": "https://www.instagram.com/reel/DbHAAlcjFYp/",
+        "description": "A published explainer exploring an environmental topic through AI-assisted visual storytelling.",
+        "source_name": "Yello on Instagram"
+      },
+      {
+        "title": "Sir Garfield Sobers tribute",
+        "kind": "Video",
+        "url": "https://www.instagram.com/reel/DbY9K5ggSDm/",
+        "description": "A tribute exploring character-led visual storytelling.",
+        "source_name": "Yello on Instagram"
+      },
+      {
+        "title": "Eye-care service discovery",
+        "kind": "Video",
+        "url": "https://www.instagram.com/reel/DcTlvacAY7B/",
+        "description": "A published visual concept connecting eye care with local service discovery.",
+        "source_name": "Yello on Instagram"
+      }
+    ]
   },
   {
     "id": "sales-academy",
@@ -261,7 +364,7 @@
     "evidence": "The public site provides the service, troubleshooting and enquiry journeys. The separate customer-dashboard concept uses sample data and remains a prototype.",
     "status": "Published website.",
     "question": "How can the next iteration make the enquiry journey clearer?",
-    "image": "vw-plus.png",
+    "image": "vwplus-desktop.webp",
     "imageAlt": "VW Plus homepage, captured October 2026",
     "links": [
       [
@@ -270,7 +373,29 @@
       ]
     ],
     "featured": true,
-    "proof": ""
+    "proof": "",
+    "imageSmall": "vwplus-desktop-720.webp",
+    "imageWidth": 1440,
+    "imageHeight": 1000,
+    "visualIntro": "The same customer journey, composed for desktop and mobile. These are actual website captures from 1 October 2026.",
+    "visuals": [
+      {
+        "image": "vwplus-desktop.webp",
+        "width": 1440,
+        "height": 1000,
+        "label": "Desktop",
+        "alt": "VW Plus homepage, captured October 2026",
+        "caption": "Specialist positioning, workshop photography and a clear first enquiry."
+      },
+      {
+        "image": "vwplus-mobile.webp",
+        "width": 390,
+        "height": 760,
+        "label": "Mobile",
+        "alt": "VW Plus mobile homepage, captured 1 October 2026",
+        "caption": "The service message and enquiry action lead on a smaller screen."
+      }
+    ]
   },
   {
     "id": "ashers-fleet",
@@ -293,7 +418,7 @@
     "evidence": "The enquiry prepares a WhatsApp message for the customer to review and send. Availability and booking are confirmed by the rental team.",
     "status": "Published website.",
     "question": "How can the next iteration make the enquiry journey clearer?",
-    "image": "ashers-fleet.png",
+    "image": "asher-desktop.webp",
     "imageAlt": "Asher’s Fleet homepage, captured October 2026",
     "links": [
       [
@@ -302,7 +427,29 @@
       ]
     ],
     "featured": false,
-    "proof": ""
+    "proof": "",
+    "imageSmall": "asher-desktop-720.webp",
+    "imageWidth": 1440,
+    "imageHeight": 1000,
+    "visualIntro": "The same customer journey, composed for desktop and mobile. These are actual website captures from 1 October 2026.",
+    "visuals": [
+      {
+        "image": "asher-desktop.webp",
+        "width": 1440,
+        "height": 1000,
+        "label": "Desktop",
+        "alt": "Asher’s Fleet homepage, captured October 2026",
+        "caption": "Vehicle context and a trip-planning enquiry in one opening view."
+      },
+      {
+        "image": "asher-mobile.webp",
+        "width": 390,
+        "height": 760,
+        "label": "Mobile",
+        "alt": "Asher’s Fleet mobile homepage, captured 1 October 2026",
+        "caption": "A stacked browsing journey with the availability action close at hand."
+      }
+    ]
   },
   {
     "id": "new-best-decorators",
@@ -325,7 +472,7 @@
     "evidence": "The site presents service information and a structured enquiry. Inspiration imagery is identified on the website; it is not all presented as completed client work.",
     "status": "Published website.",
     "question": "How can the next iteration make the enquiry journey clearer?",
-    "image": "new-best-decorators.png",
+    "image": "decorators-desktop.webp",
     "imageAlt": "The New Best Decorators homepage, captured October 2026",
     "links": [
       [
@@ -334,7 +481,29 @@
       ]
     ],
     "featured": false,
-    "proof": ""
+    "proof": "",
+    "imageSmall": "decorators-desktop-720.webp",
+    "imageWidth": 1440,
+    "imageHeight": 1000,
+    "visualIntro": "The same customer journey, composed for desktop and mobile. These are actual website captures from 1 October 2026.",
+    "visuals": [
+      {
+        "image": "decorators-desktop.webp",
+        "width": 1440,
+        "height": 1000,
+        "label": "Desktop",
+        "alt": "The New Best Decorators homepage, captured October 2026",
+        "caption": "Service positioning, interior inspiration and an estimate route."
+      },
+      {
+        "image": "decorators-mobile.webp",
+        "width": 390,
+        "height": 760,
+        "label": "Mobile",
+        "alt": "The New Best Decorators mobile homepage, captured 1 October 2026",
+        "caption": "Readable service content and direct contact options on a smaller screen."
+      }
+    ]
   },
   {
     "id": "findyello-quest",

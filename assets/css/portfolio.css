@@ -101,6 +101,17 @@ nav .nav-brand::after { display:none; }
 .campaign-media-cta { display:block; margin-top:auto; padding-top:.5rem; color:var(--accent); font-size:.78rem; font-weight:600; }
 .campaign-media-link:hover h3 { color:var(--accent); }
 .campaign-media-link:focus-visible { outline-offset:-3px; }
+.project-artwork-link { background:#0a1422; }
+.project-artwork-link .project-image { aspect-ratio:1.6; object-position:center; }
+.visual-source-note { margin-top:1rem; color:var(--muted); font-size:.75rem; line-height:1.7; }
+.case-page .website-visuals { max-width:none; padding:0; margin:0 0 2.5rem; }
+.website-visuals h2 { font-size:1.35rem; margin-bottom:.65rem; letter-spacing:-.025em; }
+.website-visual-grid { display:grid; grid-template-columns:minmax(0,2.5fr) minmax(0,1fr); gap:1.5rem; align-items:start; }
+.website-visual { margin:0; min-width:0; }
+.website-visual-frame { background:#0a1422; padding:.7rem; border:1px solid var(--border); border-radius:10px; }
+.website-visual-label { color:var(--muted); font-size:.65rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.65rem; }
+.website-visual img { display:block; width:100%; height:auto; border-radius:3px; }
+.website-visual figcaption { margin:.8rem .1rem 0; color:var(--muted); font-size:.8rem; line-height:1.65; }
 .campaign-results-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
 .campaign-results-grid > div { padding:1.1rem; border:1px solid var(--border); border-radius:8px; }
 .campaign-results-grid dt { font-size:.8rem; color:var(--muted); }
@@ -132,5 +143,7 @@ nav .nav-brand::after { display:none; }
   .case-deck { font-size:1rem; }
   .campaign-media-grid, .campaign-results-grid { grid-template-columns:1fr; }
   .campaign-media-frame { max-height:560px; }
+  .website-visual-grid { grid-template-columns:1fr; gap:1.5rem; }
+  .website-visual-mobile { width:min(100%,320px); justify-self:center; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *, *::before, *::after { animation:none !important; transition:none !important; } }

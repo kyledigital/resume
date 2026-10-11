@@ -44,11 +44,25 @@ for project in data:
         if item.get('image'):
             assert item.get('alt')
             assert (ROOT/'assets/images/projects'/item['image']).is_file()
+        if item.get('imageSmall'):
+            assert item.get('width') and item.get('height')
+            assert (ROOT/'assets/images/projects'/item['imageSmall']).is_file()
         assert item['url'] in (ROOT/'work'/f'{project["id"]}.html').read_text(encoding='utf-8')
     for metric in project.get('metrics',[]):
         assert all(metric.get(key) for key in ['label','value','scope','source_label'])
         if metric.get('source_url'):
             assert urlsplit(metric['source_url']).scheme=='https'
+    for visual in project.get('visuals',[]):
+        assert all(visual.get(key) for key in ['label','image','alt','caption','width','height'])
+        assert (ROOT/'assets/images/projects'/visual['image']).is_file()
+brand=next(p for p in data if p['id']=='brand-camp')
+assert len(brand['media'])==4
+assert all(item['image'].startswith('brand-camp-') for item in brand['media'])
+assert not brand.get('metrics')
+for project in data:
+    if 'websites' in project['categories']:
+        assert [v['label'] for v in project['visuals']]==['Desktop','Mobile']
+        assert project['visuals'][1]['width']==390
 assert 'not leads or sales' in next(p['evidence'] for p in data if p['id']=='yello-hub')
 assert 'not hours worked' in next(p['evidence'] for p in data if p['id']=='workload-dashboard')
 enersave=next(p for p in data if p['id']=='enersave')

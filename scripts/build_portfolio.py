@@ -12,12 +12,15 @@ DATA = ROOT / 'assets/data/projects.json'
 def picture(p, prefix=''):
     if not p.get('image'):
         return ''
-    return f'<img class="project-image" src="{prefix}assets/images/projects/{e(p["image"])}" alt="{e(p["imageAlt"])}" width="1280" height="800" loading="lazy">'
+    responsive = f' srcset="{prefix}assets/images/projects/{e(p["imageSmall"])} 720w, {prefix}assets/images/projects/{e(p["image"])} {p["imageWidth"]}w" sizes="(max-width:768px) calc(100vw - 40px), 520px"' if p.get('imageSmall') else ''
+    decoding = ' decoding="async"' if p.get('imageSmall') else ''
+    return f'<img class="project-image" src="{prefix}assets/images/projects/{e(p["image"])}"{responsive} alt="{e(p["imageAlt"])}" width="{p.get("imageWidth",1280)}" height="{p.get("imageHeight",800)}" loading="lazy"{decoding}>'
 
 def card(p):
     categories = ' '.join(p['categories'] + (['featured'] if p.get('featured') else []))
     image = picture(p)
-    visual = f'<a class="project-image-link" href="work/{p["id"]}.html" tabindex="-1" aria-hidden="true">{image}</a>' if image else ''
+    treatment = ' project-artwork-link' if p.get('imageTreatment') == 'artwork' else ''
+    visual = f'<a class="project-image-link{treatment}" href="work/{p["id"]}.html" tabindex="-1" aria-hidden="true">{image}</a>' if image else ''
     proof = f'<p class="project-proof">{e(p["proof"])}</p>' if p.get('proof') else ''
     return f'''<article class="project-card" data-project data-category="{categories}">
       {visual}<div class="project-body"><div class="project-meta"><span class="maturity">{e(p['label'])}</span><span>{e(p['discipline'])}</span></div>
@@ -33,10 +36,24 @@ def campaign_media(p):
     for item in p['media']:
         date=f'<span>{e(item["published"])}</span>' if item.get('published') else ''
         icon='▶' if item['kind']=='Video' else '↗'
-        visual=f'<div class="campaign-media-frame"><img src="../assets/images/projects/{e(item["image"])}" alt="{e(item["alt"])}" loading="lazy"><span class="campaign-media-open" aria-hidden="true">{icon} {e(item["kind"])}</span></div>' if item.get('image') else ''
-        kind=f'<span class="maturity">{e(item["kind"])}</span>' if not item.get('image') else ''
-        cards.append(f'''<article class="campaign-media-card"><a class="campaign-media-link" href="{e(item['url'])}" target="_blank" rel="noopener noreferrer" aria-label="{e(item['title'])} — open original {e(item['kind'].lower())} on {e(item['source_name'])}">{visual}<div class="campaign-media-copy">{kind}<h3>{e(item['title'])}</h3><p>{e(item['description'])}</p><div class="campaign-media-meta"><span>{e(item['source_name'])}</span>{date}</div><span class="campaign-media-cta">Open original post <span aria-hidden="true">↗</span></span></div></a></article>''')
-    return '<section class="campaign-media" aria-labelledby="campaign-media-title"><h2 id="campaign-media-title">Campaign moments</h2><p class="campaign-media-intro">Films and updates from the campaign. Select a card to open the original post on Instagram.</p><div class="campaign-media-grid">'+''.join(cards)+'</div></section>'
+        dimensions = f' width="{item["width"]}" height="{item["height"]}"' if item.get('width') else ''
+        responsive = f' srcset="../assets/images/projects/{e(item["imageSmall"])} 720w, ../assets/images/projects/{e(item["image"])} {item["width"]}w" sizes="(max-width:768px) calc(100vw - 40px), 510px"' if item.get('imageSmall') else ''
+        badge='' if p.get('imageTreatment')=='artwork' else f'<span class="campaign-media-open" aria-hidden="true">{icon} {e(item["kind"])}</span>'
+        visual=f'<div class="campaign-media-frame"><img src="../assets/images/projects/{e(item["image"])}"{responsive}{dimensions} alt="{e(item["alt"])}" loading="lazy" decoding="async">{badge}</div>' if item.get('image') else ''
+        kind=f'<span class="maturity">{e(item["kind"])}</span>' if not item.get('image') or p.get('imageTreatment')=='artwork' else ''
+        cards.append(f'''<article class="campaign-media-card"><a class="campaign-media-link" href="{e(item['url'])}" target="_blank" rel="noopener noreferrer">{visual}<div class="campaign-media-copy">{kind}<h3>{e(item['title'])}</h3><p>{e(item['description'])}</p><div class="campaign-media-meta"><span>{e(item['source_name'])}</span>{date}</div><span class="campaign-media-cta">Open original post <span aria-hidden="true">↗</span></span><span class="sr-only"> (opens in a new tab)</span></div></a></article>''')
+    title=e(p.get('mediaTitle','Campaign moments'))
+    intro=e(p.get('mediaIntro','Films and updates from the campaign. Select a card to open the original post on Instagram.'))
+    note=f'<p class="visual-source-note">{e(p["mediaNote"])}</p>' if p.get('mediaNote') else ''
+    return f'<section class="campaign-media" aria-labelledby="campaign-media-title"><h2 id="campaign-media-title">{title}</h2><p class="campaign-media-intro">{intro}</p><div class="campaign-media-grid">'+''.join(cards)+f'</div>{note}</section>'
+
+def website_visuals(p):
+    if not p.get('visuals'):
+        return ''
+    frames=[]
+    for item in p['visuals']:
+        frames.append(f'<figure class="website-visual website-visual-{e(item["label"].lower())}"><div class="website-visual-frame"><p class="website-visual-label">{e(item["label"])}</p><img src="../assets/images/projects/{e(item["image"])}" alt="{e(item["alt"])}" width="{item["width"]}" height="{item["height"]}" loading="lazy" decoding="async"></div><figcaption>{e(item["caption"])}</figcaption></figure>')
+    return f'<section class="website-visuals" aria-labelledby="website-visuals-title"><h2 id="website-visuals-title">Designed across screens</h2><p class="campaign-media-intro">{e(p["visualIntro"])}</p><div class="website-visual-grid">'+''.join(frames)+'</div></section>'
 
 def campaign_metrics(p):
     if not p.get('metrics'):
@@ -48,6 +65,10 @@ def campaign_metrics(p):
     return '<section class="campaign-results" aria-labelledby="campaign-results-title"><h2 id="campaign-results-title">Reported figures</h2><dl class="campaign-results-grid">'+''.join(cards)+'</dl></section>'
 
 def case_page(p):
+    updated = bool(p.get('media') or p.get('visuals'))
+    favicon = '<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">' if updated else ''
+    cache_version = '?v=20261011' if updated else ''
+    focus_target = ' tabindex="-1"' if updated else ''
     links = ''.join(f'<a class="outline-btn" href="{e(url)}" target="_blank" rel="noopener noreferrer">{e(label)} <span aria-hidden="true">↗</span></a>' for label,url in p.get('links',[]))
     sections = [('Context',p['summary']),('Problem',p['problem']),('Idea / Thinking',p['thinking']),('My Role',p['role']),('What I Built / Did',p['built']),('Output',p['output']),('Evidence',p['evidence']),('Status',p['status'])]
     # Do not fabricate a first-person retrospective when none has been supplied.
@@ -63,11 +84,11 @@ def case_page(p):
     return f'''<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(p['title'])} | Kyle Hector</title><meta name="description" content="{e(p['summary'])}">
-<link rel="stylesheet" href="../assets/css/styles.css"><link rel="stylesheet" href="../assets/css/portfolio.css"></head>
+{favicon}<link rel="stylesheet" href="../assets/css/styles.css"><link rel="stylesheet" href="../assets/css/portfolio.css{cache_version}"></head>
 <body class="case-page"><a class="skip-link" href="#main">Skip to case study</a>
 <header class="case-navigation"><a href="../index.html#portfolio">← Selected Work</a><a href="../index.html#contact">Contact Kyle</a></header>
-<main id="main"><header class="case-hero"><p class="eyebrow">{e(p['discipline'])} / <span class="maturity">{e(p['label'])}</span></p><h1>{e(p['title'])}</h1><p class="case-deck">{e(p['subtitle'])}</p><div class="project-links">{links}</div></header>
-<figure class="case-cover">{picture(p,'../') if not p.get('media') else ''}</figure>{campaign_media(p)}{campaign_metrics(p)}<div class="case-narrative">{body}</div>
+<main id="main"{focus_target}><header class="case-hero"><p class="eyebrow">{e(p['discipline'])} / <span class="maturity">{e(p['label'])}</span></p><h1>{e(p['title'])}</h1><p class="case-deck">{e(p['subtitle'])}</p><div class="project-links">{links}</div></header>
+<figure class="case-cover">{picture(p,'../') if not p.get('media') and not p.get('visuals') else ''}</figure>{campaign_media(p)}{website_visuals(p)}{campaign_metrics(p)}<div class="case-narrative">{body}</div>
 <footer class="case-bottom"><p>Explore the rest of my work.</p><a class="cta-btn" href="../index.html#portfolio">Back to Selected Work</a></footer></main></body></html>'''
 
 def main():
